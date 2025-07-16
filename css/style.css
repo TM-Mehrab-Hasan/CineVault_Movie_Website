@@ -18,11 +18,7 @@
     --font-body: 'Inter', sans-serif;
 }
 
-/*
-================================
---- General Body & Layout Styles ---
-================================
-*/
+/* --- General Body & Layout Styles --- */
 body {
     font-family: var(--font-body);
     margin: 0;
@@ -209,7 +205,7 @@ main {
 
 /*
 ================================
---- Details & Player Pages ---
+--- Details Page ---
 ================================
 */
 .details-header {
@@ -244,24 +240,119 @@ main {
     margin: 1.5rem 0;
 }
 
-.video-container {
+/*
+================================
+--- Custom Video Player ---
+================================
+*/
+.player-wrapper {
     position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-    background-color: #000;
-    border-radius: 8px;
-}
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    border: 0;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #000;
 }
 
+.player-wrapper:hover .player-controls,
+.player-wrapper.paused .player-controls,
+.player-wrapper .player-controls.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#main-video {
+    width: 100%;
+    display: block;
+}
+
+.player-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.progress-bar-container {
+    width: 100%;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    transition: height 0.2s ease;
+}
+
+.progress-bar-container:hover .progress-bar {
+    height: 8px;
+}
+
+.progress-bar-filled {
+    width: 0%;
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: 5px;
+}
+
+.bottom-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.left-controls, .right-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.control-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.volume-container {
+    display: flex;
+    align-items: center;
+}
+
+#volume-slider {
+    width: 0;
+    opacity: 0;
+    transition: width 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.volume-container:hover #volume-slider {
+    width: 80px;
+    opacity: 1;
+}
+
+.time-display {
+    font-size: 0.9rem;
+    color: white;
+}
+
+/*
+================================
+--- Episode Lists & Nav Buttons ---
+================================
+*/
 .watch-now-button, .download-button {
     background-color: var(--color-primary);
     color: white;
@@ -300,6 +391,27 @@ main {
     font-weight: bold;
 }
 
+.episode-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+}
+.ep-nav-button {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+.ep-nav-button:hover {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
 /*
 ================================
 --- Loader & Footer ---
@@ -332,7 +444,7 @@ footer {
 --- Responsive Styles (Mobile) ---
 ================================
 */
-@media (max-width: 820px) { /* Adjusted breakpoint for more devices */
+@media (max-width: 820px) {
 
     /* --- Mobile Header & Nav --- */
     .header-content {
@@ -354,7 +466,6 @@ footer {
         display: block;
     }
 
-    /* This is the key fix: stack all nav items vertically */
     nav ul {
         flex-direction: column;
         width: 100%;
@@ -374,7 +485,7 @@ footer {
         display: block;
         box-shadow: none;
         border: none;
-        background-color: #20262d; /* Nested color */
+        background-color: #20262d;
     }
 
     .dropdown-content a {
@@ -384,7 +495,7 @@ footer {
         color: var(--color-text-secondary);
     }
 
-    /* --- Hamburger Menu Button Styles --- */
+    /* --- Hamburger Menu Button --- */
     .nav-toggle {
         display: block;
         background: transparent;
@@ -440,4 +551,7 @@ footer {
         text-align: center;
     }
     .details-info { margin-top: 1.5rem; }
+    
+    /* Custom player adjustments */
+    .time-display { display: none; } /* Hide time on very small screens */
 }

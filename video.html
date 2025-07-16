@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -68,6 +68,174 @@
                                     <td>${episode.title}</td>
                                     <td><a href="video.html?series_id=${seriesId}&drive_id=${episode.google_drive_id}">Watch</a></td>
                                 </tr>`;
+                        });
+                        episodeListHtml += `</tbody></table>`;
+                    });
+                    episodeListContainer.innerHTML = episodeListHtml;
+                }
+            }
+        });
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Video</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">MovieSaviour</a>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container video-page-main">
+        <div class="player-wrapper" id="player-wrapper">
+            <video id="main-video"></video>
+
+            <div class="player-controls" id="player-controls">
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar">
+                        <div class="progress-bar-filled" id="progress-bar-filled"></div>
+                    </div>
+                </div>
+                <div class="bottom-controls">
+                    <div class="left-controls">
+                        <button id="play-pause-btn" class="control-button"><i class="fas fa-play"></i></button>
+                        <div class="volume-container">
+                            <button id="volume-btn" class="control-button"><i class="fas fa-volume-high"></i></button>
+                            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+                        </div>
+                        <div class="time-display">
+                            <span id="current-time">00:00</span> / <span id="duration">00:00</span>
+                        </div>
+                    </div>
+                    <div class="right-controls">
+                        <button id="fullscreen-btn" class="control-button"><i class="fas fa-expand"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="episode-nav-buttons" id="nav-buttons"></div>
+
+        <div id="episode-list-container"></div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MovieSaviour. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/videos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Get All Elements ---
+            const playerWrapper = document.getElementById('player-wrapper');
+            const video = document.getElementById('main-video');
+            const playerControls = document.getElementById('player-controls');
+            const playPauseBtn = document.getElementById('play-pause-btn');
+            const volumeBtn = document.getElementById('volume-btn');
+            const volumeSlider = document.getElementById('volume-slider');
+            const currentTimeEl = document.getElementById('current-time');
+            const durationEl = document.getElementById('duration');
+            const progressBar = document.getElementById('progress-bar');
+            const progressBarFilled = document.getElementById('progress-bar-filled');
+            const fullscreenBtn = document.getElementById('fullscreen-btn');
+            const episodeListContainer = document.getElementById('episode-list-container');
+            const navButtonsContainer = document.getElementById('nav-buttons');
+            const navToggle = document.querySelector('.nav-toggle');
+            const mainNav = document.querySelector('nav');
+
+            // --- Mobile Nav Logic ---
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                    navToggle.classList.toggle('active');
+                });
+            }
+
+            // --- Page Setup ---
+            const urlParams = new URLSearchParams(window.location.search);
+            const seriesId = urlParams.get('series_id');
+            const currentDriveId = urlParams.get('drive_id');
+
+            if (!currentDriveId) {
+                playerWrapper.innerHTML = '<h1>Video not found.</h1>';
+                return;
+            }
+
+            video.src = `https://drive.google.com/uc?id=${currentDriveId}`;
+            
+            // --- Player Controls Logic ---
+            const togglePlay = () => video.paused ? video.play() : video.pause();
+            video.addEventListener('play', () => { playerWrapper.classList.remove('paused'); playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>'; });
+            video.addEventListener('pause', () => { playerWrapper.classList.add('paused'); playPauseBtn.innerHTML = '<i class="fas fa-play"></i>'; });
+            playPauseBtn.addEventListener('click', togglePlay);
+            video.addEventListener('click', togglePlay);
+
+            volumeSlider.addEventListener('input', e => video.volume = e.target.value);
+            video.addEventListener('volumechange', () => {
+                volumeSlider.value = video.volume;
+                let iconClass = 'fas fa-volume-high';
+                if (video.volume === 0 || video.muted) iconClass = 'fas fa-volume-xmark';
+                else if (video.volume < 0.5) iconClass = 'fas fa-volume-low';
+                volumeBtn.innerHTML = `<i class="${iconClass}"></i>`;
+            });
+            volumeBtn.addEventListener('click', () => video.muted = !video.muted);
+
+            const formatTime = t => `${String(Math.floor(t/60)).padStart(2,'0')}:${String(Math.floor(t%60)).padStart(2,'0')}`;
+            video.addEventListener('loadedmetadata', () => durationEl.textContent = formatTime(video.duration));
+            video.addEventListener('timeupdate', () => {
+                currentTimeEl.textContent = formatTime(video.currentTime);
+                progressBarFilled.style.width = `${(video.currentTime / video.duration) * 100}%`;
+            });
+
+            progressBar.addEventListener('click', e => video.currentTime = (e.offsetX / progressBar.clientWidth) * video.duration);
+
+            fullscreenBtn.addEventListener('click', () => {
+                if (!document.fullscreenElement) playerWrapper.requestFullscreen();
+                else document.exitFullscreen();
+            });
+
+            // --- Episode List & Nav Button Logic ---
+            if (seriesId) {
+                const seriesData = videos.find(v => v.id === seriesId);
+                if (seriesData && seriesData.seasons) {
+                    let allEpisodes = [];
+                    seriesData.seasons.forEach(s => allEpisodes.push(...s.episodes));
+                    
+                    const currentEpisodeIndex = allEpisodes.findIndex(ep => ep.google_drive_id === currentDriveId);
+                    
+                    const prevEp = currentEpisodeIndex > 0 ? allEpisodes[currentEpisodeIndex - 1] : null;
+                    const nextEp = currentEpisodeIndex < allEpisodes.length - 1 ? allEpisodes[currentEpisodeIndex + 1] : null;
+                    
+                    navButtonsContainer.innerHTML = `
+                        ${prevEp ? `<a href="video.html?series_id=${seriesId}&drive_id=${prevEp.google_drive_id}" class="ep-nav-button">&laquo; Previous Ep</a>` : '<div></div>'}
+                        ${nextEp ? `<a href="video.html?series_id=${seriesId}&drive_id=${nextEp.google_drive_id}" class="ep-nav-button">Next Ep &raquo;</a>` : '<div></div>'}
+                    `;
+
+                    let episodeListHtml = '';
+                    seriesData.seasons.forEach(season => {
+                        episodeListHtml += `<h2 class="season-title">${season.season_title}</h2><table class="episodes-table"><tbody>`;
+                        season.episodes.forEach((episode, index) => {
+                            const isActive = episode.google_drive_id === currentDriveId ? 'active' : '';
+                            episodeListHtml += `<tr class="${isActive}"><td>Ep ${index + 1}</td><td>${episode.title}</td><td><a href="video.html?series_id=${seriesId}&drive_id=${episode.google_drive_id}">Watch</a></td></tr>`;
                         });
                         episodeListHtml += `</tbody></table>`;
                     });

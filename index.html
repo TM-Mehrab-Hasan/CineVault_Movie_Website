@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieSaviour | All Your Movies, Dramas, Animes Are Here</title>
+    <!-- Font Awesome for player icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,10 +13,12 @@
         <div class="container header-content">
             <a href="index.html" class="logo">MovieSaviour</a>
 
+            <!-- This button is for the mobile navigation menu -->
             <button class="nav-toggle" aria-label="toggle navigation">
                 <span class="hamburger"></span>
             </button>
 
+            <!-- Main Navigation -->
             <nav>
                 <ul>
                     <li><a href="#" class="category-link active" data-category="all">All</a></li>
@@ -50,6 +53,7 @@
                     </li>
                 </ul>
             </nav>
+
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Search for titles...">
             </div>
@@ -60,7 +64,8 @@
         <h2 id="category-title">All Content</h2>
         <div id="loader"></div>
         <div id="video-grid">
-            </div>
+            <!-- Video content is dynamically inserted here -->
+        </div>
     </main>
 
     <footer>

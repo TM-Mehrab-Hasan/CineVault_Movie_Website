@@ -4,12 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="container header-content">
             <a href="index.html" class="logo">MovieSaviour</a>
+
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="category-link" data-category="all">All</a></li>
+                    <li class="dropdown">
+                        <a href="index.html" class="category-link" data-category="movie">Movies</a>
+                        <div class="dropdown-content">
+                            <a href="index.html" class="category-link" data-category="Bollywood">Bollywood</a>
+                            <a href="index.html" class="category-link" data-category="Hollywood">Hollywood</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="index.html" class="category-link" data-category="drama">Dramas</a>
+                        <div class="dropdown-content">
+                            <a href="index.html" class="category-link" data-category="Chinese">Chinese</a>
+                            <a href="index.html" class="category-link" data-category="Korean">Korean</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="index.html" class="category-link" data-category="anime">Anime</a>
+                        <div class="dropdown-content">
+                            <a href="index.html" class="category-link" data-category="Action">Action</a>
+                            <a href="index.html" class="category-link" data-category="Harem">Harem</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -23,15 +55,24 @@
     </footer>
 
     <script src="js/videos.js"></script>
-    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // --- Mobile Nav Logic ---
+            const navToggle = document.querySelector('.nav-toggle');
+            const mainNav = document.querySelector('nav');
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                    navToggle.classList.toggle('active');
+                });
+            }
+
+            // --- Details Page Logic ---
             const detailsContainer = document.getElementById('details-container');
             const urlParams = new URLSearchParams(window.location.search);
             const videoId = urlParams.get('id');
             const apiKey = '60f2fb19';
 
-            // Find the data directly from the 'videos' variable (loaded from videos.js)
             const localVideoData = videos.find(v => v.id === videoId);
 
             if (localVideoData && localVideoData.imdb_id) {
@@ -59,14 +100,11 @@
                             `;
                             
                             if (localVideoData.google_drive_id) {
-                                // For single movies, the link points directly to the player with a drive_id
                                 contentHtml += `<a href="video.html?drive_id=${localVideoData.google_drive_id}" class="watch-now-button">Watch Now</a>`;
                             } else if (localVideoData.seasons) {
                                 localVideoData.seasons.forEach(season => {
                                     contentHtml += `<h2 class="season-title">${season.season_title}</h2><table class="episodes-table"><tbody>`;
                                     season.episodes.forEach((episode, index) => {
-                                        // --- THIS IS THE KEY UPDATE ---
-                                        // The link now includes the series_id AND the drive_id
                                         contentHtml += `
                                             <tr>
                                                 <td>Episode ${index + 1}</td>
