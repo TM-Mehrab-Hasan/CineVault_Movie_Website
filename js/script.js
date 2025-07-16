@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // This function creates the link to the details page
     const createPageUrl = (localVideo) => `details.html?id=${encodeURIComponent(localVideo.id)}`;
 
-    // --- NEW `displayVideos` function with sorting logic ---
+    // --- `displayVideos` function with sorting logic ---
     const displayVideos = (videoArray) => {
         videoGrid.innerHTML = '';
         if (loader) loader.style.display = 'block';
@@ -26,14 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
             return fetch(`https://www.omdbapi.com/?i=${localVideo.imdb_id}&apikey=${apiKey}`)
                 .then(response => response.json())
                 .then(apiData => {
-                    // Combine our local data (like the unique 'id') with the API data
-                    return { ...localVideo, ...apiData };
+                    return { ...localVideo, ...apiData }; // Combine local and API data
                 });
         });
 
         // 2. Wait for all fetches to complete
         Promise.all(promises).then(fullDataArray => {
-            // Filter out any failed requests
             const validItems = fullDataArray.filter(item => item && item.Response === "True");
 
             // 3. Sort the array of items alphabetically by title
@@ -53,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // --- Event Listeners (No changes needed below) ---
+    // --- Event Listeners ---
 
     displayVideos(videos);
 
@@ -70,15 +68,30 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const category = e.target.getAttribute('data-category');
             searchInput.value = '';
+            
+            // This logic correctly handles highlighting for dropdowns
             categoryLinks.forEach(l => l.classList.remove('active'));
             if (e.currentTarget.parentElement.classList.contains('dropdown-content')) {
                 e.currentTarget.parentElement.previousElementSibling.classList.add('active');
             } else {
                 e.currentTarget.classList.add('active');
             }
+
             let filteredVideos = (category === 'all') ? videos : videos.filter(v => v.type === category || v.subcategory === category);
             categoryTitle.textContent = (category === 'all') ? 'All Content' : category.charAt(0).toUpperCase() + category.slice(1);
             displayVideos(filteredVideos);
         });
     });
+
+    // --- NEW: Mobile Navigation Toggle ---
+    const navToggle = document.querySelector('.nav-toggle');
+    const mainNav = document.querySelector('nav'); // Selects the main <nav> element
+
+    if (navToggle && mainNav) {
+        navToggle.addEventListener('click', () => {
+            // Toggles the 'active' class on the nav menu and the button itself
+            mainNav.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+    }
 });
