@@ -1,9 +1,25 @@
-/* General Body & Layout Styles */
+/* --- Foundation: Colors & Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700;800&display=swap');
+
+:root {
+    --color-background: #101418;
+    --color-surface: #191E24;
+    --color-primary: #e50914;
+    --color-primary-hover: #f40612;
+    --color-text-primary: #f0f0f0;
+    --color-text-secondary: #a9a9a9;
+    --color-border: #2a313a;
+
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* --- General Body & Layout Styles --- */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-body);
     margin: 0;
-    background-color: #121212;
-    color: #ffffff;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
 }
 
 .container {
@@ -12,11 +28,11 @@ body {
     padding: 0 1rem;
 }
 
-/* Header & Navigation Styles */
+/* --- Header & Navigation --- */
 header {
-    background-color: #1a1a1a;
+    background-color: var(--color-surface);
     padding: 1rem 0;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--color-border);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -29,10 +45,12 @@ header .container {
 }
 
 .logo {
+    font-family: var(--font-heading);
     font-size: 1.8rem;
-    font-weight: bold;
-    color: #e50914;
+    font-weight: 700;
+    color: var(--color-primary);
     text-decoration: none;
+    text-shadow: 0 0 10px rgba(229, 9, 20, 0.3); /* Adds a subtle glow */
 }
 
 nav ul {
@@ -40,39 +58,79 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center; /* Vertically align nav items */
+    align-items: center;
 }
 
 nav a {
-    color: white;
+    color: var(--color-text-secondary);
+    font-weight: 500;
     text-decoration: none;
     padding: 0.5rem 1rem;
     transition: color 0.3s;
-    display: block; /* Ensures padding is applied correctly */
+    display: block;
 }
 
-nav a:hover, .category-link.active {
-    color: #e50914; /* Highlight active link and on hover */
+nav a:hover {
+    color: var(--color-text-primary);
 }
 
-/* Search Bar Styles */
-.search-container input {
-    padding: 0.5rem;
+.category-link.active {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* --- Dropdown Menu Styles --- */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--color-surface);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 1;
     border-radius: 5px;
-    border: 1px solid #333;
-    background-color: #222;
-    color: white;
-    width: 250px;
+    border: 1px solid var(--color-border);
+    overflow: hidden;
 }
 
-/* Main Content & Video Grid Styles */
+.dropdown-content a:hover {
+    background-color: var(--color-primary);
+    color: white !important; /* Ensure text is white on red hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* --- Search Bar --- */
+.search-container input {
+    padding: 0.6rem 0.8rem;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+    background-color: #222;
+    color: var(--color-text-primary);
+    width: 250px;
+    transition: all 0.3s ease;
+}
+.search-container input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.2);
+}
+
+/* --- Main Content & Video Grid --- */
 main {
-    padding: 2rem 0;
+    padding: 2.5rem 0;
 }
 
 #category-title {
-    margin-bottom: 1.5rem;
-    border-left: 4px solid #e50914;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--color-primary);
     padding-left: 1rem;
 }
 
@@ -83,17 +141,23 @@ main {
 }
 
 .video-item {
-    background-color: #1a1a1a;
+    background-color: var(--color-surface);
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
-    color: white;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .video-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(229, 9, 20, 0.3);
+    border-color: var(--color-primary);
+}
+
+.poster-container {
+    position: relative;
 }
 
 .video-item img {
@@ -104,6 +168,8 @@ main {
 }
 
 .video-item h3 {
+    font-family: var(--font-heading);
+    font-weight: 600;
     font-size: 1rem;
     padding: 1rem;
     margin: 0;
@@ -112,53 +178,54 @@ main {
     text-overflow: ellipsis;
 }
 
-/* --- Dropdown Menu Styles --- */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
+.badge {
     position: absolute;
-    background-color: #1a1a1a;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.dropdown-content a {
+    top: 10px;
+    left: 10px;
+    background-color: var(--color-primary);
     color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-.dropdown-content a:hover {
-    background-color: #e50914;
-    color: white;
+/* --- Details Page --- */
+.details-header {
+    display: flex;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    background: var(--color-surface);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+.details-thumbnail {
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.4);
 }
 
-/* --- Details Page Styles --- */
-.details-header { display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
-.details-thumbnail { max-width: 250px; height: auto; border-radius: 8px; object-fit: cover; }
 .details-info { flex: 1; min-width: 300px; }
-.watch-now-button { background-color: #e50914; color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-size: 1.2rem; display: inline-block; transition: background-color 0.3s; }
-.watch-now-button:hover { background-color: #f40612; }
-.season-title { margin-top: 2rem; border-bottom: 2px solid #333; padding-bottom: 0.5rem; }
-.episodes-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-.episodes-table td { padding: 1rem; border-bottom: 1px solid #2a2a2a; }
-.episodes-table tr:hover { background-color: #1a1a1a; } /* NEW: Hover effect for table rows */
-.episodes-table td a { color: #e50914; text-decoration: none; font-weight: bold; }
+.details-info h1 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    margin-top: 0;
+}
+.details-info hr {
+    border: none;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 1.5rem 0;
+}
 
-/* --- Player Page Styles --- */
+/* --- Player Page & Episode Tables --- */
 .video-container {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
@@ -166,8 +233,8 @@ main {
     overflow: hidden;
     margin-bottom: 1.5rem;
     background-color: #000;
+    border-radius: 8px;
 }
-
 .video-container iframe {
     position: absolute;
     top: 0;
@@ -177,43 +244,66 @@ main {
     border: 0;
 }
 
-.download-button {
-    display: inline-block;
-    background-color: #e50914;
+.watch-now-button, .download-button {
+    background-color: var(--color-primary);
     color: white;
-    padding: 0.8rem 1.5rem;
+    padding: 1rem 2rem;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: inline-block;
     transition: background-color 0.3s;
 }
-
-.download-button:hover {
-    background-color: #f40612;
+.watch-now-button:hover, .download-button:hover {
+    background-color: var(--color-primary-hover);
 }
 
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 2rem;
-    border-top: 1px solid #333;
-    color: #888;
+.season-title {
+    font-family: var(--font-heading);
+    margin-top: 2.5rem;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 0.5rem;
+}
+.episodes-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+.episodes-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color 0.3s;
+}
+.episodes-table tr:hover td { background-color: #20262d; }
+.episodes-table td a { color: var(--color-primary); text-decoration: none; font-weight: bold; }
+
+/* Highlight for the active episode row on the player page */
+.episodes-table tr.active td {
+    background-color: #381b1d;
+    color: var(--color-text-primary);
+}
+.episodes-table tr.active td a {
+    color: #fff;
+    font-weight: bold;
 }
 
-/* --- Loader Styles --- */
+/* --- Loader --- */
 #loader {
-    border: 8px solid #333; /* Light grey */
-    border-top: 8px solid #e50914; /* Red */
+    border: 8px solid var(--color-border);
+    border-top: 8px solid var(--color-primary);
     border-radius: 50%;
     width: 60px;
     height: 60px;
     animation: spin 1s linear infinite;
-    margin: 4rem auto; /* Center the loader */
+    margin: 4rem auto;
 }
-
-/* Spinner animation */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
 }
