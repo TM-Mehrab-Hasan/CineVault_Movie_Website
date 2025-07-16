@@ -1,53 +1,36 @@
-# backend:
-#   name: git-gateway
-#   branch: main # Or 'master', depending on your GitHub repository's default branch
-
-# media_folder: "media/uploads"
-# public_folder: "/media/uploads"
-
-# # This defines a "File Collection", which allows you to edit specific files.
-# collections:
-#   - label: "Video Library"
-#     name: "library"
-#     # The 'files' property is the key change that fixes the error.
-#     files:
-#       # This is the single file we are editing.
-#       - label: "All Videos"
-#         name: "videos"
-#         file: "js/videos.json"
-#         # The fields below describe the structure of objects inside the JSON array.
-#         fields:
-#           - { label: "Unique ID (all lowercase, use dashes, e.g., 'hidden-love')", name: "id", widget: "string" }
-#           - { label: "Type", name: "type", widget: "select", options: ["movie", "drama", "anime"] }
-#           - { label: "Subcategory (e.g., Bollywood, Korean)", name: "subcategory", widget: "string" }
-#           - { label: "IMDb ID (e.g., tt1234567)", name: "imdb_id", widget: "string" }
-#           - { label: "Google Drive ID (for single Movies only)", name: "google_drive_id", widget: "string", required: false }
-#           - label: "Seasons (for Dramas and Animes)"
-#             name: "seasons"
-#             widget: "list"
-#             required: false
-#             fields:
-#               - { label: "Season Title (e.g., Season 1)", name: "season_title", widget: "string" }
-#               - label: "Episodes"
-#                 name: "episodes"
-#                 widget: "list"
-#                 fields:
-#                   - { label: "Episode Title", name: "title", widget: "string" }
-#                   - { label: "Episode Google Drive ID", name: "google_drive_id", widget: "string" }
-
 backend:
   name: git-gateway
-  branch: main
+  branch: main # Or 'master', depending on your GitHub repository's default branch
 
-# This is a temporary, simplified config for testing purposes
+media_folder: "media/uploads"
+public_folder: "/media/uploads"
+
+# This defines a "File Collection", which allows you to edit specific files.
 collections:
-  - label: "Video Library (Test)"
-    name: "library_test"
+  - label: "Video Library"
+    name: "library"
+    # The 'files' property is the key change that fixes the error.
     files:
+      # This is the single file we are editing.
       - label: "All Videos"
         name: "videos"
         file: "js/videos.json"
-        # We are only asking the CMS to read these two simple fields
+        # The fields below describe the structure of objects inside the JSON array.
         fields:
-          - { label: "ID", name: "id", widget: "string" }
-          - { label: "Type", name: "type", widget: "string" }
+          - { label: "Unique ID (all lowercase, use dashes, e.g., 'hidden-love')", name: "id", widget: "string" }
+          - { label: "Type", name: "type", widget: "select", options: ["movie", "drama", "anime"] }
+          - { label: "Subcategory (e.g., Bollywood, Korean)", name: "subcategory", widget: "string" }
+          - { label: "IMDb ID (e.g., tt1234567)", name: "imdb_id", widget: "string" }
+          - { label: "Google Drive ID (for single Movies only)", name: "google_drive_id", widget: "string", required: false }
+          - label: "Seasons (for Dramas and Animes)"
+            name: "seasons"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Season Title (e.g., Season 1)", name: "season_title", widget: "string" }
+              - label: "Episodes"
+                name: "episodes"
+                widget: "list"
+                fields:
+                  - { label: "Episode Title", name: "title", widget: "string" }
+                  - { label: "Episode Google Drive ID", name: "google_drive_id", widget: "string" }
