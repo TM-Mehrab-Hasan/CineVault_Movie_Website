@@ -3,6 +3,7 @@
 --- Foundation: Colors & Fonts ---
 ================================
 */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700;800&display=swap');
 
 :root {
@@ -18,7 +19,11 @@
     --font-body: 'Inter', sans-serif;
 }
 
-/* --- General Body & Layout Styles --- */
+/*
+================================
+--- General Body & Layout Styles ---
+================================
+*/
 body {
     font-family: var(--font-body);
     margin: 0;
@@ -53,12 +58,13 @@ header {
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif; /* The new cinematic font */
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
     color: var(--color-primary);
     text-decoration: none;
-    text-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+    text-shadow: 0 0 15px rgba(229, 9, 20, 0.5); /* A stronger glow */
 }
 
 nav ul {
@@ -205,7 +211,7 @@ main {
 
 /*
 ================================
---- Details Page ---
+--- Details & Player Pages ---
 ================================
 */
 .details-header {
@@ -240,132 +246,41 @@ main {
     margin: 1.5rem 0;
 }
 
-/*
-================================
---- Custom Video Player ---
-================================
-*/
-.player-wrapper {
+.video-container {
     position: relative;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
+    padding-bottom: 56.25%;
+    height: 0;
     overflow: hidden;
-    border-radius: 8px;
+    margin-bottom: 1.5rem;
     background-color: #000;
+    border-radius: 8px;
 }
-
-.player-wrapper:hover .player-controls,
-.player-wrapper.paused .player-controls,
-.player-wrapper .player-controls.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-#main-video {
-    width: 100%;
-    display: block;
-}
-
-.player-controls {
+.video-container iframe {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    right: 0;
-    padding: 10px;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-    opacity: 0;
-    transform: translateY(100%);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.progress-bar-container {
     width: 100%;
-    padding: 5px 0;
-    cursor: pointer;
-}
-
-.progress-bar {
-    width: 100%;
-    height: 5px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    transition: height 0.2s ease;
-}
-
-.progress-bar-container:hover .progress-bar {
-    height: 8px;
-}
-
-.progress-bar-filled {
-    width: 0%;
     height: 100%;
-    background-color: var(--color-primary);
+    border: 0;
+}
+
+/* --- Stylish Buttons --- */
+.watch-now-button, .download-button, .ep-nav-button {
+    background: linear-gradient(45deg, var(--color-primary), #a7060e);
+    color: white;
+    padding: 0.8rem 1.5rem;
     border-radius: 5px;
-}
-
-.bottom-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 5px;
-}
-
-.left-controls, .right-controls {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.control-button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.volume-container {
-    display: flex;
-    align-items: center;
-}
-
-#volume-slider {
-    width: 0;
-    opacity: 0;
-    transition: width 0.3s ease, opacity 0.3s ease;
-    cursor: pointer;
-}
-
-.volume-container:hover #volume-slider {
-    width: 80px;
-    opacity: 1;
-}
-
-.time-display {
-    font-size: 0.9rem;
-    color: white;
-}
-
-/*
-================================
---- Episode Lists & Nav Buttons ---
-================================
-*/
-.watch-now-button, .download-button {
-    background-color: var(--color-primary);
-    color: white;
-    padding: 1rem 2rem;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
     display: inline-block;
-    transition: background-color 0.3s;
 }
-.watch-now-button:hover, .download-button:hover {
-    background-color: var(--color-primary-hover);
+.watch-now-button:hover, .download-button:hover, .ep-nav-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    background: linear-gradient(45deg, #f40612, var(--color-primary));
 }
 
 .season-title {
@@ -395,21 +310,6 @@ main {
     display: flex;
     justify-content: space-between;
     margin: 1.5rem 0;
-}
-.ep-nav-button {
-    background-color: var(--color-surface);
-    color: var(--color-text-primary);
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    border: 1px solid var(--color-border);
-    transition: all 0.3s ease;
-}
-.ep-nav-button:hover {
-    background-color: var(--color-primary);
-    color: white;
-    border-color: var(--color-primary);
 }
 
 /*
@@ -551,7 +451,4 @@ footer {
         text-align: center;
     }
     .details-info { margin-top: 1.5rem; }
-    
-    /* Custom player adjustments */
-    .time-display { display: none; } /* Hide time on very small screens */
 }
