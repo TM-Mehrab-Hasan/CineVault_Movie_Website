@@ -1,0 +1,219 @@
+/* General Body & Layout Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header & Navigation Styles */
+header {
+    background-color: #1a1a1a;
+    padding: 1rem 0;
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #e50914;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Vertically align nav items */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+    display: block; /* Ensures padding is applied correctly */
+}
+
+nav a:hover, .category-link.active {
+    color: #e50914; /* Highlight active link and on hover */
+}
+
+/* Search Bar Styles */
+.search-container input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #222;
+    color: white;
+    width: 250px;
+}
+
+/* Main Content & Video Grid Styles */
+main {
+    padding: 2rem 0;
+}
+
+#category-title {
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #e50914;
+    padding-left: 1rem;
+}
+
+#video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.video-item {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: white;
+}
+
+.video-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.video-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.video-item h3 {
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- Dropdown Menu Styles --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1a1a1a;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #e50914;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* --- Details Page Styles --- */
+.details-header { display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.details-thumbnail { max-width: 250px; height: auto; border-radius: 8px; object-fit: cover; }
+.details-info { flex: 1; min-width: 300px; }
+.watch-now-button { background-color: #e50914; color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-size: 1.2rem; display: inline-block; transition: background-color 0.3s; }
+.watch-now-button:hover { background-color: #f40612; }
+.season-title { margin-top: 2rem; border-bottom: 2px solid #333; padding-bottom: 0.5rem; }
+.episodes-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+.episodes-table td { padding: 1rem; border-bottom: 1px solid #2a2a2a; }
+.episodes-table tr:hover { background-color: #1a1a1a; } /* NEW: Hover effect for table rows */
+.episodes-table td a { color: #e50914; text-decoration: none; font-weight: bold; }
+
+/* --- Player Page Styles --- */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    background-color: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #e50914;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: #f40612;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid #333;
+    color: #888;
+}
+
+/* --- Loader Styles --- */
+#loader {
+    border: 8px solid #333; /* Light grey */
+    border-top: 8px solid #e50914; /* Red */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 4rem auto; /* Center the loader */
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
