@@ -3,14 +3,14 @@
         "id": "kabir-singh",
         "type": "movie",
         "subcategory": "Bollywood",
-        "imdb_id": "tt8269204",
+        "imdb_id": "tt8983202",
         "google_drive_id": "1tLDLmhPTh1LyRam9PCrIQMuN9ZttFeE0"
     },
     {
         "id": "absolute-duo",
         "type": "anime",
         "subcategory": "Fantasy",
-        "imdb_id": "tt4253330",
+        "imdb_id": "tt4216878",
         "seasons": [
             {
                 "season_title": "Season 1",
@@ -35,7 +35,7 @@
         "id": "campione!",
         "type": "anime",
         "subcategory": "Harem",
-        "imdb_id": "tt2322037",
+        "imdb_id": "tt2250160",
         "seasons": [
             {
                 "season_title": "Season 1",
