@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieSaviour | All Your Movies, Dramas, Animes Are Here</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">MovieSaviour</a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="category-link active" data-category="all">All</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="category-link" data-category="movie">Movies</a>
+                        <div class="dropdown-content">
+                            <a href="#" class="category-link" data-category="Bollywood">Bollywood</a>
+                            <a href="#" class="category-link" data-category="Hollywood">Hollywood</a>
+                            <a href="#" class="category-link" data-category="South Indian">South Indian</a>
+                            <a href="#" class="category-link" data-category="Bangla">Bangla</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="category-link" data-category="drama">Dramas</a>
+                        <div class="dropdown-content">
+                            <a href="#" class="category-link" data-category="Chinese">Chinese</a>
+                            <a href="#" class="category-link" data-category="Korean">Korean</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="category-link" data-category="anime">Anime</a>
+                        <div class="dropdown-content">
+                            <a href="#" class="category-link" data-category="Action">Action</a>
+                            <a href="#" class="category-link" data-category="Adventure">Adventure</a>
+                            <a href="#" class="category-link" data-category="Fantasy">Fantasy</a>
+                            <a href="#" class="category-link" data-category="Romance">Romance</a>
+                            <a href="#" class="category-link" data-category="Harem">Harem</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </nav>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for titles...">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 id="category-title">All Content</h2>
+        <div id="loader"></div>
+        <div id="video-grid">
+            </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MovieSaviour. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/videos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

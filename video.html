@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Video</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">MovieSaviour</a>
+        </div>
+    </header>
+
+    <main class="container video-page-main" id="player-container">
+        </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MovieSaviour. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const playerContainer = document.getElementById('player-container');
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // This page now looks for 'drive_id' from the URL, which is sent by details.html
+            const driveId = urlParams.get('drive_id');
+
+            if (driveId) {
+                // If a drive_id is found, create the player and download button
+                playerContainer.innerHTML = `
+                    <div class="video-container">
+                        <iframe src="https://drive.google.com/file/d/${driveId}/preview" allow="autoplay" allowfullscreen></iframe>
+                    </div>
+                    <a href="https://drive.google.com/uc?export=download&id=${driveId}" class="download-button" download>Download Video</a>
+                `;
+            } else {
+                // If no drive_id is found, show an error
+                playerContainer.innerHTML = '<h1>Video not found.</h1>';
+            }
+        });
+    </script>
+</body>
+</html>
