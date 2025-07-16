@@ -13,6 +13,13 @@ const videos = [
         "imdb_id": "tt4302956",
         "google_drive_id": "1elpWkcuFWTmaR7ci3aRvKrrvM8XyTT_h"
     },
+        {
+        "id": "radhe-shyam",
+        "type": "movie",
+        "subcategory": "South Indian",
+        "imdb_id": "tt8960382",
+        "google_drive_id": "1ddLw15a2la3Xan_wtuZIxJqCWuzH2Szh"
+    },
     {
         "id": "absolute-duo",
         "type": "anime",
