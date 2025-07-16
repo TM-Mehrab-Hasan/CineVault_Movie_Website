@@ -23,54 +23,73 @@
     </footer>
 
     <script src="js/videos.js"></script>
-<script>
-    function initializeDetailsPage(videos) {
-        const detailsContainer = document.getElementById('details-container');
-        const urlParams = new URLSearchParams(window.location.search);
-        const videoId = urlParams.get('id');
-        const apiKey = '60f2fb19';
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const detailsContainer = document.getElementById('details-container');
+            const urlParams = new URLSearchParams(window.location.search);
+            const videoId = urlParams.get('id');
+            const apiKey = '60f2fb19';
 
-        const localVideoData = videos.find(v => v.id === videoId);
+            // Find the data directly from the 'videos' variable (loaded from videos.js)
+            const localVideoData = videos.find(v => v.id === videoId);
 
-        if (localVideoData && localVideoData.imdb_id) {
-            fetch(`https://www.omdbapi.com/?i=${localVideoData.imdb_id}&apikey=${apiKey}`)
-                .then(response => response.json())
-                .then(apiData => {
-                    if (apiData.Response === "True") {
-                        document.title = apiData.Title;
-                        let contentHtml = `<div class="details-header"><img src="${apiData.Poster}" alt="${apiData.Title}" class="details-thumbnail"><div class="details-info"><h1>${apiData.Title}</h1><p><strong>Year:</strong> ${apiData.Year} | <strong>Rated:</strong> ${apiData.Rated} | <strong>Runtime:</strong> ${apiData.Runtime}</p><p><strong>Genre:</strong> ${apiData.Genre}</p><p><strong>IMDb Rating:</strong> ⭐ ${apiData.imdbRating}</p><hr><h3>Plot</h3><p>${apiData.Plot}</p><p><strong>Actors:</strong> ${apiData.Actors}</p><p><strong>Director:</strong> ${apiData.Director}</p><p><strong>Writer:</strong> ${apiData.Writer}</p></div></div>`;
-                        if (localVideoData.google_drive_id) {
-                            contentHtml += `<a href="video.html?drive_id=${localVideoData.google_drive_id}" class="watch-now-button">Watch Now</a>`;
-                        } else if (localVideoData.seasons) {
-                            localVideoData.seasons.forEach(season => {
-                                contentHtml += `<h2 class="season-title">${season.season_title}</h2><table class="episodes-table"><tbody>`;
-                                season.episodes.forEach((episode, index) => {
-                                    contentHtml += `<tr><td>Episode ${index + 1}</td><td>${episode.title}</td><td><a href="video.html?drive_id=${episode.google_drive_id}">Watch</a></td></tr>`;
+            if (localVideoData && localVideoData.imdb_id) {
+                fetch(`https://www.omdbapi.com/?i=${localVideoData.imdb_id}&apikey=${apiKey}`)
+                    .then(response => response.json())
+                    .then(apiData => {
+                        if (apiData.Response === "True") {
+                            document.title = apiData.Title;
+                            let contentHtml = `
+                                <div class="details-header">
+                                    <img src="${apiData.Poster}" alt="${apiData.Title}" class="details-thumbnail">
+                                    <div class="details-info">
+                                        <h1>${apiData.Title}</h1>
+                                        <p><strong>Year:</strong> ${apiData.Year} | <strong>Rated:</strong> ${apiData.Rated} | <strong>Runtime:</strong> ${apiData.Runtime}</p>
+                                        <p><strong>Genre:</strong> ${apiData.Genre}</p>
+                                        <p><strong>IMDb Rating:</strong> ⭐ ${apiData.imdbRating}</p>
+                                        <hr>
+                                        <h3>Plot</h3>
+                                        <p>${apiData.Plot}</p>
+                                        <p><strong>Actors:</strong> ${apiData.Actors}</p>
+                                        <p><strong>Director:</strong> ${apiData.Director}</p>
+                                        <p><strong>Writer:</strong> ${apiData.Writer}</p>
+                                    </div>
+                                </div>
+                            `;
+                            
+                            if (localVideoData.google_drive_id) {
+                                // For single movies, the link points directly to the player with a drive_id
+                                contentHtml += `<a href="video.html?drive_id=${localVideoData.google_drive_id}" class="watch-now-button">Watch Now</a>`;
+                            } else if (localVideoData.seasons) {
+                                localVideoData.seasons.forEach(season => {
+                                    contentHtml += `<h2 class="season-title">${season.season_title}</h2><table class="episodes-table"><tbody>`;
+                                    season.episodes.forEach((episode, index) => {
+                                        // --- THIS IS THE KEY UPDATE ---
+                                        // The link now includes the series_id AND the drive_id
+                                        contentHtml += `
+                                            <tr>
+                                                <td>Episode ${index + 1}</td>
+                                                <td>${episode.title}</td>
+                                                <td><a href="video.html?series_id=${localVideoData.id}&drive_id=${episode.google_drive_id}">Watch</a></td>
+                                            </tr>`;
+                                    });
+                                    contentHtml += `</tbody></table>`;
                                 });
-                                contentHtml += `</tbody></table>`;
-                            });
+                            }
+                            detailsContainer.innerHTML = contentHtml;
+                        } else {
+                            detailsContainer.innerHTML = `<h1>Error: ${apiData.Error}</h1>`;
                         }
-                        detailsContainer.innerHTML = contentHtml;
-                    } else {
-                        detailsContainer.innerHTML = `<h1>Error: ${apiData.Error}</h1>`;
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching API data:', error);
-                    detailsContainer.innerHTML = '<h1>Could not fetch movie details.</h1>';
-                });
-        } else {
-            detailsContainer.innerHTML = '<h1>Content not found in local data.</h1>';
-        }
-    }
-
-    // Fetch the video data from the JSON file first, then start the details page logic
-    document.addEventListener('DOMContentLoaded', () => {
-        fetch('js/videos.json')
-            .then(response => response.json())
-            .then(data => initializeDetailsPage(data))
-            .catch(error => console.error('Error loading videos.json:', error));
-    });
-</script>
+                    })
+                    .catch(error => {
+                        console.error('Error fetching API data:', error);
+                        detailsContainer.innerHTML = '<h1>Could not fetch movie details.</h1>';
+                    });
+            } else {
+                detailsContainer.innerHTML = '<h1>Content not found in local data.</h1>';
+            }
+        });
+    </script>
 </body>
 </html>

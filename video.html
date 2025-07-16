@@ -13,8 +13,11 @@
         </div>
     </header>
 
-    <main class="container video-page-main" id="player-container">
-        </main>
+    <main class="container video-page-main">
+        <div id="player-container"></div>
+        
+        <div id="episode-list-container"></div>
+    </main>
 
     <footer>
         <div class="container">
@@ -22,25 +25,54 @@
         </div>
     </footer>
 
+    <script src="js/videos.js"></script>
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const playerContainer = document.getElementById('player-container');
+            const episodeListContainer = document.getElementById('episode-list-container');
             const urlParams = new URLSearchParams(window.location.search);
+            
+            const seriesId = urlParams.get('series_id');
+            const currentDriveId = urlParams.get('drive_id');
 
-            // This page now looks for 'drive_id' from the URL, which is sent by details.html
-            const driveId = urlParams.get('drive_id');
-
-            if (driveId) {
-                // If a drive_id is found, create the player and download button
-                playerContainer.innerHTML = `
-                    <div class="video-container">
-                        <iframe src="https://drive.google.com/file/d/${driveId}/preview" allow="autoplay" allowfullscreen></iframe>
-                    </div>
-                    <a href="https://drive.google.com/uc?export=download&id=${driveId}" class="download-button" download>Download Video</a>
-                `;
-            } else {
-                // If no drive_id is found, show an error
+            if (!currentDriveId) {
                 playerContainer.innerHTML = '<h1>Video not found.</h1>';
+                return;
+            }
+
+            // 1. Display the video player for the current episode
+            playerContainer.innerHTML = `
+                <div class="video-container">
+                    <iframe src="https://drive.google.com/file/d/${currentDriveId}/preview" allow="autoplay" allowfullscreen></iframe>
+                </div>
+                <a href="https://drive.google.com/uc?export=download&id=${currentDriveId}" class="download-button" download>Download Video</a>
+            `;
+
+            // 2. If it's a series, find its data and display the episode list
+            if (seriesId) {
+                const seriesData = videos.find(v => v.id === seriesId);
+                if (seriesData && seriesData.seasons) {
+                    // Set the document title to the series title
+                    document.title = seriesData.title || 'Watch Series';
+
+                    let episodeListHtml = '';
+                    seriesData.seasons.forEach(season => {
+                        episodeListHtml += `<h2 class="season-title">${season.season_title}</h2><table class="episodes-table"><tbody>`;
+                        season.episodes.forEach((episode, index) => {
+                            // Check if the current episode in the list is the one playing to highlight it
+                            const isActive = episode.google_drive_id === currentDriveId ? 'active' : '';
+                            episodeListHtml += `
+                                <tr class="${isActive}">
+                                    <td>Episode ${index + 1}</td>
+                                    <td>${episode.title}</td>
+                                    <td><a href="video.html?series_id=${seriesId}&drive_id=${episode.google_drive_id}">Watch</a></td>
+                                </tr>`;
+                        });
+                        episodeListHtml += `</tbody></table>`;
+                    });
+                    episodeListContainer.innerHTML = episodeListHtml;
+                }
             }
         });
     </script>

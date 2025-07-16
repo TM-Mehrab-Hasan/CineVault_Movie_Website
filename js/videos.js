@@ -1,0 +1,134 @@
+const videos = [
+    {
+        "id": "kabir-singh",
+        "type": "movie",
+        "subcategory": "Bollywood",
+        "imdb_id": "tt8983202",
+        "google_drive_id": "1tLDLmhPTh1LyRam9PCrIQMuN9ZttFeE0"
+    },
+    {
+        "id": "kis-kisko-pyaar-karoon",
+        "type": "movie",
+        "subcategory": "Bollywood",
+        "imdb_id": "tt4302956",
+        "google_drive_id": "1elpWkcuFWTmaR7ci3aRvKrrvM8XyTT_h"
+    },
+    {
+        "id": "absolute-duo",
+        "type": "anime",
+        "subcategory": "Fantasy",
+        "imdb_id": "tt4216878",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "Blaze", "google_drive_id": "1XQ42-I_YOqb731A1opCIrPzj7rnnXz65" },
+                    { "title": "Duo", "google_drive_id": "1y46H8la1XOzsCDfCh5xEDQc7oJSO6gnN" },
+                    { "title": "Avenger", "google_drive_id": "1B393-11mWWtw_SZJ-c9IOGtFuV8wUSaq" },
+                    { "title": "Exception", "google_drive_id": "1cF7cGnF-1p0JawRaFHqpCkLg5cWZzNHY" },
+                    { "title": "Level Up", "google_drive_id": "1csPyOutxP-ROC8PZb31f-HY2m1WHXf35" },
+                    { "title": "Survive", "google_drive_id": "1-sPNBti3OBtmqgyfqSEgFLmqDIFjovJo" },
+                    { "title": "Silver-Blonde, Yellow Topaz", "google_drive_id": "1GtCMXwEAMnhkODWSGuNII5hdpYa3uJ1Z" },
+                    { "title": "Selection", "google_drive_id": "1VBqsi5XLjbqjoPnymVoYC1VHiFO-xyiu" },
+                    { "title": "Rebels", "google_drive_id": "1OKLDBVbxzv4ya8DCAoB-Uajt_h9lcBWH" },
+                    { "title": "Reign Conference", "google_drive_id": "1gvuuT3vixyLj8uBzLFTr-FDjH3Oyt6n4" },
+                    { "title": "Killing Game", "google_drive_id": "18R2GQeNpcLkV-tKCD25qBI1bwxi2nyoq" },
+                    { "title": "Absolute Duo", "google_drive_id": "1jWr0ffltFzzpAQgF9uCbwg6c2lQfUT7I" }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "campione!",
+        "type": "anime",
+        "subcategory": "Harem",
+        "imdb_id": "tt2250160",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "The Saga Begins", "google_drive_id": "1dA1qgXVKB2FbpJSpeaAKsazSSaCa0tSP" },
+                    { "title": "A Day in the Life of a Lord", "google_drive_id": "1KeaN--JRqRQZpNsn7IOHiFs3G_pk0yyk" },
+                    { "title": "From Afar, an Enemy Comes", "google_drive_id": "1kxHdsICHS1N0ei8MRxLdS589VSRmlIxI" },
+                    { "title": "Rogue Athena", "google_drive_id": "1V8nA69JipQhaNIvagml0ZdO356707muM" },
+                    { "title": "Unpleasant Days", "google_drive_id": "1dtnsJyZeJR7pY_9jQEngQupV7SVUxq7" },
+                    { "title": "The Kings Converse", "google_drive_id": "1a7Bq7pPYtweQsyFAc6RJbRC2PTLYMSES" },
+                    { "title": "Wind, Rain, Wolf", "google_drive_id": "1ptpRv8HnOxJMbOhttIz4OieOYWqLtBR-" },
+                    { "title": "A Hero Arrives", "google_drive_id": "1UYrgAGW6P2onYtGqTSMaBAZD2hU7ls9g" },
+                    { "title": "The Missing King", "google_drive_id": "1gGD_QCtP2zaFQwwLpe8gh2D9fW295bKz" },
+                    { "title": "The Turbulent Demon King, the Sun Hero", "google_drive_id": "1D1EDt0ysVF4rPUPY8zUcEPuSbgpqqdRO" },
+                    { "title": "Princess Maiden of the Long Sword", "google_drive_id": "1X-Q2CtPLywzVz-qC_xWaJ9j_sULvUZQD" },
+                    { "title": "The Sword of Ama No Murakumo", "google_drive_id": "1jWr0ffltFzzpAQgF9uCbwg6c2lQfUT7I" },
+                    { "title": "Tale of the God Slayer", "google_drive_id": "1W32d7_OSaUFYZrd366ghT4wpW_XpkntM" }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "business-proposal",
+        "type": "drama",
+        "subcategory": "Korean",
+        "imdb_id": "tt14819828",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "To appease his grandfather's wishes, Kang Tae Moo agrees to a blind date. Jin Young Seo enlists Shin Ha Ri's help to scare away her latest prospect.", "google_drive_id": "1Vu_D7k_w4MzYm7phLPBwXdlgN7-3sjNz" },
+                    { "title": "Tae Moo lies about having a girlfriend to stop the endless barrage of blind dates, with the perfect person in mind to play the part.", "google_drive_id": "1_W_zvShVWIwAJWgjU9Cx5b5hbMqsKIsv" },
+                    { "title": "Ha Ri has a long list of facts about Tae Moo to memorize - as well as someone important to meet. Young Seo declares her independence.", "google_drive_id": "1heCy_CuVZZpudq2GCQfECtISwvM84TTt" },
+                    { "title": "In and outside of work, Ha Ri scrambles to hide her true identity from Tae Moo and his grandfather. A fake one-year anniversary comes up.", "google_drive_id": "1wwML6uEQGEQReSvj_PoLut6Oyyl_Kpmr" },
+                    { "title": "As payback for being fooled, Tae-moo sets a trap for Ha-ri at a company event.", "google_drive_id": "1_IlgFLGm72brOgYRskMGdEleE8oujVqS" },
+                    { "title": "When plans for a confession go awry, Tae-moo takes Ha-ri on a date by the sea disguised as a work trip. Cha Sung-hoon confronts a red-faced Young-seo.", "google_drive_id": "11ewNIGIyGoemPXP9EXq0IGNyoCE0Wr_r" },
+                    { "title": "Tae Moo plays the part of Ha Ri's smitten boyfriend in front of her friends, much to the chagrin of a wary Lee Min Woo and a jealous Go Yoo Ra.", "google_drive_id": "1nPDWFRPjhHFmBIKTSEmpP8-l-SooEsCB" },
+                    { "title": "Calling their kiss a mistake, Ha Ri continues to reject Tae Moo's advances. But an unreturned text and word of his blind date stir up her emotions.", "google_drive_id": "1koyVu_lyqafqkxTdiUDCFCdBYrwRAck0" },
+                    { "title": "Jo Yoo Jung falls for Sung Hoon, landing him in hot water with Young Seo. Tae Moo and Ha Ri try to keep their relationship a secret at work.", "google_drive_id": "1wuzwWor5f2NU-z6SH9evudpC6OgqTXkL" },
+                    { "title": "Kang Da Goo's suspicions about his grandson's love life are proven true. On a rainy night after work, Ha Ri.", "google_drive_id": "17vEt1FAwGDaJc23ToMBGgp5I9P-fZozj" },
+                    { "title": "When Ha Ri's personal life becomes the talk of the town, Tae Moo's grandfather gives her an ultimatum. Young Seo's dad suggests dinner with Sung Hoon.", "google_drive_id": "1_qVtQ8rRjDlWc0f-a_CxYjy-FfJIAzte" },
+                    { "title": "Ha-ri tries to win Da-goo over by keeping him company at his hospital bedside. A worried Tae-moo asks Ha-ri to go to the U.S. with him.", "google_drive_id": "1LuJp4R2F8BtDET5OF6agBFtw4d3UfxVJ" }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "gakusen-toshi-asterisk",
+        "type": "anime",
+        "subcategory": "Action",
+        "imdb_id": "tt5095466",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "Witch of the Resplendent Flames", "google_drive_id": "1hU7qeBDIIB4TtIRO0EQ2TMNrIcBVS4h-" },
+                    { "title": "Ser Veresta", "google_drive_id": "1Zxffv0IjyjcTGYIHeD00RPtYK1WkJMYR" },
+                    { "title": "A Holiday for Two", "google_drive_id": "1Oo6tjts1s9CZjAN7NiqnpYnsVhHHgv0E" },
+                    { "title": "Unshackled", "google_drive_id": "1doaqSXzme40EgGbchpkd5y7688Z7QVBy" },
+                    { "title": "Lightning Blade Speed", "google_drive_id": "1q3DokQo6qdfxoKRm5UwJQW8DnzsVia1P" },
+                    { "title": "The True Face of the Girl", "google_drive_id": "1K6QXW4xoA11mTFk1o_xUiSmEri-COASF" },
+                    { "title": "Decisions and Duels", "google_drive_id": "1KVfdzjMKyiqm5XVtdtj2-aJ76J6OmrB_" },
+                    { "title": "A Holiday for Two, Part 2", "google_drive_id": "1268zr7CnT3sVlvg8daFvbbKJUL0e_bF1" },
+                    { "title": "The Phoenix Festa", "google_drive_id": "1_IpqMIUcgr8XQMH0b3EFBVaJ0cqPzYm1" },
+                    { "title": "The Tyrant Vampire Princess", "google_drive_id": "1Pen5PtAWXZvdLAqx_oTQ-zYS4WUOubVt" },
+                    { "title": "Power and its Price", "google_drive_id": "1K4V1sOx3M79CJl9fQbXbVKRhkpQUaSXe" },
+                    { "title": "The Gravi-Sheath", "google_drive_id": "1DYm59-bWLB47GHRwHD6WXF8ruuM44P7c" }
+                ]
+            },
+            {
+                "season_title": "Season 2",
+                "episodes": [
+                    { "title": "Divine Revelations", "google_drive_id": "1ffCI3TlCOLDHzuKrNi9yBmouvGXN7IUi" },
+                    { "title": "Corrupt Ruler", "google_drive_id": "16DICID4y3eTvxdRLGDOdEv0GRG7ke1T4" },
+                    { "title": "Breaking the Memory Barrier", "google_drive_id": "1UdLqb9IdV2uaFiFUQXXFvmNuUZfT2PAn" },
+                    { "title": "Never Back Down", "google_drive_id": "1i5iPXiiY6VgQhuglFtPAuKeazRVaNkHa" },
+                    { "title": "The Tyrant's Puppet Strings", "google_drive_id": "1KZhXPOm4aaK_AKIxMu3JjHWXIQ9gtOKv" },
+                    { "title": "Scrambling", "google_drive_id": "1eUO_A7j-4nIBqUGdYhYILfH1q0plC-t-" },
+                    { "title": "Battle Song", "google_drive_id": "1Rt12QG5zBML75vuuzGnCfKKTYzMT9pUj" },
+                    { "title": "The Phoenix Showdown", "google_drive_id": "1wsIsLZsFX0LqZlCy2jPQFdUEbe2Bdy6S" },
+                    { "title": "Clinical Victory", "google_drive_id": "1LUlgm8Uz3xuckGS6jPg5suPuch5Uv2uY" },
+                    { "title": "Lieseltania", "google_drive_id": "1K3oNjBh1IWZI9BvK8VIofoaH-GOWFSb3" },
+                    { "title": "The Lonely Strega", "google_drive_id": "15LsxXeL_5Ewvf1wJthmITH1T2LCz9-Wa" },
+                    { "title": "Reunion", "google_drive_id": "1JDj9VYuULhBemmkbCOe-wX4Z408b-vx5" }
+                ]
+            }
+        ]
+    }
+];

@@ -1,5 +1,4 @@
-// This function contains all the logic that runs after the video data is loaded
-function initializeHomepage(videos) {
+document.addEventListener('DOMContentLoaded', () => {
     const videoGrid = document.getElementById('video-grid');
     const searchInput = document.getElementById('searchInput');
     const categoryLinks = document.querySelectorAll('.category-link');
@@ -7,39 +6,54 @@ function initializeHomepage(videos) {
     const loader = document.getElementById('loader');
     const apiKey = '60f2fb19';
 
+    // This function creates the link to the details page
     const createPageUrl = (localVideo) => `details.html?id=${encodeURIComponent(localVideo.id)}`;
 
+    // --- NEW `displayVideos` function with sorting logic ---
     const displayVideos = (videoArray) => {
         videoGrid.innerHTML = '';
         if (loader) loader.style.display = 'block';
 
         if (!videoArray || videoArray.length === 0) {
-            videoGrid.innerHTML = '<p style="color: white;">No results found.</p>';
             if (loader) loader.style.display = 'none';
+            videoGrid.innerHTML = '<p style="color: white;">No results found.</p>';
             return;
         }
 
+        // 1. Create an array of promises to fetch data for all items
         const promises = videoArray.map(localVideo => {
-            if (!localVideo || !localVideo.imdb_id) return Promise.resolve();
+            if (!localVideo || !localVideo.imdb_id) return Promise.resolve(null);
             return fetch(`https://www.omdbapi.com/?i=${localVideo.imdb_id}&apikey=${apiKey}`)
                 .then(response => response.json())
                 .then(apiData => {
-                    if (apiData.Response === "True") {
-                        const pageUrl = createPageUrl(localVideo);
-                        const videoItem = document.createElement('a');
-                        videoItem.href = pageUrl;
-                        videoItem.classList.add('video-item');
-                        videoItem.innerHTML = `<img src="${apiData.Poster}" alt="${apiData.Title}"><h3>${apiData.Title}</h3>`;
-                        videoGrid.appendChild(videoItem);
-                    }
-                })
-                .catch(error => console.error('Error fetching grid data:', error));
+                    // Combine our local data (like the unique 'id') with the API data
+                    return { ...localVideo, ...apiData };
+                });
         });
 
-        Promise.allSettled(promises).then(() => {
-            if (loader) loader.style.display = 'none';
+        // 2. Wait for all fetches to complete
+        Promise.all(promises).then(fullDataArray => {
+            // Filter out any failed requests
+            const validItems = fullDataArray.filter(item => item && item.Response === "True");
+
+            // 3. Sort the array of items alphabetically by title
+            validItems.sort((a, b) => a.Title.localeCompare(b.Title));
+
+            // 4. Now, display the sorted items
+            validItems.forEach(item => {
+                const pageUrl = createPageUrl(item);
+                const videoItem = document.createElement('a');
+                videoItem.href = pageUrl;
+                videoItem.classList.add('video-item');
+                videoItem.innerHTML = `<img src="${item.Poster}" alt="${item.Title}"><h3>${item.Title}</h3>`;
+                videoGrid.appendChild(videoItem);
+            });
+
+            if (loader) loader.style.display = 'none'; // Hide loader after displaying
         });
     };
+
+    // --- Event Listeners (No changes needed below) ---
 
     displayVideos(videos);
 
@@ -67,12 +81,4 @@ function initializeHomepage(videos) {
             displayVideos(filteredVideos);
         });
     });
-}
-
-// Fetch the video data from the JSON file first, then start the homepage logic
-document.addEventListener('DOMContentLoaded', () => {
-    fetch('js/videos.json')
-        .then(response => response.json())
-        .then(data => initializeHomepage(data))
-        .catch(error => console.error('Error loading videos.json:', error));
 });
