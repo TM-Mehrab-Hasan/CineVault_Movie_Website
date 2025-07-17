@@ -20,13 +20,84 @@ const videos = [
         "imdb_id": "tt8960382",
         "google_drive_id": "1ddLw15a2la3Xan_wtuZIxJqCWuzH2Szh"
     },
+        {
+        "id": "Maharaja-2024",
+        "type": "movie",
+        "subcategory": "South Indian",
+        "imdb_id": "tt26548265",
+        "google_drive_id": "1ySRjOeJPOrrZnj_KGyYIX_Iy0gv-thEF"
+    },
     {
-        "id": "despicable-me-4",
+        "id": "a-girl-in-the-river",
         "type": "movie",
         "subcategory": "Hollywood",
-        "imdb_id": "tt7510222",
-        "google_drive_id": "1Oi62_x2WI1t8U-qd_UsjXZzFFWGzofyI"
+        "imdb_id": "tt5144072",
+        "google_drive_id": "1vlk4x6gv_sP7TBY49GIBQvJve4KZl8Wb"
     },
+        {
+        "id": "Anna-Karenina",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt1781769",
+        "google_drive_id": "1xkzOLz8QBoIW87VrBADeVU1lR7Y2LRCNk"
+    },
+        {
+        "id": "creation-of-gods",
+        "type": "movie",
+        "subcategory": "Chinese Movie",
+        "imdb_id": "tt6979756",
+        "google_drive_id": "1ooTaSVX4gC7cC4NzAKsxBL4_TU5v8lUyk"
+    },
+        {
+        "id": "Gone-With-The-Wind",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt0031381",
+        "google_drive_id": "17_AppILecWOaK3aBCsVufNpiiUjhddW1k"
+    },
+        {
+        "id": "poor-things",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt14230458",
+        "google_drive_id": "1m6SBesi43Hk9aRcmChAHgZECKRxCDSuNk"
+    },
+        {
+        "id": "The-Forbidden-Kingdom",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt0865556",
+        "google_drive_id": "1by_DrQzBonJgvUAkX5RkwxRy-ZhJPEWyk"
+    },
+        {
+        "id": "The-Gods-Must-be-crazy",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt0080801",
+        "google_drive_id": "12f3MQ2n0Hn8d6aRZ-w9VOnri3l5RuVhkk"
+    },
+        {
+        "id": "The-Gods-Must-be-crazy-2",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt0097443",
+        "google_drive_id": "1yX1u-dTQGuyV3tasjLEHrwCNlQVug9bFk"
+    },
+        {
+        "id": "the-great-beauty",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt2358891",
+        "google_drive_id": "1c6GQ8Wolcgpj2bNf7-_TprufROsSNmsAk"
+    },
+        {
+        "id": "uptown-girls",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt0263757",
+        "google_drive_id": "1hW35Fu7dksPfIfC27s68N6AZDAUfulWvk"
+    },
+
     {
         "id": "just-go-with-it",
         "type": "movie",
@@ -49,11 +120,81 @@ const videos = [
         "google_drive_id": "1S0d3elc1GIoE6zCdQ837EkqcfvTPNxv0"
     },
     {
+        "id": "Hatyapuri",
+        "type": "movie",
+        "subcategory": "Bangla",
+        "imdb_id": "tt9319882",
+        "google_drive_id": "1lybeZynRUyZDVFTUypuiLn6UyGZAG0OA"
+    },
+    {
+        "id": "Kakababur-Protyaborton",
+        "type": "movie",
+        "subcategory": "Bangla",
+        "imdb_id": "tt8919364",
+        "google_drive_id": "https://drive.google.com/file/d/1JvnvyT1jtDJ2e553dI2w4IqxyP8axyrx/view?usp=drive_link"
+    },
+    {
+        "id": "Yeti-Obhijaan",
+        "type": "movie",
+        "subcategory": "Bangla",
+        "imdb_id": "tt7166042",
+        "google_drive_id": "https://drive.google.com/file/d/1Mqw-7tTK4bo4dJtQ7aKCfL9ITD8OFUbj/view?usp=drive_link"
+    },
+    {
         "id": "revolver-lily",
         "type": "movie",
         "subcategory": "Korean Movie",
         "imdb_id": "tt26744484",
         "google_drive_id": "1qzo8Nk7IMkQz5X7RVXTrEToRKC5pEhOu"
+    },
+        {
+        "id": "Exhuma",
+        "type": "movie",
+        "subcategory": "Korean Movie",
+        "imdb_id": "tt27802490",
+        "google_drive_id": "1jpWLmKNVrimi3ifuLPhFRY4fuILe3vfo"
+    },
+        {
+        "id": "Lady-of-The-Dynasty",
+        "type": "movie",
+        "subcategory": "Chinese Movie",
+        "imdb_id": "tt2080418",
+        "google_drive_id": "1kL2TkebFHpeqvsT_Q2KbYj2mWZajL5-U"
+    },
+        {
+        "id": "My-Happy-Marriage",
+        "type": "movie",
+        "subcategory": "Japanese Movie",
+        "imdb_id": "tt19869122",
+        "google_drive_id": "1U-WRGOdIpzzhSMtInJsBTejuF99mQFVf"
+    },
+        {
+        "id": "Serve The People",
+        "type": "movie",
+        "subcategory": "Korean Movie",
+        "imdb_id": "tt18372308",
+        "google_drive_id": "1yM7nD3DNNufM8edI4exgC0YAGCm0irES"
+    },
+        {
+        "id": "The-Banquet",
+        "type": "movie",
+        "subcategory": "Chinese Movie",
+        "imdb_id": "tt0465676",
+        "google_drive_id": "1YFNAIzG26bslaI-qrd6GecBsLRDObAGp"
+    },
+        {
+        "id": "The-Legend-Butterfly",
+        "type": "movie",
+        "subcategory": "Japanese Movie",
+        "imdb_id": "tt21192216",
+        "google_drive_id": "1FJHJV0fNjrBNOUMBlled3_srQLEPuwMD"
+    },
+        {
+        "id": "Zhou-Yus-Train",
+        "type": "movie",
+        "subcategory": "Chinese Movie",
+        "imdb_id": "tt0354243",
+        "google_drive_id": "1LIhR5YPOYYj_mI4-Aud8z31LGNXr6rD0"
     },
     {
         "id": "the-lover-lamant",
