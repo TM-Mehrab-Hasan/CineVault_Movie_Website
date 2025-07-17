@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieSaviour | All Your Movies, Dramas, Animes Are Here</title>
-    <!-- Font Awesome for player icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,47 +11,46 @@
     <header>
         <div class="container header-content">
             <a href="index.html" class="logo">MovieSaviour</a>
-
-            <!-- This button is for the mobile navigation menu -->
             <button class="nav-toggle" aria-label="toggle navigation">
                 <span class="hamburger"></span>
             </button>
-
-            <!-- Main Navigation -->
             <nav>
                 <ul>
                     <li><a href="#" class="category-link active" data-category="all">All</a></li>
-                    
                     <li class="dropdown">
                         <a href="#" class="category-link" data-category="movie">Movies</a>
                         <div class="dropdown-content">
                             <a href="#" class="category-link" data-category="Bollywood">Bollywood</a>
                             <a href="#" class="category-link" data-category="Hollywood">Hollywood</a>
                             <a href="#" class="category-link" data-category="South Indian">South Indian</a>
-                            <a href="#" class="category-link" data-category="Korean">Korean</a>
-                            <a href="#" class="category-link" data-category="Bangla">Chinese</a>
+                            <a href="#" class="category-link" data-category="Korean Movie">Korean</a>
                             <a href="#" class="category-link" data-category="Bangla">Bangla</a>
                         </div>
                     </li>
-
                     <li class="dropdown">
                         <a href="#" class="category-link" data-category="drama">Dramas</a>
                         <div class="dropdown-content">
-                            <a href="#" class="category-link" data-category="Chinese">Chinese</a>
-                            <a href="#" class="category-link" data-category="Korean">Korean</a>
+                            <a href="#" class="category-link" data-category="Chinese Drama">Chinese Drama</a>
+                            <a href="#" class="category-link" data-category="Korean Drama">Korean Drama</a>
                         </div>
                     </li>
-
                     <li class="dropdown">
                         <a href="#" class="category-link" data-category="anime">Anime</a>
                         <div class="dropdown-content">
-                            <a href="#" class="category-link" data-category="Action">Japanese</a>
-                            <a href="#" class="category-link" data-category="Adventure">Chinese</a>
+                            <a href="#" class="category-link" data-category="Japanese">Japanese</a>
+                            <a href="#" class="category-link" data-category="Chinese">Chinese</a>
+                        </div>
+                    </li>
+                    <!-- UPDATED: Separate links for Software and Games -->
+                    <li><a href="#" class="category-link" data-category="software">Software</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="category-link" data-category="game">Game</a>
+                        <div class="dropdown-content">
+                            <a href="#" class="category-link" data-category="Racing">Racing</a>
                         </div>
                     </li>
                 </ul>
             </nav>
-
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Search for titles...">
             </div>
@@ -60,10 +58,34 @@
     </header>
 
     <main class="container">
-        <h2 id="category-title">All Content</h2>
-        <div id="loader"></div>
-        <div id="video-grid">
-            <!-- Video content is dynamically inserted here -->
+        <div id="homepage-content">
+            <section class="category-row" id="movie-section">
+                <h2 class="category-row-title">Movies</h2>
+                <div class="video-grid" id="movie-grid"></div>
+            </section>
+            <section class="category-row" id="drama-section">
+                <h2 class="category-row-title">Dramas</h2>
+                <div class="video-grid" id="drama-grid"></div>
+            </section>
+            <section class="category-row" id="anime-section">
+                <h2 class="category-row-title">Animes</h2>
+                <div class="video-grid" id="anime-grid"></div>
+            </section>
+            <section class="category-row" id="software-section">
+                <h2 class="category-row-title">Software</h2>
+                <div class="video-grid" id="software-grid"></div>
+            </section>
+            <!-- NEW: Section for Games -->
+            <section class="category-row" id="game-section">
+                <h2 class="category-row-title">Games</h2>
+                <div class="video-grid" id="game-grid"></div>
+            </section>
+        </div>
+        
+        <div id="single-category-content" style="display: none;">
+            <h2 id="category-title"></h2>
+            <div id="loader"></div>
+            <div class="video-grid" id="single-video-grid"></div>
         </div>
     </main>
 

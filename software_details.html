@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software & Games Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">MovieSaviour</a>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav>
+                <ul>
+                    <!-- Note: These links now point back to the homepage -->
+                    <li><a href="index.html" class="category-link" data-category="all">All</a></li>
+                    <li class="dropdown">
+                        <a href="index.html" class="category-link" data-category="movie">Movies</a>
+                        <div class="dropdown-content">
+                            <a href="index.html" class="category-link" data-category="Bollywood">Bollywood</a>
+                            <a href="index.html" class="category-link" data-category="Hollywood">Hollywood</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="index.html" class="category-link" data-category="drama">Dramas</a>
+                        <div class="dropdown-content">
+                            <a href="index.html" class="category-link" data-category="Chinese">Chinese</a>
+                            <a href="index.html" class="category-link" data-category="Korean">Korean</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="index.html" class="category-link" data-category="anime">Anime</a>
+                        <div class="dropdown-content">
+                            <a href="index.html" class="category-link" data-category="Action">Action</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html" class="category-link" data-category="software">Software</a></li>
+                    <li><a href="index.html" class="category-link" data-category="game">Games</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="details-container">
+        <!-- Details will be dynamically inserted here -->
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MovieSaviour. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/videos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Mobile Nav Logic ---
+            const navToggle = document.querySelector('.nav-toggle');
+            const mainNav = document.querySelector('nav');
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                    navToggle.classList.toggle('active');
+                });
+            }
+
+            // --- Details Page Logic ---
+            const detailsContainer = document.getElementById('details-container');
+            const urlParams = new URLSearchParams(window.location.search);
+            const itemId = urlParams.get('id');
+
+            const itemData = videos.find(v => v.id === itemId);
+
+            if (itemData) {
+                document.title = itemData.title;
+
+                let contentHtml = `
+                    <div class="details-header">
+                        <img src="${itemData.thumbnail}" alt="${itemData.title}" class="details-thumbnail">
+                        <div class="details-info">
+                            <h1>${itemData.title}</h1>
+                            <p>${itemData.description}</p>
+                        </div>
+                    </div>
+                `;
+                
+                if (itemData.download_all_id) {
+                    contentHtml += `<a href="https://drive.google.com/uc?id=${itemData.download_all_id}&export=download" class="watch-now-button">Download All (.zip)</a>`;
+                }
+
+                if (itemData.files && itemData.files.length > 0) {
+                    contentHtml += `<h2 class="season-title">Files</h2><table class="episodes-table"><tbody>`;
+                    itemData.files.forEach(file => {
+                        contentHtml += `
+                            <tr>
+                                <td><i class="fa-solid fa-file-zipper" style="margin-right: 10px; color: var(--color-text-secondary);"></i> ${file.name}</td>
+                                <td>${file.size}</td>
+                                <td><a href="https://drive.google.com/uc?id=${file.google_drive_id}&export=download">Download</a></td>
+                            </tr>`;
+                    });
+                    contentHtml += `</tbody></table>`;
+                }
+                
+                detailsContainer.innerHTML = contentHtml;
+            } else {
+                detailsContainer.innerHTML = '<h1>Content not found.</h1>';
+            }
+        });
+    </script>
+</body>
+</html>

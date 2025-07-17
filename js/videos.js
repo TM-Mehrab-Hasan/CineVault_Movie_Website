@@ -51,7 +51,7 @@ const videos = [
     {
         "id": "revolver-lily",
         "type": "movie",
-        "subcategory": "Korean",
+        "subcategory": "Korean Movie",
         "imdb_id": "tt26744484",
         "google_drive_id": "1qzo8Nk7IMkQz5X7RVXTrEToRKC5pEhOu"
     },
@@ -62,6 +62,26 @@ const videos = [
         "imdb_id": "tt0101316",
         "google_drive_id": "1eNjuCwAP4qWMkpcK-nsGzMI74wfZqh9b"
     },
+    {
+    "id": "avro-keyboard",
+    "type": "software", // The new type
+    "title": "Avro Keyboard",
+    "description": "Avro Keyboard is free and open-source Bangla (Bengali) typing software that allows users to type in Bengali using a QWERTY keyboard. It offers various typing methods, including phonetic (English to Bangla transliteration), keyboard layout-based, and mouse-based input. It also includes a Bangla spell checker and supports both Unicode and ANSI.",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQj6Lweus7-rX-3RqqWkxqc-KmR5lK9mhC4A&s",
+    
+    // The Google Drive ID for your manually created .zip file
+    "download_all_id": "1HaJ4AuZUAV__kkxIIi8G1iwChmYkf0as", 
+    
+    // An array of individual files
+    "files": [
+        { 
+            "name": "setup_avrokeyboard_5.6.0.exe", 
+            "size": "6.69 MB", 
+            "google_drive_id": "1HaJ4AuZUAV__kkxIIi8G1iwChmYkf0as" 
+        }
+    ]
+},
+
     {
         "id": "absolute-duo",
         "type": "anime",
@@ -116,7 +136,7 @@ const videos = [
     {
         "id": "business-proposal",
         "type": "drama",
-        "subcategory": "Korean",
+        "subcategory": "Korean Drama",
         "imdb_id": "tt14819828",
         "seasons": [
             {
@@ -141,7 +161,7 @@ const videos = [
     {
         "id": "my-demon",
         "type": "drama",
-        "subcategory": "Korean",
+        "subcategory": "Korean Drama",
         "imdb_id": "tt29569035",
         "seasons": [
             {
@@ -170,7 +190,7 @@ const videos = [
     {
         "id": "fireworks-of-my-heart",
         "type": "drama",
-        "subcategory": "Chinese",
+        "subcategory": "Chinese Drama",
         "imdb_id": "tt24532414",
         "seasons": [
             {
