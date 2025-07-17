@@ -21,7 +21,7 @@ const videos = [
         "google_drive_id": "1ddLw15a2la3Xan_wtuZIxJqCWuzH2Szh"
     },
         {
-        "id": "Maharaja-2024",
+        "id": "maharaja-2024",
         "type": "movie",
         "subcategory": "South Indian",
         "imdb_id": "tt26548265",
@@ -35,11 +35,11 @@ const videos = [
         "google_drive_id": "1vlk4x6gv_sP7TBY49GIBQvJve4KZl8Wb"
     },
         {
-        "id": "Anna-Karenina",
+        "id": "anna-karenina",
         "type": "movie",
         "subcategory": "Hollywood",
         "imdb_id": "tt1781769",
-        "google_drive_id": "1xkzOLz8QBoIW87VrBADeVU1lR7Y2LRCNk"
+        "google_drive_id": "1xkzOLz8QBoIW87VrBADeVU1lR7Y2LRCN"
     },
         {
         "id": "creation-of-gods",
@@ -49,11 +49,11 @@ const videos = [
         "google_drive_id": "1ooTaSVX4gC7cC4NzAKsxBL4_TU5v8lUy"
     },
         {
-        "id": "Gone-With-The-Wind",
+        "id": "gone-with-the-wind",
         "type": "movie",
         "subcategory": "Hollywood",
         "imdb_id": "tt0031381",
-        "google_drive_id": "17_AppILecWOaK3aBCsVufNpiiUjhddW1k"
+        "google_drive_id": "17_AppILecWOaK3aBCsVufNpiiUjhddW1"
     },
         {
         "id": "poor-things",
@@ -127,18 +127,18 @@ const videos = [
         "google_drive_id": "1lybeZynRUyZDVFTUypuiLn6UyGZAG0OA"
     },
     {
-        "id": "Kakababur-Protyaborton",
+        "id": "kakababur-protyaborton",
         "type": "movie",
         "subcategory": "Bangla",
         "imdb_id": "tt8919364",
-        "google_drive_id": "https://drive.google.com/file/d/1JvnvyT1jtDJ2e553dI2w4IqxyP8axyrx/view?usp=drive_link"
+        "google_drive_id": "file/d/1JvnvyT1jtDJ2e553dI2w4IqxyP8axyrx"
     },
     {
-        "id": "Yeti-Obhijaan",
+        "id": "yeti-obhijaan",
         "type": "movie",
         "subcategory": "Bangla",
         "imdb_id": "tt7166042",
-        "google_drive_id": "https://drive.google.com/file/d/1Mqw-7tTK4bo4dJtQ7aKCfL9ITD8OFUbj/view?usp=drive_link"
+        "google_drive_id": "file/d/1Mqw-7tTK4bo4dJtQ7aKCfL9ITD8OFUbj"
     },
     {
         "id": "revolver-lily",
@@ -148,49 +148,49 @@ const videos = [
         "google_drive_id": "1qzo8Nk7IMkQz5X7RVXTrEToRKC5pEhOu"
     },
         {
-        "id": "Exhuma",
+        "id": "exhuma",
         "type": "movie",
         "subcategory": "Korean Movie",
         "imdb_id": "tt27802490",
         "google_drive_id": "1jpWLmKNVrimi3ifuLPhFRY4fuILe3vfo"
     },
         {
-        "id": "Lady-of-The-Dynasty",
+        "id": "lady-of-the-dynasty",
         "type": "movie",
         "subcategory": "Chinese Movie",
         "imdb_id": "tt2080418",
         "google_drive_id": "1kL2TkebFHpeqvsT_Q2KbYj2mWZajL5-U"
     },
         {
-        "id": "My-Happy-Marriage",
+        "id": "my-happy-marriage",
         "type": "movie",
         "subcategory": "Japanese Movie",
         "imdb_id": "tt19869122",
         "google_drive_id": "1U-WRGOdIpzzhSMtInJsBTejuF99mQFVf"
     },
         {
-        "id": "Serve The People",
+        "id": "serve-the-people",
         "type": "movie",
         "subcategory": "Korean Movie",
         "imdb_id": "tt18372308",
         "google_drive_id": "1yM7nD3DNNufM8edI4exgC0YAGCm0irES"
     },
         {
-        "id": "The-Banquet",
+        "id": "the-banquet",
         "type": "movie",
         "subcategory": "Chinese Movie",
         "imdb_id": "tt0465676",
         "google_drive_id": "1YFNAIzG26bslaI-qrd6GecBsLRDObAGp"
     },
         {
-        "id": "The-Legend-Butterfly",
+        "id": "the-legend-butterfly",
         "type": "movie",
         "subcategory": "Japanese Movie",
         "imdb_id": "tt21192216",
         "google_drive_id": "1FJHJV0fNjrBNOUMBlled3_srQLEPuwMD"
     },
         {
-        "id": "Zhou-Yus-Train",
+        "id": "zhou-yus-train",
         "type": "movie",
         "subcategory": "Chinese Movie",
         "imdb_id": "tt0354243",

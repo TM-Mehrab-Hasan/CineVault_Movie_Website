@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${page}?id=${encodeURIComponent(item.id)}`;
     };
 
-    // This "dumb" function just renders items to a grid
+    // This function just renders items to a grid
     const renderGrid = (gridElement, items) => {
         gridElement.innerHTML = '';
         if (items.length === 0) {
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             
-            // The search now filters the complete 'allEnrichedMedia' array instantly
+            // The search now filters the pre-loaded 'allEnrichedMedia' array instantly
             const searchResults = allEnrichedMedia.filter(item =>
                 item.Title && item.Title.toLowerCase().includes(searchTerm)
             );

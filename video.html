@@ -4,28 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watch Video</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <div class="container header-content">
             <a href="index.html" class="logo">MovieSaviour</a>
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
+
+            <!-- Wrapper for mobile-only icons -->
+            <div class="mobile-icons">
+                <button class="search-toggle-btn" aria-label="toggle search"><i class="fas fa-search"></i></button>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <!-- Main Navigation -->
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    </ul>
+                    <li><a href="index.html" class="category-link" data-category="all">All</a></li>
+                    <li class="dropdown">
+                        <a href="index.html" class="category-link" data-category="movie">Movies</a>
+                        <div class="dropdown-content">
+                            <a href="index.html" class="category-link" data-category="Bollywood">Bollywood</a>
+                            <a href="index.html" class="category-link" data-category="Hollywood">Hollywood</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="index.html" class="category-link" data-category="drama">Dramas</a>
+                        <div class="dropdown-content">
+                            <a href="index.html" class="category-link" data-category="Chinese Drama">Chinese Drama</a>
+                            <a href="index.html" class="category-link" data-category="Korean Drama">Korean Drama</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="index.html" class="category-link" data-category="anime">Anime</a>
+                        <div class="dropdown-content">
+                            <a href="index.html" class="category-link" data-category="Japanese">Japanese</a>
+                            <a href="index.html" class="category-link" data-category="Chinese">Chinese</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html" class="category-link" data-category="software">Software</a></li>
+                    <li class="dropdown">
+                        <a href="index.html" class="category-link" data-category="game">Game</a>
+                        <div class="dropdown-content">
+                            <a href="index.html" class="category-link" data-category="Racing">Racing</a>
+                        </div>
+                    </li>
+                </ul>
             </nav>
+            
+            <!-- Search Container (now outside nav) -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for titles...">
+            </div>
         </div>
     </header>
 
     <main class="container video-page-main">
+        <!-- The reliable Google Drive iframe player -->
         <div id="player-container"></div>
-
+        
+        <!-- Container for Next/Previous Buttons -->
         <div class="episode-nav-buttons" id="nav-buttons"></div>
 
+        <!-- Container for the full episode list -->
         <div id="episode-list-container"></div>
     </main>
 
@@ -38,14 +82,9 @@
     <script src="js/videos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- Get Elements ---
-            const playerContainer = document.getElementById('player-container');
-            const episodeListContainer = document.getElementById('episode-list-container');
-            const navButtonsContainer = document.getElementById('nav-buttons');
+            // --- Mobile Nav Logic ---
             const navToggle = document.querySelector('.nav-toggle');
             const mainNav = document.querySelector('nav');
-            
-            // --- Mobile Nav Logic ---
             if (navToggle && mainNav) {
                 navToggle.addEventListener('click', () => {
                     mainNav.classList.toggle('active');
@@ -53,8 +92,32 @@
                 });
             }
 
-            // --- Page Setup ---
+            // --- Mobile Search Logic ---
+            const searchToggleBtn = document.querySelector('.search-toggle-btn');
+            const searchContainer = document.querySelector('.search-container');
+            if (searchToggleBtn && searchContainer) {
+                searchToggleBtn.addEventListener('click', () => {
+                    searchContainer.classList.toggle('active');
+                    const searchInput = document.getElementById('searchInput');
+                    if (searchContainer.classList.contains('active')) {
+                        searchInput.focus();
+                    }
+                });
+                const searchInput = document.getElementById('searchInput');
+                searchInput.addEventListener('keyup', (e) => {
+                    if (e.key === 'Enter') {
+                        // Redirect to homepage with search query
+                        window.location.href = `index.html?search=${encodeURIComponent(searchInput.value)}`;
+                    }
+                });
+            }
+
+            // --- Player Page Logic ---
+            const playerContainer = document.getElementById('player-container');
+            const episodeListContainer = document.getElementById('episode-list-container');
+            const navButtonsContainer = document.getElementById('nav-buttons');
             const urlParams = new URLSearchParams(window.location.search);
+            
             const seriesId = urlParams.get('series_id');
             const currentDriveId = urlParams.get('drive_id');
 
@@ -63,9 +126,7 @@
                 return;
             }
 
-            // --- Main Logic ---
-
-            // 1. Display the reliable iframe player
+            // Display the video player
             playerContainer.innerHTML = `
                 <div class="video-container">
                     <iframe src="https://drive.google.com/file/d/${currentDriveId}/preview" allow="autoplay" allowfullscreen></iframe>
@@ -73,7 +134,7 @@
                 <a href="https://drive.google.com/uc?export=download&id=${currentDriveId}" class="download-button" download>Download Video</a>
             `;
 
-            // 2. If it's a series, build the episode list and nav buttons
+            // If it's a series, build the episode list and nav buttons
             if (seriesId) {
                 const seriesData = videos.find(v => v.id === seriesId);
                 if (seriesData && seriesData.seasons) {

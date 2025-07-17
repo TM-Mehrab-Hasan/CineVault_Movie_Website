@@ -16,7 +16,6 @@
             </button>
             <nav>
                 <ul>
-                    <!-- Note: These links now point back to the homepage -->
                     <li><a href="index.html" class="category-link" data-category="all">All</a></li>
                     <li class="dropdown">
                         <a href="index.html" class="category-link" data-category="movie">Movies</a>
@@ -28,26 +27,34 @@
                     <li class="dropdown">
                         <a href="index.html" class="category-link" data-category="drama">Dramas</a>
                         <div class="dropdown-content">
-                            <a href="index.html" class="category-link" data-category="Chinese">Chinese</a>
-                            <a href="index.html" class="category-link" data-category="Korean">Korean</a>
+                            <a href="index.html" class="category-link" data-category="Chinese Drama">Chinese Drama</a>
+                            <a href="index.html" class="category-link" data-category="Korean Drama">Korean Drama</a>
                         </div>
                     </li>
                     <li class="dropdown">
                         <a href="index.html" class="category-link" data-category="anime">Anime</a>
                         <div class="dropdown-content">
-                            <a href="index.html" class="category-link" data-category="Action">Action</a>
+                            <a href="index.html" class="category-link" data-category="Japanese">Japanese</a>
+                            <a href="index.html" class="category-link" data-category="Chinese">Chinese</a>
                         </div>
                     </li>
                     <li><a href="index.html" class="category-link" data-category="software">Software</a></li>
-                    <li><a href="index.html" class="category-link" data-category="game">Games</a></li>
+                    <li class="dropdown">
+                        <a href="index.html" class="category-link" data-category="game">Game</a>
+                        <div class="dropdown-content">
+                            <a href="index.html" class="category-link" data-category="Racing">Racing</a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for titles...">
+            </div>
         </div>
     </header>
 
     <main class="container" id="details-container">
-        <!-- Details will be dynamically inserted here -->
-    </main>
+        </main>
 
     <footer>
         <div class="container">
@@ -65,6 +72,24 @@
                 navToggle.addEventListener('click', () => {
                     mainNav.classList.toggle('active');
                     navToggle.classList.toggle('active');
+                });
+            }
+
+            const searchToggleBtn = document.querySelector('.search-toggle-btn');
+            const searchContainer = document.querySelector('.search-container');
+            if (searchToggleBtn && searchContainer) {
+                searchToggleBtn.addEventListener('click', () => {
+                    searchContainer.classList.toggle('active');
+                    const searchInput = document.getElementById('searchInput');
+                    if (searchContainer.classList.contains('active')) {
+                        searchInput.focus();
+                    }
+                });
+                const searchInput = document.getElementById('searchInput');
+                searchInput.addEventListener('keyup', (e) => {
+                    if (e.key === 'Enter') {
+                        window.location.href = `index.html?search=${encodeURIComponent(searchInput.value)}`;
+                    }
                 });
             }
 

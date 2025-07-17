@@ -12,52 +12,63 @@
         <div class="container header-content">
             <a href="index.html" class="logo">MovieSaviour</a>
 
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
+            <!-- Wrapper for mobile-only icons -->
+            <div class="mobile-icons">
+                <button class="search-toggle-btn" aria-label="toggle search"><i class="fas fa-search"></i></button>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
 
-<nav>
+            <!-- Main Navigation -->
+            <nav>
                 <ul>
-                    <li><a href="#" class="category-link active" data-category="all">All</a></li>
+                    <li><a href="index.html" class="category-link" data-category="all">All</a></li>
                     <li class="dropdown">
-                        <a href="#" class="category-link" data-category="movie">Movies</a>
+                        <a href="index.html" class="category-link" data-category="movie">Movies</a>
                         <div class="dropdown-content">
-                            <a href="#" class="category-link" data-category="Bollywood">Bollywood</a>
-                            <a href="#" class="category-link" data-category="Hollywood">Hollywood</a>
-                            <a href="#" class="category-link" data-category="South Indian">South Indian</a>
-                            <a href="#" class="category-link" data-category="Korean Movie">Korean</a>
-                            <a href="#" class="category-link" data-category="Bangla">Bangla</a>
+                            <a href="index.html" class="category-link" data-category="Bollywood">Bollywood</a>
+                            <a href="index.html" class="category-link" data-category="Hollywood">Hollywood</a>
+                            <a href="index.html" class="category-link" data-category="Chinese Movie">Chinese</a>
+                            <a href="index.html" class="category-link" data-category="Korean Movie">Korean</a>
+                            <a href="index.html" class="category-link" data-category="Japanese Movie">Japanese</a>
+                            <a href="index.html" class="category-link" data-category="Bangla">Bangla</a>
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="category-link" data-category="drama">Dramas</a>
+                        <a href="index.html" class="category-link" data-category="drama">Dramas</a>
                         <div class="dropdown-content">
-                            <a href="#" class="category-link" data-category="Chinese Drama">Chinese Drama</a>
-                            <a href="#" class="category-link" data-category="Korean Drama">Korean Drama</a>
+                            <a href="index.html" class="category-link" data-category="Chinese Drama">Chinese Drama</a>
+                            <a href="index.html" class="category-link" data-category="Korean Drama">Korean Drama</a>
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="category-link" data-category="anime">Anime</a>
+                        <a href="index.html" class="category-link" data-category="anime">Anime</a>
                         <div class="dropdown-content">
-                            <a href="#" class="category-link" data-category="Japanese">Japanese</a>
-                            <a href="#" class="category-link" data-category="Chinese">Chinese</a>
+                            <a href="index.html" class="category-link" data-category="Japanese">Japanese</a>
+                            <a href="index.html" class="category-link" data-category="Chinese">Chinese</a>
                         </div>
                     </li>
-                    <!-- UPDATED: Separate links for Software and Games -->
-                    <li><a href="#" class="category-link" data-category="software">Software</a></li>
+                    <li><a href="index.html" class="category-link" data-category="software">Software</a></li>
                     <li class="dropdown">
-                        <a href="#" class="category-link" data-category="game">Game</a>
+                        <a href="index.html" class="category-link" data-category="game">Game</a>
                         <div class="dropdown-content">
-                            <a href="#" class="category-link" data-category="Racing">Racing</a>
+                            <a href="index.html" class="category-link" data-category="Racing">Racing</a>
                         </div>
                     </li>
                 </ul>
             </nav>
+            
+            <!-- Search Container (now outside nav) -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for titles...">
+            </div>
         </div>
     </header>
 
     <main class="container" id="details-container">
-        </main>
+        <!-- Details will be dynamically inserted here -->
+    </main>
 
     <footer>
         <div class="container">
@@ -75,6 +86,27 @@
                 navToggle.addEventListener('click', () => {
                     mainNav.classList.toggle('active');
                     navToggle.classList.toggle('active');
+                });
+            }
+
+            // --- Mobile Search Logic ---
+            const searchToggleBtn = document.querySelector('.search-toggle-btn');
+            const searchContainer = document.querySelector('.search-container');
+            if (searchToggleBtn && searchContainer) {
+                searchToggleBtn.addEventListener('click', () => {
+                    searchContainer.classList.toggle('active');
+                    const searchInput = document.getElementById('searchInput');
+                    if (searchContainer.classList.contains('active')) {
+                        searchInput.focus();
+                    }
+                });
+                
+                const searchInput = document.getElementById('searchInput');
+                searchInput.addEventListener('keyup', (e) => {
+                    if (e.key === 'Enter') {
+                        // Redirect to homepage with search query
+                        window.location.href = `index.html?search=${encodeURIComponent(searchInput.value)}`;
+                    }
                 });
             }
 
