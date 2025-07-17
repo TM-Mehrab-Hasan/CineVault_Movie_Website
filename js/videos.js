@@ -46,7 +46,7 @@ const videos = [
         "type": "movie",
         "subcategory": "Chinese Movie",
         "imdb_id": "tt6979756",
-        "google_drive_id": "1ooTaSVX4gC7cC4NzAKsxBL4_TU5v8lUyk"
+        "google_drive_id": "1ooTaSVX4gC7cC4NzAKsxBL4_TU5v8lUy"
     },
         {
         "id": "Gone-With-The-Wind",
