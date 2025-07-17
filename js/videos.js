@@ -49,6 +49,20 @@ const videos = [
         "google_drive_id": "1S0d3elc1GIoE6zCdQ837EkqcfvTPNxv0"
     },
     {
+        "id": "revolver-lily",
+        "type": "movie",
+        "subcategory": "Korean",
+        "imdb_id": "tt26744484",
+        "google_drive_id": "1qzo8Nk7IMkQz5X7RVXTrEToRKC5pEhOu"
+    },
+    {
+        "id": "the-lover-lamant",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt0101316",
+        "google_drive_id": "1eNjuCwAP4qWMkpcK-nsGzMI74wfZqh9b"
+    },
+    {
         "id": "absolute-duo",
         "type": "anime",
         "subcategory": "Japanese",
