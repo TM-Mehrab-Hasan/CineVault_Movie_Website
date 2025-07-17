@@ -96,6 +96,35 @@ const videos = [
             }
         ]
     },
+        {
+        "id": "my-demon",
+        "type": "drama",
+        "subcategory": "Korean",
+        "imdb_id": "tt29569035",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "Living in the Mist", "google_drive_id": "1kdoJKLK54Lca_2zHETBYq20EQZ2-IPfL" },
+                    { "title": "Everyone Has a Demon in Their Heart", "google_drive_id": "1z1amtwmxcUH1R5qebcAY5MjpIlGa_Txj" },
+                    { "title": "Joining Hands With a Demon", "google_drive_id": "19v697mapidnUplhJ2-VjlbheTzW9Kxtj" },
+                    { "title": "Sweet but Dangerous", "google_drive_id": "1GXfw4ISeJ64TUQeTZFrzcRNgUeOt8Ih8" },
+                    { "title": "Only You", "google_drive_id": "11-Z8R0VX7-6wxHEa7GsEe-8ay3FWzm8b" },
+                    { "title": "Into the Wheel of Fortune", "google_drive_id": "1bAlqNTH1F5BejbnBDsKPsL3TxlxdhRXV" },
+                    { "title": "Stained Relationships", "google_drive_id": "14txa6iFLMZF5RIpklhDoiMN3XYq132Bs" },
+                    { "title": "The Fateful Choice", "google_drive_id": "1rosUZK2gO2WevIQFbI5pN3mnrdmJAptl" },
+                    { "title": "The Unmasked Truth", "google_drive_id": "1_KgfQv_VIZVW7hrMHIlnfP4qMTmvGrYJ" },
+                    { "title": "Breaking Through the Shell", "google_drive_id": "1uyRCKT7B8NXqXrCwXkb9O1Ue5kbbl6c3" },
+                    { "title": "A Paradise of the Ominous", "google_drive_id": "1397J4woTuQZF1trbvP4p62mc8hKdO0w5" },
+                    { "title": "The Savior of Destruction", "google_drive_id": "1LiN8zfw_XXKUHVw-fzycKMahPTyet5a5" },
+                    { "title": "The Past, the Original Sin", "google_drive_id": "1_O7kz5z1YGWS0PqnqLWP3RlVOPcasVum"},
+                    { "title": "Our Personal Hell", "google_drive_id": "19Gtnu2Axqo2DaMcGekSwU2KZ0m5DXnMq" },
+                    { "title": "The End of Fate", "google_drive_id": "1Vwhxso6GTzCcvCZiG6-bwmNQyMY3dhff" },
+                    { "title": "Our Personal Heaven", "google_drive_id": "1a_bR3pcAaMCdbNsBX06zN9_najGZ6yrG" }
+                ]
+            }
+        ]
+    },
     {
         "id": "gakusen-toshi-asterisk",
         "type": "anime",
