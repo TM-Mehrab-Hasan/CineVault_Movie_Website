@@ -13,7 +13,7 @@ const videos = [
         "imdb_id": "tt4302956",
         "google_drive_id": "1elpWkcuFWTmaR7ci3aRvKrrvM8XyTT_h"
     },
-        {
+    {
         "id": "radhe-shyam",
         "type": "movie",
         "subcategory": "South Indian",
@@ -21,9 +21,37 @@ const videos = [
         "google_drive_id": "1ddLw15a2la3Xan_wtuZIxJqCWuzH2Szh"
     },
     {
+        "id": "despicable-me-4",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt7510222",
+        "google_drive_id": "1Oi62_x2WI1t8U-qd_UsjXZzFFWGzofyI"
+    },
+    {
+        "id": "just-go-with-it",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt1564367",
+        "google_drive_id": "1kIpI80eRDoryCV_776uGH21K96BQGggG"
+    },
+    {
+        "id": "jane-eyre",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt1229822",
+        "google_drive_id": "10_JoHAQjbmuLIR5Ejjn9rPPr7-F2-C_Y"
+    },
+    {
+        "id": "mishawr-rawhoshyo",
+        "type": "movie",
+        "subcategory": "Bangla",
+        "imdb_id": "tt3148268",
+        "google_drive_id": "1S0d3elc1GIoE6zCdQ837EkqcfvTPNxv0"
+    },
+    {
         "id": "absolute-duo",
         "type": "anime",
-        "subcategory": "Fantasy",
+        "subcategory": "Japanese",
         "imdb_id": "tt4216878",
         "seasons": [
             {
@@ -48,7 +76,7 @@ const videos = [
     {
         "id": "campione!",
         "type": "anime",
-        "subcategory": "Harem",
+        "subcategory": "Japanese",
         "imdb_id": "tt2250160",
         "seasons": [
             {
@@ -96,7 +124,7 @@ const videos = [
             }
         ]
     },
-        {
+    {
         "id": "my-demon",
         "type": "drama",
         "subcategory": "Korean",
@@ -126,9 +154,63 @@ const videos = [
         ]
     },
     {
+        "id": "fireworks-of-my-heart",
+        "type": "drama",
+        "subcategory": "Chinese",
+        "imdb_id": "tt24532414",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "Long Time No See", "google_drive_id": "1aBXHajkndOcoTn18qL53h7qONcFTZB9A" },
+                    { "title": "Under the Same Roof", "google_drive_id": "15Ojs4lyCVBnTNY5lQ_PM9rmVeU7RiU_O" },
+                    { "title": "Revival", "google_drive_id": "1qiqpy3ZCRqqD-Ar6ZkBg9wnvvl0oAuoI" },
+                    { "title": "I Still Have You in My Heart", "google_drive_id": "1cZiG06os9vjoRAiYusN6JpTrvAO9jvNC" },
+                    { "title": "Risk of Infection", "google_drive_id": "1mSS6LziglZSK2imStkAp-Dv24tf-qbdT" },
+                    { "title": "Home Accident", "google_drive_id": "14Y2hOITVgK-gFt566oCX-kBVTjVORq1J" },
+                    { "title": "Stayed the Same", "google_drive_id": "13atOq4lRU2abJuGT85D5KHLz9scCsXeL" },
+                    { "title": "My Closest Comrade", "google_drive_id": "1oGzkzSG8r7HA0bbDeZkvevCpsM9DsCoD" },
+                    { "title": "Warning", "google_drive_id": "12xfD-OMNNk_XoCI9iWxbV6PJdCH1Ysit" },
+                    { "title": "Back to Square One", "google_drive_id": "11Xs7_k6j5aMbNWGktCQ1RJljESu99t3N" },
+                    { "title": "Tamed Beast", "google_drive_id": "1XV9xltIlq7FbKZIu3Y7fCParygHCjpiX" },
+                    { "title": "Meaningless Sacrifice", "google_drive_id": "1zLZkeT5uePEWNUxYi43G2uPBAW8AEuxw" },
+                    { "title": "You're Not Her Brother", "google_drive_id": "1657wCrHKHWi7g3oPqK6nwWCLwnX-TOhJ"},
+                    { "title": "A Blind Date", "google_drive_id": "1NPrYInJQJvSFKtLhpO4CiKyWh0i3JHgn" },
+                    { "title": "A Thankless Job", "google_drive_id": "1x6fqO-IHr0pgvoaRaPEdJ0_WjxDtXwHt" },
+                    { "title": "Setting Up a Joint Rescue Team", "google_drive_id": "1a74RlobbZkOXiyDOKEwUbH7rLkS063ro" },
+                    { "title": "Duality", "google_drive_id": "1r5uD06GBaiByyvTTOKlQBpDh3bSD3mHX" },
+                    { "title": "Dignity", "google_drive_id": "1jMs1lMWs0lzANcGmCexdX3JF0U15DrCD" },
+                    { "title": "Gifts", "google_drive_id": "1xPAw_cbptxp6fvdJ6BQQQLJfy18TGPSl" },
+                    { "title": "Mission", "google_drive_id": "1vDkoP5y2UDLy72bOfT8r5Ru7dPSQR965" },
+                    { "title": "Drill", "google_drive_id": "13RHQA9d26PJ9ZOU5-m5p-uKFXf9pKj6q" },
+                    { "title": "Rescue Team", "google_drive_id": "1IYVNMHfCO4mKlccli9ZpcOoyJ9z89Ite" },
+                    { "title": "Missing", "google_drive_id": "1UPafpn8Na9P9Y8lgQ43ZptSgLwQ07wU_" },
+                    { "title": "Duty", "google_drive_id": "1vWYQbZD4HNlDkp4DriRDx33MzFGSkgXl" },
+                    { "title": "Falling into Place", "google_drive_id": "17HKbJPnwROBvRR8H1sKX1rCTWVRrWQyJ" },
+                    { "title": "Overcoming Trauma", "google_drive_id": "1yHhI-eVFtAqJuRtVgAaJ5t_DQwx2o039 " },
+                    { "title": "Caterpillars", "google_drive_id": "1Tdj12DIPoFJ0hmYobfQ2RmsKn5azdOFb" },
+                    { "title": "Staying Together", "google_drive_id": "1LD6ola67FiokVRl7gxWxocgq4pubETXP" },
+                    { "title": "Progress", "google_drive_id": "1IJFf_UsJrBoi_tzXlVWWuAmx-qziDMnG"},
+                    { "title": "Assurance", "google_drive_id": "1-z_crXEH47ATUnsSVKEucFPGUHHA5IXE" },
+                    { "title": "Danger", "google_drive_id": "1BZ4ahaf2ckAWFUXybnfWnuJon_FT4f3I  `" },
+                    { "title": "New Year", "google_drive_id": "1QtLuI0_w3sTiByib0V02nYMQUu6DIYsc" },
+                    { "title": "Flashover", "google_drive_id": "1Qsr7xcDK0a9Z0zLgvI5AMyYew0I4Qz3k" },
+                    { "title": "Making Choices", "google_drive_id": "1bZFRF_Qr2FDIlceEebGsnfnoYNb4IZsR" },
+                    { "title": "New Developments", "google_drive_id": "1VhZ6wpqQ_gBNhUYvrs5PhS_G56ILWCFX" },
+                    { "title": "Gunshot Truth", "google_drive_id": "1uv0XbPFt_YSyRSdYR_zblqFlUB9izHEI" },
+                    { "title": "Accusations", "google_drive_id": "1gnuqijc1rngjh_rQCmLeuojyGj6nMMOc"},
+                    { "title": "An Eye for an Eye", "google_drive_id": "17-9kVG4Sn99tWUzWU932ISuhJ_8vCs0S" },
+                    { "title": "Typhoon", "google_drive_id": "12AzMhadJU1lIlLNaiRQK3qnYtFZNGZtK" },
+                    { "title": "The Reaching Hand", "google_drive_id": "1D9TLeoWM_IBl27K_TQSjIJ7wb-3VNyBX" }
+                    
+                ]
+            }
+        ]
+    },
+    {
         "id": "gakusen-toshi-asterisk",
         "type": "anime",
-        "subcategory": "Action",
+        "subcategory": "Japanese",
         "imdb_id": "tt5095466",
         "seasons": [
             {
