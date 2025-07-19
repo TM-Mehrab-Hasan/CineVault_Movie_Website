@@ -12,7 +12,6 @@
         <div class="container header-content">
             <a href="index.html" class="logo">MovieSaviour</a>
 
-            <!-- Wrapper for mobile-only icons -->
             <div class="mobile-icons">
                 <button class="search-toggle-btn" aria-label="toggle search"><i class="fas fa-search"></i></button>
                 <button class="nav-toggle" aria-label="toggle navigation">
@@ -20,23 +19,23 @@
                 </button>
             </div>
 
-            <!-- Main Navigation -->
             <nav>
                 <ul>
                     <li><a href="#" class="category-link active" data-category="all">All</a></li>
                     <li class="dropdown">
-                        <a href="#" class="category-link" data-category="movie">Movies</a>
+                        <a href="#" class="category-link" data-category="movie">Movie</a>
                         <div class="dropdown-content">
-                            <a href="#" class="category-link" data-category="Bollywood">Bollywood</a>
-                            <a href="#" class="category-link" data-category="Hollywood">Hollywood</a>
-                            <a href="#" class="category-link" data-category="Chinese Movie">Chinese</a>
-                            <a href="#" class="category-link" data-category="Korean Movie">Korean</a>
-                            <a href="#" class="category-link" data-category="Japanese Movie">Japanese</a>
-                            <a href="#" class="category-link" data-category="Bangla">Bangla</a>
+                            <a href="index.html" class="category-link" data-category="Bangla">Bangla</a>
+                            <a href="index.html" class="category-link" data-category="Bollywood">Bollywood</a>
+                            <a href="index.html" class="category-link" data-category="Hollywood">Hollywood</a>
+                            <a href="index.html" class="category-link" data-category="Chinese Movie">Chinese</a>
+                            <a href="index.html" class="category-link" data-category="Japanese Movie">Japanese</a>
+                            <a href="index.html" class="category-link" data-category="Korean Movie">Korean</a>
+                            <a href="index.html" class="category-link" data-category="South Indian">South Indian</a>
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="category-link" data-category="drama">Dramas</a>
+                        <a href="#" class="category-link" data-category="drama">Drama</a>
                         <div class="dropdown-content">
                             <a href="#" class="category-link" data-category="Chinese Drama">Chinese Drama</a>
                             <a href="#" class="category-link" data-category="Korean Drama">Korean Drama</a>
@@ -59,7 +58,6 @@
                 </ul>
             </nav>
             
-            <!-- Search Container (now outside nav) -->
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Search for titles...">
             </div>
@@ -69,23 +67,38 @@
     <main class="container">
         <div id="homepage-content">
             <section class="category-row" id="movie-section">
-                <h2 class="category-row-title">Movies</h2>
+                <div class="category-row-header">
+                    <h2 class="category-row-title">Movie</h2>
+                    <a href="#" class="see-all-link category-link" data-category="movie">See all &raquo;</a>
+                </div>
                 <div class="video-grid" id="movie-grid"></div>
             </section>
             <section class="category-row" id="drama-section">
-                <h2 class="category-row-title">Dramas</h2>
+                <div class="category-row-header">
+                    <h2 class="category-row-title">Drama</h2>
+                    <a href="#" class="see-all-link category-link" data-category="drama">See all &raquo;</a>
+                </div>
                 <div class="video-grid" id="drama-grid"></div>
             </section>
             <section class="category-row" id="anime-section">
-                <h2 class="category-row-title">Animes</h2>
+                <div class="category-row-header">
+                    <h2 class="category-row-title">Anime</h2>
+                    <a href="#" class="see-all-link category-link" data-category="anime">See all &raquo;</a>
+                </div>
                 <div class="video-grid" id="anime-grid"></div>
             </section>
             <section class="category-row" id="software-section">
-                <h2 class="category-row-title">Software</h2>
+                <div class="category-row-header">
+                    <h2 class="category-row-title">Software</h2>
+                    <a href="#" class="see-all-link category-link" data-category="software">See all &raquo;</a>
+                </div>
                 <div class="video-grid" id="software-grid"></div>
             </section>
             <section class="category-row" id="game-section">
-                <h2 class="category-row-title">Games</h2>
+                <div class="category-row-header">
+                    <h2 class="category-row-title">Game</h2>
+                    <a href="#" class="see-all-link category-link" data-category="game">See all &raquo;</a>
+                </div>
                 <div class="video-grid" id="game-grid"></div>
             </section>
         </div>

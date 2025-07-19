@@ -1,229 +1,5 @@
 const videos = [
     {
-        "id": "kabir-singh",
-        "type": "movie",
-        "subcategory": "Bollywood",
-        "imdb_id": "tt8983202",
-        "google_drive_id": "1tLDLmhPTh1LyRam9PCrIQMuN9ZttFeE0"
-    },
-    {
-        "id": "kis-kisko-pyaar-karoon",
-        "type": "movie",
-        "subcategory": "Bollywood",
-        "imdb_id": "tt4302956",
-        "google_drive_id": "1elpWkcuFWTmaR7ci3aRvKrrvM8XyTT_h"
-    },
-    {
-        "id": "radhe-shyam",
-        "type": "movie",
-        "subcategory": "South Indian",
-        "imdb_id": "tt8960382",
-        "google_drive_id": "1ddLw15a2la3Xan_wtuZIxJqCWuzH2Szh"
-    },
-        {
-        "id": "maharaja-2024",
-        "type": "movie",
-        "subcategory": "South Indian",
-        "imdb_id": "tt26548265",
-        "google_drive_id": "1ySRjOeJPOrrZnj_KGyYIX_Iy0gv-thEF"
-    },
-    {
-        "id": "a-girl-in-the-river",
-        "type": "movie",
-        "subcategory": "Hollywood",
-        "imdb_id": "tt5144072",
-        "google_drive_id": "1vlk4x6gv_sP7TBY49GIBQvJve4KZl8Wb"
-    },
-        {
-        "id": "anna-karenina",
-        "type": "movie",
-        "subcategory": "Hollywood",
-        "imdb_id": "tt1781769",
-        "google_drive_id": "1xkzOLz8QBoIW87VrBADeVU1lR7Y2LRCN"
-    },
-        {
-        "id": "creation-of-gods",
-        "type": "movie",
-        "subcategory": "Chinese Movie",
-        "imdb_id": "tt6979756",
-        "google_drive_id": "1ooTaSVX4gC7cC4NzAKsxBL4_TU5v8lUy"
-    },
-        {
-        "id": "gone-with-the-wind",
-        "type": "movie",
-        "subcategory": "Hollywood",
-        "imdb_id": "tt0031381",
-        "google_drive_id": "17_AppILecWOaK3aBCsVufNpiiUjhddW1"
-    },
-        {
-        "id": "poor-things",
-        "type": "movie",
-        "subcategory": "Hollywood",
-        "imdb_id": "tt14230458",
-        "google_drive_id": "1m6SBesi43Hk9aRcmChAHgZECKRxCDSuNk"
-    },
-        {
-        "id": "The-Forbidden-Kingdom",
-        "type": "movie",
-        "subcategory": "Hollywood",
-        "imdb_id": "tt0865556",
-        "google_drive_id": "1by_DrQzBonJgvUAkX5RkwxRy-ZhJPEWyk"
-    },
-        {
-        "id": "The-Gods-Must-be-crazy",
-        "type": "movie",
-        "subcategory": "Hollywood",
-        "imdb_id": "tt0080801",
-        "google_drive_id": "12f3MQ2n0Hn8d6aRZ-w9VOnri3l5RuVhkk"
-    },
-        {
-        "id": "The-Gods-Must-be-crazy-2",
-        "type": "movie",
-        "subcategory": "Hollywood",
-        "imdb_id": "tt0097443",
-        "google_drive_id": "1yX1u-dTQGuyV3tasjLEHrwCNlQVug9bFk"
-    },
-        {
-        "id": "the-great-beauty",
-        "type": "movie",
-        "subcategory": "Hollywood",
-        "imdb_id": "tt2358891",
-        "google_drive_id": "1c6GQ8Wolcgpj2bNf7-_TprufROsSNmsAk"
-    },
-        {
-        "id": "uptown-girls",
-        "type": "movie",
-        "subcategory": "Hollywood",
-        "imdb_id": "tt0263757",
-        "google_drive_id": "1hW35Fu7dksPfIfC27s68N6AZDAUfulWvk"
-    },
-
-    {
-        "id": "just-go-with-it",
-        "type": "movie",
-        "subcategory": "Hollywood",
-        "imdb_id": "tt1564367",
-        "google_drive_id": "1kIpI80eRDoryCV_776uGH21K96BQGggG"
-    },
-    {
-        "id": "jane-eyre",
-        "type": "movie",
-        "subcategory": "Hollywood",
-        "imdb_id": "tt1229822",
-        "google_drive_id": "10_JoHAQjbmuLIR5Ejjn9rPPr7-F2-C_Y"
-    },
-    {
-        "id": "mishawr-rawhoshyo",
-        "type": "movie",
-        "subcategory": "Bangla",
-        "imdb_id": "tt3148268",
-        "google_drive_id": "1S0d3elc1GIoE6zCdQ837EkqcfvTPNxv0"
-    },
-    {
-        "id": "Hatyapuri",
-        "type": "movie",
-        "subcategory": "Bangla",
-        "imdb_id": "tt9319882",
-        "google_drive_id": "1lybeZynRUyZDVFTUypuiLn6UyGZAG0OA"
-    },
-    {
-        "id": "kakababur-protyaborton",
-        "type": "movie",
-        "subcategory": "Bangla",
-        "imdb_id": "tt8919364",
-        "google_drive_id": "file/d/1JvnvyT1jtDJ2e553dI2w4IqxyP8axyrx"
-    },
-    {
-        "id": "yeti-obhijaan",
-        "type": "movie",
-        "subcategory": "Bangla",
-        "imdb_id": "tt7166042",
-        "google_drive_id": "file/d/1Mqw-7tTK4bo4dJtQ7aKCfL9ITD8OFUbj"
-    },
-    {
-        "id": "revolver-lily",
-        "type": "movie",
-        "subcategory": "Korean Movie",
-        "imdb_id": "tt26744484",
-        "google_drive_id": "1qzo8Nk7IMkQz5X7RVXTrEToRKC5pEhOu"
-    },
-        {
-        "id": "exhuma",
-        "type": "movie",
-        "subcategory": "Korean Movie",
-        "imdb_id": "tt27802490",
-        "google_drive_id": "1jpWLmKNVrimi3ifuLPhFRY4fuILe3vfo"
-    },
-        {
-        "id": "lady-of-the-dynasty",
-        "type": "movie",
-        "subcategory": "Chinese Movie",
-        "imdb_id": "tt2080418",
-        "google_drive_id": "1kL2TkebFHpeqvsT_Q2KbYj2mWZajL5-U"
-    },
-        {
-        "id": "my-happy-marriage",
-        "type": "movie",
-        "subcategory": "Japanese Movie",
-        "imdb_id": "tt19869122",
-        "google_drive_id": "1U-WRGOdIpzzhSMtInJsBTejuF99mQFVf"
-    },
-        {
-        "id": "serve-the-people",
-        "type": "movie",
-        "subcategory": "Korean Movie",
-        "imdb_id": "tt18372308",
-        "google_drive_id": "1yM7nD3DNNufM8edI4exgC0YAGCm0irES"
-    },
-        {
-        "id": "the-banquet",
-        "type": "movie",
-        "subcategory": "Chinese Movie",
-        "imdb_id": "tt0465676",
-        "google_drive_id": "1YFNAIzG26bslaI-qrd6GecBsLRDObAGp"
-    },
-        {
-        "id": "the-legend-butterfly",
-        "type": "movie",
-        "subcategory": "Japanese Movie",
-        "imdb_id": "tt21192216",
-        "google_drive_id": "1FJHJV0fNjrBNOUMBlled3_srQLEPuwMD"
-    },
-        {
-        "id": "zhou-yus-train",
-        "type": "movie",
-        "subcategory": "Chinese Movie",
-        "imdb_id": "tt0354243",
-        "google_drive_id": "1LIhR5YPOYYj_mI4-Aud8z31LGNXr6rD0"
-    },
-    {
-        "id": "the-lover-lamant",
-        "type": "movie",
-        "subcategory": "Hollywood",
-        "imdb_id": "tt0101316",
-        "google_drive_id": "1eNjuCwAP4qWMkpcK-nsGzMI74wfZqh9b"
-    },
-    {
-    "id": "avro-keyboard",
-    "type": "software", // The new type
-    "title": "Avro Keyboard",
-    "description": "Avro Keyboard is free and open-source Bangla (Bengali) typing software that allows users to type in Bengali using a QWERTY keyboard. It offers various typing methods, including phonetic (English to Bangla transliteration), keyboard layout-based, and mouse-based input. It also includes a Bangla spell checker and supports both Unicode and ANSI.",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQj6Lweus7-rX-3RqqWkxqc-KmR5lK9mhC4A&s",
-    
-    // The Google Drive ID for your manually created .zip file
-    "download_all_id": "1HaJ4AuZUAV__kkxIIi8G1iwChmYkf0as", 
-    
-    // An array of individual files
-    "files": [
-        { 
-            "name": "setup_avrokeyboard_5.6.0.exe", 
-            "size": "6.69 MB", 
-            "google_drive_id": "1HaJ4AuZUAV__kkxIIi8G1iwChmYkf0as" 
-        }
-    ]
-},
-
-    {
         "id": "absolute-duo",
         "type": "anime",
         "subcategory": "Japanese",
@@ -275,114 +51,6 @@ const videos = [
         ]
     },
     {
-        "id": "business-proposal",
-        "type": "drama",
-        "subcategory": "Korean Drama",
-        "imdb_id": "tt14819828",
-        "seasons": [
-            {
-                "season_title": "Season 1",
-                "episodes": [
-                    { "title": "To appease his grandfather's wishes, Kang Tae Moo agrees to a blind date. Jin Young Seo enlists Shin Ha Ri's help to scare away her latest prospect.", "google_drive_id": "1Vu_D7k_w4MzYm7phLPBwXdlgN7-3sjNz" },
-                    { "title": "Tae Moo lies about having a girlfriend to stop the endless barrage of blind dates, with the perfect person in mind to play the part.", "google_drive_id": "1_W_zvShVWIwAJWgjU9Cx5b5hbMqsKIsv" },
-                    { "title": "Ha Ri has a long list of facts about Tae Moo to memorize - as well as someone important to meet. Young Seo declares her independence.", "google_drive_id": "1heCy_CuVZZpudq2GCQfECtISwvM84TTt" },
-                    { "title": "In and outside of work, Ha Ri scrambles to hide her true identity from Tae Moo and his grandfather. A fake one-year anniversary comes up.", "google_drive_id": "1wwML6uEQGEQReSvj_PoLut6Oyyl_Kpmr" },
-                    { "title": "As payback for being fooled, Tae-moo sets a trap for Ha-ri at a company event.", "google_drive_id": "1_IlgFLGm72brOgYRskMGdEleE8oujVqS" },
-                    { "title": "When plans for a confession go awry, Tae-moo takes Ha-ri on a date by the sea disguised as a work trip. Cha Sung-hoon confronts a red-faced Young-seo.", "google_drive_id": "11ewNIGIyGoemPXP9EXq0IGNyoCE0Wr_r" },
-                    { "title": "Tae Moo plays the part of Ha Ri's smitten boyfriend in front of her friends, much to the chagrin of a wary Lee Min Woo and a jealous Go Yoo Ra.", "google_drive_id": "1nPDWFRPjhHFmBIKTSEmpP8-l-SooEsCB" },
-                    { "title": "Calling their kiss a mistake, Ha Ri continues to reject Tae Moo's advances. But an unreturned text and word of his blind date stir up her emotions.", "google_drive_id": "1koyVu_lyqafqkxTdiUDCFCdBYrwRAck0" },
-                    { "title": "Jo Yoo Jung falls for Sung Hoon, landing him in hot water with Young Seo. Tae Moo and Ha Ri try to keep their relationship a secret at work.", "google_drive_id": "1wuzwWor5f2NU-z6SH9evudpC6OgqTXkL" },
-                    { "title": "Kang Da Goo's suspicions about his grandson's love life are proven true. On a rainy night after work, Ha Ri.", "google_drive_id": "17vEt1FAwGDaJc23ToMBGgp5I9P-fZozj" },
-                    { "title": "When Ha Ri's personal life becomes the talk of the town, Tae Moo's grandfather gives her an ultimatum. Young Seo's dad suggests dinner with Sung Hoon.", "google_drive_id": "1_qVtQ8rRjDlWc0f-a_CxYjy-FfJIAzte" },
-                    { "title": "Ha-ri tries to win Da-goo over by keeping him company at his hospital bedside. A worried Tae-moo asks Ha-ri to go to the U.S. with him.", "google_drive_id": "1LuJp4R2F8BtDET5OF6agBFtw4d3UfxVJ" }
-                ]
-            }
-        ]
-    },
-    {
-        "id": "my-demon",
-        "type": "drama",
-        "subcategory": "Korean Drama",
-        "imdb_id": "tt29569035",
-        "seasons": [
-            {
-                "season_title": "Season 1",
-                "episodes": [
-                    { "title": "Living in the Mist", "google_drive_id": "1kdoJKLK54Lca_2zHETBYq20EQZ2-IPfL" },
-                    { "title": "Everyone Has a Demon in Their Heart", "google_drive_id": "1z1amtwmxcUH1R5qebcAY5MjpIlGa_Txj" },
-                    { "title": "Joining Hands With a Demon", "google_drive_id": "19v697mapidnUplhJ2-VjlbheTzW9Kxtj" },
-                    { "title": "Sweet but Dangerous", "google_drive_id": "1GXfw4ISeJ64TUQeTZFrzcRNgUeOt8Ih8" },
-                    { "title": "Only You", "google_drive_id": "11-Z8R0VX7-6wxHEa7GsEe-8ay3FWzm8b" },
-                    { "title": "Into the Wheel of Fortune", "google_drive_id": "1bAlqNTH1F5BejbnBDsKPsL3TxlxdhRXV" },
-                    { "title": "Stained Relationships", "google_drive_id": "14txa6iFLMZF5RIpklhDoiMN3XYq132Bs" },
-                    { "title": "The Fateful Choice", "google_drive_id": "1rosUZK2gO2WevIQFbI5pN3mnrdmJAptl" },
-                    { "title": "The Unmasked Truth", "google_drive_id": "1_KgfQv_VIZVW7hrMHIlnfP4qMTmvGrYJ" },
-                    { "title": "Breaking Through the Shell", "google_drive_id": "1uyRCKT7B8NXqXrCwXkb9O1Ue5kbbl6c3" },
-                    { "title": "A Paradise of the Ominous", "google_drive_id": "1397J4woTuQZF1trbvP4p62mc8hKdO0w5" },
-                    { "title": "The Savior of Destruction", "google_drive_id": "1LiN8zfw_XXKUHVw-fzycKMahPTyet5a5" },
-                    { "title": "The Past, the Original Sin", "google_drive_id": "1_O7kz5z1YGWS0PqnqLWP3RlVOPcasVum"},
-                    { "title": "Our Personal Hell", "google_drive_id": "19Gtnu2Axqo2DaMcGekSwU2KZ0m5DXnMq" },
-                    { "title": "The End of Fate", "google_drive_id": "1Vwhxso6GTzCcvCZiG6-bwmNQyMY3dhff" },
-                    { "title": "Our Personal Heaven", "google_drive_id": "1a_bR3pcAaMCdbNsBX06zN9_najGZ6yrG" }
-                ]
-            }
-        ]
-    },
-    {
-        "id": "fireworks-of-my-heart",
-        "type": "drama",
-        "subcategory": "Chinese Drama",
-        "imdb_id": "tt24532414",
-        "seasons": [
-            {
-                "season_title": "Season 1",
-                "episodes": [
-                    { "title": "Long Time No See", "google_drive_id": "1aBXHajkndOcoTn18qL53h7qONcFTZB9A" },
-                    { "title": "Under the Same Roof", "google_drive_id": "15Ojs4lyCVBnTNY5lQ_PM9rmVeU7RiU_O" },
-                    { "title": "Revival", "google_drive_id": "1qiqpy3ZCRqqD-Ar6ZkBg9wnvvl0oAuoI" },
-                    { "title": "I Still Have You in My Heart", "google_drive_id": "1cZiG06os9vjoRAiYusN6JpTrvAO9jvNC" },
-                    { "title": "Risk of Infection", "google_drive_id": "1mSS6LziglZSK2imStkAp-Dv24tf-qbdT" },
-                    { "title": "Home Accident", "google_drive_id": "14Y2hOITVgK-gFt566oCX-kBVTjVORq1J" },
-                    { "title": "Stayed the Same", "google_drive_id": "13atOq4lRU2abJuGT85D5KHLz9scCsXeL" },
-                    { "title": "My Closest Comrade", "google_drive_id": "1oGzkzSG8r7HA0bbDeZkvevCpsM9DsCoD" },
-                    { "title": "Warning", "google_drive_id": "12xfD-OMNNk_XoCI9iWxbV6PJdCH1Ysit" },
-                    { "title": "Back to Square One", "google_drive_id": "11Xs7_k6j5aMbNWGktCQ1RJljESu99t3N" },
-                    { "title": "Tamed Beast", "google_drive_id": "1XV9xltIlq7FbKZIu3Y7fCParygHCjpiX" },
-                    { "title": "Meaningless Sacrifice", "google_drive_id": "1zLZkeT5uePEWNUxYi43G2uPBAW8AEuxw" },
-                    { "title": "You're Not Her Brother", "google_drive_id": "1657wCrHKHWi7g3oPqK6nwWCLwnX-TOhJ"},
-                    { "title": "A Blind Date", "google_drive_id": "1NPrYInJQJvSFKtLhpO4CiKyWh0i3JHgn" },
-                    { "title": "A Thankless Job", "google_drive_id": "1x6fqO-IHr0pgvoaRaPEdJ0_WjxDtXwHt" },
-                    { "title": "Setting Up a Joint Rescue Team", "google_drive_id": "1a74RlobbZkOXiyDOKEwUbH7rLkS063ro" },
-                    { "title": "Duality", "google_drive_id": "1r5uD06GBaiByyvTTOKlQBpDh3bSD3mHX" },
-                    { "title": "Dignity", "google_drive_id": "1jMs1lMWs0lzANcGmCexdX3JF0U15DrCD" },
-                    { "title": "Gifts", "google_drive_id": "1xPAw_cbptxp6fvdJ6BQQQLJfy18TGPSl" },
-                    { "title": "Mission", "google_drive_id": "1vDkoP5y2UDLy72bOfT8r5Ru7dPSQR965" },
-                    { "title": "Drill", "google_drive_id": "13RHQA9d26PJ9ZOU5-m5p-uKFXf9pKj6q" },
-                    { "title": "Rescue Team", "google_drive_id": "1IYVNMHfCO4mKlccli9ZpcOoyJ9z89Ite" },
-                    { "title": "Missing", "google_drive_id": "1UPafpn8Na9P9Y8lgQ43ZptSgLwQ07wU_" },
-                    { "title": "Duty", "google_drive_id": "1vWYQbZD4HNlDkp4DriRDx33MzFGSkgXl" },
-                    { "title": "Falling into Place", "google_drive_id": "17HKbJPnwROBvRR8H1sKX1rCTWVRrWQyJ" },
-                    { "title": "Overcoming Trauma", "google_drive_id": "1yHhI-eVFtAqJuRtVgAaJ5t_DQwx2o039 " },
-                    { "title": "Caterpillars", "google_drive_id": "1Tdj12DIPoFJ0hmYobfQ2RmsKn5azdOFb" },
-                    { "title": "Staying Together", "google_drive_id": "1LD6ola67FiokVRl7gxWxocgq4pubETXP" },
-                    { "title": "Progress", "google_drive_id": "1IJFf_UsJrBoi_tzXlVWWuAmx-qziDMnG"},
-                    { "title": "Assurance", "google_drive_id": "1-z_crXEH47ATUnsSVKEucFPGUHHA5IXE" },
-                    { "title": "Danger", "google_drive_id": "1BZ4ahaf2ckAWFUXybnfWnuJon_FT4f3I  `" },
-                    { "title": "New Year", "google_drive_id": "1QtLuI0_w3sTiByib0V02nYMQUu6DIYsc" },
-                    { "title": "Flashover", "google_drive_id": "1Qsr7xcDK0a9Z0zLgvI5AMyYew0I4Qz3k" },
-                    { "title": "Making Choices", "google_drive_id": "1bZFRF_Qr2FDIlceEebGsnfnoYNb4IZsR" },
-                    { "title": "New Developments", "google_drive_id": "1VhZ6wpqQ_gBNhUYvrs5PhS_G56ILWCFX" },
-                    { "title": "Gunshot Truth", "google_drive_id": "1uv0XbPFt_YSyRSdYR_zblqFlUB9izHEI" },
-                    { "title": "Accusations", "google_drive_id": "1gnuqijc1rngjh_rQCmLeuojyGj6nMMOc"},
-                    { "title": "An Eye for an Eye", "google_drive_id": "17-9kVG4Sn99tWUzWU932ISuhJ_8vCs0S" },
-                    { "title": "Typhoon", "google_drive_id": "12AzMhadJU1lIlLNaiRQK3qnYtFZNGZtK" },
-                    { "title": "The Reaching Hand", "google_drive_id": "1D9TLeoWM_IBl27K_TQSjIJ7wb-3VNyBX" }
-                    
-                ]
-            }
-        ]
-    },
-    {
         "id": "gakusen-toshi-asterisk",
         "type": "anime",
         "subcategory": "Japanese",
@@ -423,5 +91,326 @@ const videos = [
                 ]
             }
         ]
+    },
+    {
+        "id": "fireworks-of-my-heart",
+        "type": "drama",
+        "subcategory": "Chinese Drama",
+        "imdb_id": "tt24532414",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "Long Time No See", "google_drive_id": "1aBXHajkndOcoTn18qL53h7qONcFTZB9A" },
+                    { "title": "Under the Same Roof", "google_drive_id": "15Ojs4lyCVBnTNY5lQ_PM9rmVeU7RiU_O" },
+                    { "title": "Revival", "google_drive_id": "1qiqpy3ZCRqqD-Ar6ZkBg9wnvvl0oAuoI" },
+                    { "title": "I Still Have You in My Heart", "google_drive_id": "1cZiG06os9vjoRAiYusN6JpTrvAO9jvNC" },
+                    { "title": "Risk of Infection", "google_drive_id": "1mSS6LziglZSK2imStkAp-Dv24tf-qbdT" },
+                    { "title": "Home Accident", "google_drive_id": "14Y2hOITVgK-gFt566oCX-kBVTjVORq1J" },
+                    { "title": "Stayed the Same", "google_drive_id": "13atOq4lRU2abJuGT85D5KHLz9scCsXeL" },
+                    { "title": "My Closest Comrade", "google_drive_id": "1oGzkzSG8r7HA0bbDeZkvevCpsM9DsCoD" },
+                    { "title": "Warning", "google_drive_id": "12xfD-OMNNk_XoCI9iWxbV6PJdCH1Ysit" },
+                    { "title": "Back to Square One", "google_drive_id": "11Xs7_k6j5aMbNWGktCQ1RJljESu99t3N" },
+                    { "title": "Tamed Beast", "google_drive_id": "1XV9xltIlq7FbKZIu3Y7fCParygHCjpiX" },
+                    { "title": "Meaningless Sacrifice", "google_drive_id": "1zLZkeT5uePEWNUxYi43G2uPBAW8AEuxw" },
+                    { "title": "You're Not Her Brother", "google_drive_id": "1657wCrHKHWi7g3oPqK6nwWCLwnX-TOhJ" },
+                    { "title": "A Blind Date", "google_drive_id": "1NPrYInJQJvSFKtLhpO4CiKyWh0i3JHgn" },
+                    { "title": "A Thankless Job", "google_drive_id": "1x6fqO-IHr0pgvoaRaPEdJ0_WjxDtXwHt" },
+                    { "title": "Setting Up a Joint Rescue Team", "google_drive_id": "1a74RlobbZkOXiyDOKEwUbH7rLkS063ro" },
+                    { "title": "Duality", "google_drive_id": "1r5uD06GBaiByyvTTOKlQBpDh3bSD3mHX" },
+                    { "title": "Dignity", "google_drive_id": "1jMs1lMWs0lzANcGmCexdX3JF0U15DrCD" },
+                    { "title": "Gifts", "google_drive_id": "1xPAw_cbptxp6fvdJ6BQQQLJfy18TGPSl" },
+                    { "title": "Mission", "google_drive_id": "1vDkoP5y2UDLy72bOfT8r5Ru7dPSQR965" },
+                    { "title": "Drill", "google_drive_id": "13RHQA9d26PJ9ZOU5-m5p-uKFXf9pKj6q" },
+                    { "title": "Rescue Team", "google_drive_id": "1IYVNMHfCO4mKlccli9ZpcOoyJ9z89Ite" },
+                    { "title": "Missing", "google_drive_id": "1UPafpn8Na9P9Y8lgQ43ZptSgLwQ07wU_" },
+                    { "title": "Duty", "google_drive_id": "1vWYQbZD4HNlDkp4DriRDx33MzFGSkgXl" },
+                    { "title": "Falling into Place", "google_drive_id": "17HKbJPnwROBvRR8H1sKX1rCTWVRrWQyJ" },
+                    { "title": "Overcoming Trauma", "google_drive_id": "1yHhI-eVFtAqJuRtVgAaJ5t_DQwx2o039 " },
+                    { "title": "Caterpillars", "google_drive_id": "1Tdj12DIPoFJ0hmYobfQ2RmsKn5azdOFb" },
+                    { "title": "Staying Together", "google_drive_id": "1LD6ola67FiokVRl7gxWxocgq4pubETXP" },
+                    { "title": "Progress", "google_drive_id": "1IJFf_UsJrBoi_tzXlVWWuAmx-qziDMnG" },
+                    { "title": "Assurance", "google_drive_id": "1-z_crXEH47ATUnsSVKEucFPGUHHA5IXE" },
+                    { "title": "Danger", "google_drive_id": "1BZ4ahaf2ckAWFUXybnfWnuJon_FT4f3I  `" },
+                    { "title": "New Year", "google_drive_id": "1QtLuI0_w3sTiByib0V02nYMQUu6DIYsc" },
+                    { "title": "Flashover", "google_drive_id": "1Qsr7xcDK0a9Z0zLgvI5AMyYew0I4Qz3k" },
+                    { "title": "Making Choices", "google_drive_id": "1bZFRF_Qr2FDIlceEebGsnfnoYNb4IZsR" },
+                    { "title": "New Developments", "google_drive_id": "1VhZ6wpqQ_gBNhUYvrs5PhS_G56ILWCFX" },
+                    { "title": "Gunshot Truth", "google_drive_id": "1uv0XbPFt_YSyRSdYR_zblqFlUB9izHEI" },
+                    { "title": "Accusations", "google_drive_id": "1gnuqijc1rngjh_rQCmLeuojyGj6nMMOc" },
+                    { "title": "An Eye for an Eye", "google_drive_id": "17-9kVG4Sn99tWUzWU932ISuhJ_8vCs0S" },
+                    { "title": "Typhoon", "google_drive_id": "12AzMhadJU1lIlLNaiRQK3qnYtFZNGZtK" },
+                    { "title": "The Reaching Hand", "google_drive_id": "1D9TLeoWM_IBl27K_TQSjIJ7wb-3VNyBX" }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "business-proposal",
+        "type": "drama",
+        "subcategory": "Korean Drama",
+        "imdb_id": "tt14819828",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "To appease his grandfather's wishes...", "google_drive_id": "1Vu_D7k_w4MzYm7phLPBwXdlgN7-3sjNz" },
+                    { "title": "Tae Moo lies about having a girlfriend...", "google_drive_id": "1_W_zvShVWIwAJWgjU9Cx5b5hbMqsKIsv" },
+                    { "title": "Ha Ri has a long list of facts...", "google_drive_id": "1heCy_CuVZZpudq2GCQfECtISwvM84TTt" },
+                    { "title": "In and outside of work, Ha Ri scrambles...", "google_drive_id": "1wwML6uEQGEQReSvj_PoLut6Oyyl_Kpmr" },
+                    { "title": "As payback for being fooled...", "google_drive_id": "1_IlgFLGm72brOgYRskMGdEleE8oujVqS" },
+                    { "title": "When plans for a confession go awry...", "google_drive_id": "11ewNIGIyGoemPXP9EXq0IGNyoCE0Wr_r" },
+                    { "title": "Tae Moo plays the part of Ha Ri's smitten boyfriend...", "google_drive_id": "1nPDWFRPjhHFmBIKTSEmpP8-l-SooEsCB" },
+                    { "title": "Calling their kiss a mistake...", "google_drive_id": "1koyVu_lyqafqkxTdiUDCFCdBYrwRAck0" },
+                    { "title": "Jo Yoo Jung falls for Sung Hoon...", "google_drive_id": "1wuzwWor5f2NU-z6SH9evudpC6OgqTXkL" },
+                    { "title": "Kang Da Goo's suspicions...", "google_drive_id": "17vEt1FAwGDaJc23ToMBGgp5I9P-fZozj" },
+                    { "title": "When Ha Ri's personal life becomes the talk of the town...", "google_drive_id": "1_qVtQ8rRjDlWc0f-a_CxYjy-FfJIAzte" },
+                    { "title": "Ha-ri tries to win Da-goo over...", "google_drive_id": "1LuJp4R2F8BtDET5OF6agBFtw4d3UfxVJ" }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "my-demon",
+        "type": "drama",
+        "subcategory": "Korean Drama",
+        "imdb_id": "tt29569035",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "Living in the Mist", "google_drive_id": "1kdoJKLK54Lca_2zHETBYq20EQZ2-IPfL" },
+                    { "title": "Everyone Has a Demon in Their Heart", "google_drive_id": "1z1amtwmxcUH1R5qebcAY5MjpIlGa_Txj" },
+                    { "title": "Joining Hands With a Demon", "google_drive_id": "19v697mapidnUplhJ2-VjlbheTzW9Kxtj" },
+                    { "title": "Sweet but Dangerous", "google_drive_id": "1GXfw4ISeJ64TUQeTZFrzcRNgUeOt8Ih8" },
+                    { "title": "Only You", "google_drive_id": "11-Z8R0VX7-6wxHEa7GsEe-8ay3FWzm8b" },
+                    { "title": "Into the Wheel of Fortune", "google_drive_id": "1bAlqNTH1F5BejbnBDsKPsL3TxlxdhRXV" },
+                    { "title": "Stained Relationships", "google_drive_id": "14txa6iFLMZF5RIpklhDoiMN3XYq132Bs" },
+                    { "title": "The Fateful Choice", "google_drive_id": "1rosUZK2gO2WevIQFbI5pN3mnrdmJAptl" },
+                    { "title": "The Unmasked Truth", "google_drive_id": "1_KgfQv_VIZVW7hrMHIlnfP4qMTmvGrYJ" },
+                    { "title": "Breaking Through the Shell", "google_drive_id": "1uyRCKT7B8NXqXrCwXkb9O1Ue5kbbl6c3" },
+                    { "title": "A Paradise of the Ominous", "google_drive_id": "1397J4woTuQZF1trbvP4p62mc8hKdO0w5" },
+                    { "title": "The Savior of Destruction", "google_drive_id": "1LiN8zfw_XXKUHVw-fzycKMahPTyet5a5" },
+                    { "title": "The Past, the Original Sin", "google_drive_id": "1_O7kz5z1YGWS0PqnqLWP3RlVOPcasVum" },
+                    { "title": "Our Personal Hell", "google_drive_id": "19Gtnu2Axqo2DaMcGekSwU2KZ0m5DXnMq" },
+                    { "title": "The End of Fate", "google_drive_id": "1Vwhxso6GTzCcvCZiG6-bwmNQyMY3dhff" },
+                    { "title": "Our Personal Heaven", "google_drive_id": "1a_bR3pcAaMCdbNsBX06zN9_najGZ6yrG" }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "hatyapuri",
+        "type": "movie",
+        "subcategory": "Bangla",
+        "imdb_id": "tt9319882",
+        "google_drive_id": "1lybeZynRUyZDVFTUypuiLn6UyGZAG0OA"
+    },
+    {
+        "id": "kakababur-protyaborton",
+        "type": "movie",
+        "subcategory": "Bangla",
+        "imdb_id": "tt8919364",
+        "google_drive_id": "1JvnvyT1jtDJ2e553dI2w4IqxyP8axyrx"
+    },
+    {
+        "id": "mishawr-rawhoshyo",
+        "type": "movie",
+        "subcategory": "Bangla",
+        "imdb_id": "tt3148268",
+        "google_drive_id": "1S0d3elc1GIoE6zCdQ837EkqcfvTPNxv0"
+    },
+    {
+        "id": "yeti-obhijaan",
+        "type": "movie",
+        "subcategory": "Bangla",
+        "imdb_id": "tt7166042",
+        "google_drive_id": "1Mqw-7tTK4bo4dJtQ7aKCfL9ITD8OFUbj"
+    },
+    {
+        "id": "kabir-singh",
+        "type": "movie",
+        "subcategory": "Bollywood",
+        "imdb_id": "tt8983202",
+        "google_drive_id": "1tLDLmhPTh1LyRam9PCrIQMuN9ZttFeE0"
+    },
+    {
+        "id": "kis-kisko-pyaar-karoon",
+        "type": "movie",
+        "subcategory": "Bollywood",
+        "imdb_id": "tt4302956",
+        "google_drive_id": "1elpWkcuFWTmaR7ci3aRvKrrvM8XyTT_h"
+    },
+    {
+        "id": "creation-of-gods",
+        "type": "movie",
+        "subcategory": "Chinese Movie",
+        "imdb_id": "tt6979756",
+        "google_drive_id": "1ooTaSVX4gC7cC4NzAKsxBL4_TU5v8lUy"
+    },
+    {
+        "id": "lady-of-the-dynasty",
+        "type": "movie",
+        "subcategory": "Chinese Movie",
+        "imdb_id": "tt2080418",
+        "google_drive_id": "1kL2TkebFHpeqvsT_Q2KbYj2mWZajL5-U"
+    },
+    {
+        "id": "the-banquet",
+        "type": "movie",
+        "subcategory": "Chinese Movie",
+        "imdb_id": "tt0465676",
+        "google_drive_id": "1YFNAIzG26bslaI-qrd6GecBsLRDObAGp"
+    },
+    {
+        "id": "the-forbidden-kingdom",
+        "type": "movie",
+        "subcategory": "Chinese Movie",
+        "imdb_id": "tt0865556",
+        "google_drive_id": "1by_DrQzBonJgvUAkX5RkwxRy-ZhJPEWy"
+    },
+    {
+        "id": "zhou-yus-train",
+        "type": "movie",
+        "subcategory": "Chinese Movie",
+        "imdb_id": "tt0354243",
+        "google_drive_id": "1LIhR5YPOYYj_mI4-Aud8z31LGNXr6rD0"
+    },
+    {
+        "id": "a-girl-in-the-river",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt5144072",
+        "google_drive_id": "1vlk4x6gv_sP7TBY49GIBQvJve4KZl8Wb"
+    },
+    {
+        "id": "anna-karenina",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt1781769",
+        "google_drive_id": "1xkzOLz8QBoIW87VrBADeVU1lR7Y2LRCN"
+    },
+    {
+        "id": "gone-with-the-wind",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt0031381",
+        "google_drive_id": "17_AppILecWOaK3aBCsVufNpiiUjhddW1"
+    },
+    {
+        "id": "jane-eyre",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt1229822",
+        "google_drive_id": "10_JoHAQjbmuLIR5Ejjn9rPPr7-F2-C_Y"
+    },
+    {
+        "id": "just-go-with-it",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt1564367",
+        "google_drive_id": "1kIpI80eRDoryCV_776uGH21K96BQGggG"
+    },
+    {
+        "id": "poor-things",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt14230458",
+        "google_drive_id": "1m6SBesi43Hk9aRcmChAHgZECKRxCDSuN"
+    },
+    {
+        "id": "the-gods-must-be-crazy",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt0080801",
+        "google_drive_id": "12f3MQ2n0Hn8d6aRZ-w9VOnri3l5RuVhk"
+    },
+    {
+        "id": "the-gods-must-be-crazy-2",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt0097443",
+        "google_drive_id": "1yX1u-dTQGuyV3tasjLEHrwCNlQVug9bF"
+    },
+    {
+        "id": "the-great-beauty",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt2358891",
+        "google_drive_id": "1c6GQ8Wolcgpj2bNf7-_TprufROsSNmsA"
+    },
+    {
+        "id": "the-lover-lamant",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt0101316",
+        "google_drive_id": "1eNjuCwAP4qWMkpcK-nsGzMI74wfZqh9b"
+    },
+    {
+        "id": "uptown-girls",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt0263757",
+        "google_drive_id": "1hW35Fu7dksPfIfC27s68N6AZDAUfulWv"
+    },
+    {
+        "id": "my-happy-marriage",
+        "type": "movie",
+        "subcategory": "Japanese Movie",
+        "imdb_id": "tt19869122",
+        "google_drive_id": "1U-WRGOdIpzzhSMtInJsBTejuF99mQFVf"
+    },
+    {
+        "id": "the-legend-butterfly",
+        "type": "movie",
+        "subcategory": "Japanese Movie",
+        "imdb_id": "tt21192216",
+        "google_drive_id": "1FJHJV0fNjrBNOUMBlled3_srQLEPuwMD"
+    },
+    {
+        "id": "exhuma",
+        "type": "movie",
+        "subcategory": "Korean Movie",
+        "imdb_id": "tt27802490",
+        "google_drive_id": "1jpWLmKNVrimi3ifuLPhFRY4fuILe3vfo"
+    },
+    {
+        "id": "revolver-lily",
+        "type": "movie",
+        "subcategory": "Korean Movie",
+        "imdb_id": "tt26744484",
+        "google_drive_id": "1qzo8Nk7IMkQz5X7RVXTrEToRKC5pEhOu"
+    },
+    {
+        "id": "serve-the-people",
+        "type": "movie",
+        "subcategory": "Korean Movie",
+        "imdb_id": "tt18372308",
+        "google_drive_id": "1yM7nD3DNNufM8edI4exgC0YAGCm0irES"
+    },
+    {
+        "id": "maharaja-2024",
+        "type": "movie",
+        "subcategory": "South Indian",
+        "imdb_id": "tt26548265",
+        "google_drive_id": "1ySRjOeJPOrrZnj_KGyYIX_Iy0gv-thEF"
+    },
+    {
+        "id": "radhe-shyam",
+        "type": "movie",
+        "subcategory": "South Indian",
+        "imdb_id": "tt8960382",
+        "google_drive_id": "1ddLw15a2la3Xan_wtuZIxJqCWuzH2Szh"
+    },
+    {
+        "id": "avro-keyboard",
+        "type": "software",
+        "title": "Avro Keyboard",
+        "description": "Avro Keyboard is a free and open-source typing software for Bengali.",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQj6Lweus7-rX-3RqqWkxqc-KmR5lK9mhC4A&s",
+        "download_all_id": "1HaJ4AuZUAV__kkxIIi8G1iwChmYkf0as",
+        "files": [
+            { "name": "setup_avrokeyboard_5.6.0.exe", "size": "6.69 MB", "google_drive_id": "1HaJ4AuZUAV__kkxIIi8G1iwChmYkf0as" }
+        ]
     }
-];
+]

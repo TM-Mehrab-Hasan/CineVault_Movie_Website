@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Element Selectors ---
     const searchInput = document.getElementById('searchInput');
-    const categoryLinks = document.querySelectorAll('.category-link');
     const homepageContent = document.getElementById('homepage-content');
     const singleCategoryContent = document.getElementById('single-category-content');
     const singleVideoGrid = document.getElementById('single-video-grid');
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loader');
     const apiKey = '60f2fb19';
 
-    // This array will store all our complete data after fetching from the API
     let allEnrichedMedia = [];
 
     // --- Core Functions ---
@@ -18,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${page}?id=${encodeURIComponent(item.id)}`;
     };
 
-    // This function just renders items to a grid
     const renderGrid = (gridElement, items) => {
         gridElement.innerHTML = '';
         if (items.length === 0) {
@@ -44,7 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (grid) {
                 const filtered = allEnrichedMedia.filter(v => v.type === type);
                 filtered.sort((a, b) => a.Title.localeCompare(b.Title));
-                renderGrid(grid, filtered);
+                const limited = filtered.slice(0, 10);
+                renderGrid(grid, limited);
             }
         });
     };
@@ -57,18 +55,32 @@ document.addEventListener('DOMContentLoaded', () => {
         renderGrid(singleVideoGrid, items);
     };
 
-    // This function sets up all the interactive elements after the data is loaded
     const initializeEventListeners = () => {
-        categoryLinks.forEach(link => {
+        const allCategoryLinks = document.querySelectorAll('.category-link');
+        
+        allCategoryLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const category = e.target.getAttribute('data-category');
-                const categoryName = e.target.textContent;
+                
+                // --- THIS IS THE CORRECTED LOGIC ---
+                // It creates a clean title (e.g., "Movie") from the data attribute
+                const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
+                
                 searchInput.value = '';
 
-                categoryLinks.forEach(l => l.classList.remove('active'));
+                allCategoryLinks.forEach(l => l.classList.remove('active'));
                 const parentLink = e.currentTarget.closest('.dropdown') ? e.currentTarget.closest('.dropdown').querySelector('a') : e.currentTarget;
-                parentLink.classList.add('active');
+                
+                const navLinkToActivate = document.querySelector(`nav a[data-category="${category}"]`) || parentLink;
+                if(navLinkToActivate) {
+                    const topLevelDropdown = navLinkToActivate.closest('.dropdown');
+                    if(topLevelDropdown) {
+                        topLevelDropdown.querySelector('a').classList.add('active');
+                    } else {
+                        navLinkToActivate.classList.add('active');
+                    }
+                }
 
                 if (category === 'all') {
                     showHomepageView();
@@ -81,13 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         searchInput.addEventListener('keyup', (e) => {
             const searchTerm = e.target.value.toLowerCase();
-
             if (searchTerm.length === 0) {
                 showHomepageView();
                 return;
             }
-            
-            // The search now filters the pre-loaded 'allEnrichedMedia' array instantly
             const searchResults = allEnrichedMedia.filter(item =>
                 item.Title && item.Title.toLowerCase().includes(searchTerm)
             );
@@ -106,10 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- Main App Initialization ---
-    // 1. Show loader
     if (loader) loader.style.display = 'block';
 
-    // 2. Create a list of promises to fetch all necessary data
     const promises = videos.map(localItem => {
         if (localItem.imdb_id) {
             return fetch(`https://www.omdbapi.com/?i=${localItem.imdb_id}&apikey=${apiKey}`)
@@ -119,11 +126,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return Promise.resolve({ ...localItem, Title: localItem.title, Poster: localItem.thumbnail });
     });
 
-    // 3. Wait for all data to be fetched
     Promise.all(promises).then(results => {
         allEnrichedMedia = results.filter(item => item && (item.Response === "True" || item.title));
         
-        // 4. Hide loader and start the application with the complete data
         if (loader) loader.style.display = 'none';
         showHomepageView();
         initializeEventListeners();
