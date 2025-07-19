@@ -45,7 +45,7 @@ To get a local copy up and running, follow these simple steps.
     You need a free API key from OMDb. Go to [omdbapi.com/apikey.aspx](http://www.omdbapi.com/apikey.aspx) to get one.
 
 4.  **Update the API Key:**
-    Open the `js/script.js` and `details.html` files and replace the placeholder API key (`60f2fb19`) with your personal OMDb API key.
+    Open the `js/script.js` and `details.html` files and replace the placeholder API key (`********`) with your personal OMDb API key.
 
 5.  **Run Locally:**
     Open the `index.html` file in your favorite web browser.
