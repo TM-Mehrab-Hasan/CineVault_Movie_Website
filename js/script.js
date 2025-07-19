@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Element Selectors ---
     const searchInput = document.getElementById('searchInput');
+    const categoryLinks = document.querySelectorAll('.category-link');
     const homepageContent = document.getElementById('homepage-content');
     const singleCategoryContent = document.getElementById('single-category-content');
     const singleVideoGrid = document.getElementById('single-video-grid');
@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let allEnrichedMedia = [];
 
-    // --- Core Functions ---
     const createPageUrl = (item) => {
         const page = (item.type === 'software' || item.type === 'game') ? 'software_details.html' : 'details.html';
         return `${page}?id=${encodeURIComponent(item.id)}`;
@@ -35,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const showHomepageView = () => {
         homepageContent.style.display = 'block';
         singleCategoryContent.style.display = 'none';
-
         ['movie', 'drama', 'anime', 'software', 'game'].forEach(type => {
             const grid = document.getElementById(`${type}-grid`);
             if (grid) {
@@ -57,34 +55,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const initializeEventListeners = () => {
         const allCategoryLinks = document.querySelectorAll('.category-link');
-        
         allCategoryLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const category = e.target.getAttribute('data-category');
-                
-                // --- THIS IS THE CORRECTED LOGIC ---
-                // It creates a clean title (e.g., "Movie") from the data attribute
                 const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
-                
                 searchInput.value = '';
-
                 allCategoryLinks.forEach(l => l.classList.remove('active'));
-                const parentLink = e.currentTarget.closest('.dropdown') ? e.currentTarget.closest('.dropdown').querySelector('a') : e.currentTarget;
-                
-                const navLinkToActivate = document.querySelector(`nav a[data-category="${category}"]`) || parentLink;
+                const navLinkToActivate = document.querySelector(`nav a[data-category="${category}"]`);
                 if(navLinkToActivate) {
-                    const topLevelDropdown = navLinkToActivate.closest('.dropdown');
-                    if(topLevelDropdown) {
-                        topLevelDropdown.querySelector('a').classList.add('active');
-                    } else {
-                        navLinkToActivate.classList.add('active');
-                    }
+                    const parentDropdown = navLinkToActivate.closest('.dropdown');
+                    if(parentDropdown) { parentDropdown.querySelector('a').classList.add('active'); }
+                    else { navLinkToActivate.classList.add('active'); }
                 }
-
-                if (category === 'all') {
-                    showHomepageView();
-                } else {
+                if (category === 'all') { showHomepageView(); }
+                else {
                     const filtered = allEnrichedMedia.filter(v => v.type === category || v.subcategory === category);
                     showSingleCategoryView(categoryName, filtered);
                 }
@@ -93,30 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         searchInput.addEventListener('keyup', (e) => {
             const searchTerm = e.target.value.toLowerCase();
-            if (searchTerm.length === 0) {
-                showHomepageView();
-                return;
-            }
-            const searchResults = allEnrichedMedia.filter(item =>
-                item.Title && item.Title.toLowerCase().includes(searchTerm)
-            );
+            if (searchTerm.length === 0) { showHomepageView(); return; }
+            const searchResults = allEnrichedMedia.filter(item => item.Title && item.Title.toLowerCase().includes(searchTerm));
             showSingleCategoryView(`Search results for "${searchTerm}"`, searchResults);
         });
-
-        // Mobile Nav Toggle
-        const navToggle = document.querySelector('.nav-toggle');
-        const mainNav = document.querySelector('nav');
-        if (navToggle && mainNav) {
-            navToggle.addEventListener('click', () => {
-                mainNav.classList.toggle('active');
-                navToggle.classList.toggle('active');
-            });
-        }
     };
 
-    // --- Main App Initialization ---
     if (loader) loader.style.display = 'block';
-
     const promises = videos.map(localItem => {
         if (localItem.imdb_id) {
             return fetch(`https://www.omdbapi.com/?i=${localItem.imdb_id}&apikey=${apiKey}`)
@@ -128,9 +96,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     Promise.all(promises).then(results => {
         allEnrichedMedia = results.filter(item => item && (item.Response === "True" || item.title));
-        
         if (loader) loader.style.display = 'none';
-        showHomepageView();
+        
+        // --- NEW: Check for search query in URL ---
+        const urlParams = new URLSearchParams(window.location.search);
+        const initialSearchTerm = urlParams.get('search');
+        if (initialSearchTerm) {
+            searchInput.value = initialSearchTerm;
+            const searchResults = allEnrichedMedia.filter(item => item.Title && item.Title.toLowerCase().includes(initialSearchTerm.toLowerCase()));
+            showSingleCategoryView(`Search results for "${initialSearchTerm}"`, searchResults);
+        } else {
+            showHomepageView();
+        }
+        
         initializeEventListeners();
     });
 });

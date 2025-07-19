@@ -27,13 +27,12 @@
                     <li class="dropdown">
                         <a href="index.html" class="category-link" data-category="movie">Movie</a>
                         <div class="dropdown-content">
-                            <a href="index.html" class="category-link" data-category="Bangla">Bangla</a>
                             <a href="index.html" class="category-link" data-category="Bollywood">Bollywood</a>
                             <a href="index.html" class="category-link" data-category="Hollywood">Hollywood</a>
                             <a href="index.html" class="category-link" data-category="Chinese Movie">Chinese</a>
-                            <a href="index.html" class="category-link" data-category="Japanese Movie">Japanese</a>
                             <a href="index.html" class="category-link" data-category="Korean Movie">Korean</a>
-                            <a href="index.html" class="category-link" data-category="South Indian">South Indian</a>
+                            <a href="index.html" class="category-link" data-category="Japanese Movie">Japanese</a>
+                            <a href="index.html" class="category-link" data-category="Bangla">Bangla</a>
                         </div>
                     </li>
                     <li class="dropdown">
@@ -78,38 +77,10 @@
     </footer>
 
     <script src="js/videos.js"></script>
+    <script src="js/main.js"></script> <!-- The new shared script for nav/search -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- Mobile Nav Logic ---
-            const navToggle = document.querySelector('.nav-toggle');
-            const mainNav = document.querySelector('nav');
-            if (navToggle && mainNav) {
-                navToggle.addEventListener('click', () => {
-                    mainNav.classList.toggle('active');
-                    navToggle.classList.toggle('active');
-                });
-            }
-
-            // --- Mobile Search Logic ---
-            const searchToggleBtn = document.querySelector('.search-toggle-btn');
-            const searchContainer = document.querySelector('.search-container');
-            if (searchToggleBtn && searchContainer) {
-                searchToggleBtn.addEventListener('click', () => {
-                    searchContainer.classList.toggle('active');
-                    const searchInput = document.getElementById('searchInput');
-                    if (searchContainer.classList.contains('active')) {
-                        searchInput.focus();
-                    }
-                });
-                
-                const searchInput = document.getElementById('searchInput');
-                searchInput.addEventListener('keyup', (e) => {
-                    if (e.key === 'Enter') {
-                        // Redirect to homepage with search query
-                        window.location.href = `index.html?search=${encodeURIComponent(searchInput.value)}`;
-                    }
-                });
-            }
+            // NOTE: All mobile nav and search logic has been moved to main.js
 
             // --- Details Page Logic ---
             const detailsContainer = document.getElementById('details-container');
