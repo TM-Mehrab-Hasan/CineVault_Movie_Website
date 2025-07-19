@@ -200,6 +200,60 @@ const videos = [
         ]
     },
     {
+        "id": "touch-your-heart",
+        "type": "drama",
+        "subcategory": "Korean Drama",
+        "imdb_id": "tt9466990",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "Yun Seo Goes to a Law Firm", "google_drive_id": "1NSAbufuyFydElcE6kLoYDvtOidECtmXl" },
+                    { "title": "Se Won Comes to Seoul", "google_drive_id": "1LWMd78RSXPmBXx_pS-9UDyo9KNo-br8Y" },
+                    { "title": "Yun Seo's First Case", "google_drive_id": "1GaZGlQo3dpGJEdkg3tBYIT7DSPoo5Dq_" },
+                    { "title": "Studying Together", "google_drive_id": "1wytRW38OOAQS2WzEhHCgouc9_B6FEGQv" },
+                    { "title": "Murder or Self-defense", "google_drive_id": "1j_ckO__GqmxXPmaCHsfkwn12ZdgOaQlv" },
+                    { "title": "Jung Rok & Yun Seo Investigate the Case", "google_drive_id": "1KzWoGwxkuPykhKsmjAH_ITCfSTWiC8io" },
+                    { "title": "Jung Rok's Confession", "google_drive_id": "155iAeCGc6XITN-z_qKzWAq9nRXNZGvzR" },
+                    { "title": "ALWAYS Law Firm Holds a Workshop", "google_drive_id": "1xsWC4nnKuIJZ_sOYtyfRPI4phCh2VtYr" },
+                    { "title": "A Special Date", "google_drive_id": "1hZrJZd8PAnv77IVNxXxR0rv4nUb3k9V6" },
+                    { "title": "A Mysterious Man", "google_drive_id": "1SSw8ZAWk5ZShumkeBDpPywQoBVayBUTc" },
+                    { "title": "Gang Joon Approaches Yun Seo", "google_drive_id": "1cSf3H5GURQ16GY53ZZVoJSdaM10V1Axk" },
+                    { "title": "Yun Seo Will Act Again", "google_drive_id": "1FasUJ36TnI9Vh5hW2UdV6LoSzCfIhLsG" },
+                    { "title": "Jung Rok's New Case", "google_drive_id": "1nsSmjVIdn0C1ezPhMxCTGQ4H5nj6frU6" },
+                    { "title": "Jung Rok's Resignation", "google_drive_id": "1QORPWyepsj1lVvazaZVyT7REEcG_L3D9" },
+                    { "title": "Jung Rok Gets Jealous", "google_drive_id": "1Q79mTAtSym0QxpUu-qxQKVb4SDeZYSfp" },
+                    { "title": "Yun Seo Makes a Comeback", "google_drive_id": "1jtSerQYmjXH-O20Pxfu63gcOA8tx3FM-" }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "when-the-phone-rings",
+        "type": "drama",
+        "subcategory": "Korean Drama",
+        "imdb_id": "tt33503491",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "Episode #1.1", "google_drive_id": "https://drive.google.com/file/d/1iiBMKJg9R4lzNqQDvh3KXA3NuzjoN-89/view?usp=drive_link" },
+                    { "title": "Episode #1.2", "google_drive_id": "https://drive.google.com/file/d/1tCtUoHghhmSGTPGIqlnn-lc6zmsF1neI/view?usp=drive_link" },
+                    { "title": "Episode #1.3", "google_drive_id": "https://drive.google.com/file/d/1oRgt3i09R9kMmWe32vrJ0AIeF_5bqAS3/view?usp=drive_link" },
+                    { "title": "Episode #1.4", "google_drive_id": "https://drive.google.com/file/d/1kG0swY1LW8aQoxFZ674elHGTYw5Z04df/view?usp=drive_link" },
+                    { "title": "Episode #1.5", "google_drive_id": "https://drive.google.com/file/d/1z2WsnB0p0wHsw_ENZuSYQejORcYZAV1W/view?usp=drive_link" },
+                    { "title": "Episode #1.6", "google_drive_id": "https://drive.google.com/file/d/1MWPg-LJeXRCKM-Rlv1pfJr8PMYpf9NyB/view?usp=drive_link" },
+                    { "title": "Episode #1.7", "google_drive_id": "1nPDWFRPjhHFmBIKTSEmpP8-l-SooEsCB" },
+                    { "title": "Episode #1.8", "google_drive_id": "1koyVu_lyqafqkxTdiUDCFCdBYrwRAck0" },
+                    { "title": "Episode #1.9", "google_drive_id": "1wuzwWor5f2NU-z6SH9evudpC6OgqTXkL" },
+                    { "title": "Episode #1.10", "google_drive_id": "17vEt1FAwGDaJc23ToMBGgp5I9P-fZozj" },
+                    { "title": "Episode #1.11", "google_drive_id": "1_qVtQ8rRjDlWc0f-a_CxYjy-FfJIAzte" },
+                    { "title": "Episode #1.12", "google_drive_id": "1LuJp4R2F8BtDET5OF6agBFtw4d3UfxVJ" }
+                ]
+            }
+        ]
+    },
+    {
         "id": "hatyapuri",
         "type": "movie",
         "subcategory": "Bangla",
@@ -228,6 +282,20 @@ const videos = [
         "google_drive_id": "1Mqw-7tTK4bo4dJtQ7aKCfL9ITD8OFUbj"
     },
     {
+        "id": "byomkesh-gotro",
+        "type": "movie",
+        "subcategory": "Bangla",
+        "imdb_id": "tt8665794",
+        "google_drive_id": "1bPfrKQw4q5Wl27CnePF6DaHRBwwh8Sd6"
+    },
+    {
+        "id": "byomkesh-phire-elo",
+        "type": "movie",
+        "subcategory": "Bangla",
+        "imdb_id": "tt4282396",
+        "google_drive_id": "1vEcZqS_bg628cL9orp3xtO8_MOVeXM9b"
+    },
+    {
         "id": "kabir-singh",
         "type": "movie",
         "subcategory": "Bollywood",
@@ -240,6 +308,48 @@ const videos = [
         "subcategory": "Bollywood",
         "imdb_id": "tt4302956",
         "google_drive_id": "1elpWkcuFWTmaR7ci3aRvKrrvM8XyTT_h"
+    },
+    {
+        "id": "kama-sutra",
+        "type": "movie",
+        "subcategory": "Bollywood",
+        "imdb_id": "tt0116743",
+        "google_drive_id": "1sjSTCpuJbkh1qPo4XY8S51wImzVqAcqU"
+    },
+    {
+        "id": "b-a-pass",
+        "type": "movie",
+        "subcategory": "Bollywood",
+        "imdb_id": "tt2408040",
+        "google_drive_id": "1sSOjVCFIPgto2s9txQi2k0BNMm3btYwR"
+    },
+    {
+        "id": "detective-byomkesh-bakshy",
+        "type": "movie",
+        "subcategory": "Bollywood",
+        "imdb_id": "tt3447364",
+        "google_drive_id": "1w5RM47vWZjTjmrYGrSCXHGNEvUMLFIwJ"
+    },
+    {
+        "id": "dil-bechara",
+        "type": "movie",
+        "subcategory": "Bollywood",
+        "imdb_id": "tt8110330",
+        "google_drive_id": "1i5tE6gThf5gUDgjamjL81W1z1lghJS4o"
+    },
+    {
+        "id": "singh-saab-the-great",
+        "type": "movie",
+        "subcategory": "Bollywood",
+        "imdb_id": "tt2437954",
+        "google_drive_id": "15nd1VpRhLixzJNGX5Z2z03pPLcPbvmqD"
+    },
+    {
+        "id": "fateh",
+        "type": "movie",
+        "subcategory": "Bollywood",
+        "imdb_id": "tt27679608",
+        "google_drive_id": "1kHk5n5n8iIvgDlxVbiIom4e562s2pS6_"
     },
     {
         "id": "creation-of-gods",
@@ -275,6 +385,27 @@ const videos = [
         "subcategory": "Chinese Movie",
         "imdb_id": "tt0354243",
         "google_drive_id": "1LIhR5YPOYYj_mI4-Aud8z31LGNXr6rD0"
+    },
+    {
+        "id": "forbidden-zone",
+        "type": "movie",
+        "subcategory": "Chinese Movie",
+        "imdb_id": "tt28495752",
+        "google_drive_id": "10yXjsbo0rn6F1QwqsgvM3qouYgYggEb6"
+    },
+    {
+        "id": "the-legend-of-loulan-ghost-army",
+        "type": "movie",
+        "subcategory": "Chinese Movie",
+        "imdb_id": "tt21634718",
+        "google_drive_id": "1-KqSbXHo_H1KgfexiefadHAENTGtMdxo"
+    },
+    {
+        "id": "mojin-the-worm-valley",
+        "type": "movie",
+        "subcategory": "Chinese Movie",
+        "imdb_id": "tt9490414",
+        "google_drive_id": "1BqNM2XadtDzLjLm6uyVtI_GCYWVabJnh"
     },
     {
         "id": "a-girl-in-the-river",
@@ -354,6 +485,48 @@ const videos = [
         "google_drive_id": "1hW35Fu7dksPfIfC27s68N6AZDAUfulWv"
     },
     {
+        "id": "siberia",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt6494418",
+        "google_drive_id": "1iHfq5pX2w9JwC_pq8e2gePbhCGD6bRN3"
+    },
+    {
+        "id": "top-gun-maverick",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt1745960",
+        "google_drive_id": "12h1busAwXB-wjkQJlC4eyf_XZGJt6qvk"
+    },
+    {
+        "id": "the-expendables",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt1320253",
+        "google_drive_id": "10TGNjF3sYTUTeqxLAvzUEIWDCVYEdDhK"
+    },
+    {
+        "id": "the-expendables-2",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt1764651",
+        "google_drive_id": "1Tlwc2QGbnF3anhCpY1-HKIeRtQ8PgnN-"
+    },
+    {
+        "id": "the-expendables-3",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt2333784",
+        "google_drive_id": "1IhNAQbxbhrMvZGmpbr7kEWdruMv8sTa_"
+    },
+    {
+        "id": "the-adventures-of-tintin",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt0983193",
+        "google_drive_id": "1ip7KTci6KB4JUK8hsUfFCMzwNG4yf4dT"
+    },
+    {
         "id": "my-happy-marriage",
         "type": "movie",
         "subcategory": "Japanese Movie",
@@ -389,6 +562,20 @@ const videos = [
         "google_drive_id": "1yM7nD3DNNufM8edI4exgC0YAGCm0irES"
     },
     {
+        "id": "the-witch-part1-the-subversion",
+        "type": "movie",
+        "subcategory": "Korean Movie",
+        "imdb_id": "tt8574252",
+        "google_drive_id": "1eu80VCaj24pUqsoq8nNm38fVfgSPA0cZ"
+    },
+    {
+        "id": "the-witch-part2-the-other-one",
+        "type": "movie",
+        "subcategory": "Korean Movie",
+        "imdb_id": "tt13721828",
+        "google_drive_id": "19AZ8at9OQ0jSQGVWx53qyUWHhrsYmEKf"
+    },
+    {
         "id": "maharaja-2024",
         "type": "movie",
         "subcategory": "South Indian",
@@ -403,6 +590,62 @@ const videos = [
         "google_drive_id": "1ddLw15a2la3Xan_wtuZIxJqCWuzH2Szh"
     },
     {
+        "id": "bhimaa",
+        "type": "movie",
+        "subcategory": "South Indian",
+        "imdb_id": "tt26997803",
+        "google_drive_id": "1ypfqg_ej3GkeW498aFLKUmgp4Gcns7L3"
+    },
+    {
+        "id": "daaku-maharaaj",
+        "type": "movie",
+        "subcategory": "South Indian",
+        "imdb_id": "tt27957740",
+        "google_drive_id": "1hCl2Wjb26_RHeJNhRqvBEoGAhLwjGTm5"
+    },
+    {
+        "id": "game-changer",
+        "type": "movie",
+        "subcategory": "South Indian",
+        "imdb_id": "tt14209618",
+        "google_drive_id": "1MpYsFsz6vNcAKukilAcYK0oKDXmi55KO"
+    },
+    {
+        "id": "hit-the-third-case",
+        "type": "movie",
+        "subcategory": "South Indian",
+        "imdb_id": "tt23804696",
+        "google_drive_id": "1CAO6SIhDL546F7C_9rOBXJgqQeky6FvS"
+    },
+    {
+        "id": "kaatera",
+        "type": "movie",
+        "subcategory": "South Indian",
+        "imdb_id": "tt26744208",
+        "google_drive_id": "1wXqB9T6DN3fCnE7ZRtuHK0Y_FiTpbfle"
+    },
+    {
+        "id": "l2-empuraan",
+        "type": "movie",
+        "subcategory": "South Indian",
+        "imdb_id": "tt10505918",
+        "google_drive_id": "1uxDy9HI0TN4Rex9I4Rb92AU073AFzKLX"
+    },
+    {
+        "id": "marco",
+        "type": "movie",
+        "subcategory": "South Indian",
+        "imdb_id": "tt29383379",
+        "google_drive_id": "1PUgafyUfy_wnYVGZupuiej6X_xo2jrBl"
+    },
+    {
+        "id": "saindhav",
+        "type": "movie",
+        "subcategory": "South Indian",
+        "imdb_id": "tt27118258",
+        "google_drive_id": "1klQOy30f67EhKkiDqlcQE_sh07ipKu_F"
+    },
+    {
         "id": "avro-keyboard",
         "type": "software",
         "title": "Avro Keyboard",
@@ -411,6 +654,72 @@ const videos = [
         "download_all_id": "1HaJ4AuZUAV__kkxIIi8G1iwChmYkf0as",
         "files": [
             { "name": "setup_avrokeyboard_5.6.0.exe", "size": "6.69 MB", "google_drive_id": "1HaJ4AuZUAV__kkxIIi8G1iwChmYkf0as" }
+        ]
+    },
+    {
+        "id": "adobe-acrobat-pro-dc-2019",
+        "type": "software",
+        "title": "Adobe Acrobat Pro DC 2019",
+        "description": "Adobe Acrobat Pro DC is a comprehensive PDF software suite that allows users to create, edit, manage, and share PDF documents across various devices. It's the latest version of Adobe's Acrobat subscription software and is designed for both desktop and mobile use. Key features include the ability to edit text and images within PDFs, convert files to and from PDF format, create and manage forms, and add digital signatures and security features. It also offers cloud integration, enabling users to access their documents from anywhere and collaborate with others in real-time. Adobe Acrobat Pro DC is widely used in professional settings for its robust functionality and ease of use.",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPgaGfd-xwtK6_MFO8xaxsX5NeaSlHiJ7_sQ&s",
+        "download_all_id": "1qy1eW56VFRLr4ZtIjM2sP01N9HFFxnvK",
+        "files": [
+            { "name": "Adobe Acrobat Pro DC 2019.012.20040 Silent-Activated - Lava.exe", "size": "488.5 MB", "google_drive_id": "1qy1eW56VFRLr4ZtIjM2sP01N9HFFxnvK" }
+        ]
+    },
+    {
+        "id": "adobe-reader",
+        "type": "software",
+        "title": "Adobe Reader 11.0.7",
+        "description": "Adobe Acrobat Reader is a free, widely used software for viewing, printing, signing, sharing, and annotating PDF documents. It's the standard for interacting with all types of PDF content, including forms and multimedia. Key features include the ability to view PDFs, add comments, fill out and e-sign forms, and share documents for collaboration. Adobe Reader supports a variety of PDF features, such as bookmarks, hyperlinks, and text search. It is available on multiple platforms, including Windows, macOS, iOS, and Android, making it accessible for users across different devices. Adobe Reader is essential for anyone who needs to work with PDF files regularly.",
+        "thumbnail": "https://images.sftcdn.net/images/t_app-icon-m/p/30e0f2e8-96d0-11e6-b461-00163ec9f5fa/3061376402/adobe-reader-download-adobe-reader.jpg",
+        "download_all_id": "1lSJ9lfRUee3SraSimN5gCRTK1QBiFx5l",
+        "files": [
+            { "name": "Esl", "size": "210 KB", "google_drive_id": "16zk2dl-R-1EQGDWQurkWZ_fdPt5-lVgw" },
+            { "name": "Reader", "size": "168 MB", "google_drive_id": "1a2Pv1LNO7TUo8dGkOpA3Gd_HSeKkpdVB" },
+            { "name": "Resource", "size": "2.18 MB", "google_drive_id": "1gxhSCrPWuf1E6NZa7OaehzA3B27NeMES" },
+            { "name": "Setup Files", "size": "", "google_drive_id": "1MC2kX3v5LOz5QyDzEOu9zQovX0aWUu2J" },
+            { "name": "Adobe Reader 11.0.7.exe", "size": "71.2 MB", "google_drive_id": "1AbPGR69-Ec-TE6wSfRD7EqqRx6efoll-" },
+            { "name": "ReadMe.htm", "size": "16 KB", "google_drive_id": "1SVODKu4KQqKUjWnDpgQgC5n22OmbiRGZ" }
+        ]
+    },
+    {
+        "id": "need-for-speed-most-wanted",
+        "type": "game",
+        "subcategory": "Racing",
+        "title": "Need for Speed: Most Wanted Black Edition (2005)",
+        "description": "Need for Speed: Most Wanted is a racing game where players strive to become the most notorious street racer, outrunning both rivals and the police. It features an open-world environment, intense police chases, and a progression system where players rise through a blacklist of elite racers. The game is known for its blend of street racing, customization, and strategic police evasion. ",
+        "thumbnail": "https://i.redd.it/jcd0799d5vd21.jpg",
+        "download_all_id": "1wIMthCpT3U4jwZ2m4Rd309FQVNx4z8Fe",
+        "files": [
+            { "name": "Redist", "size": "5.88 MB", "google_drive_id": "19FgXssaXXAoEokMIZQDRf2hnJUkGQFMM" },
+            { "name": "autorun.inf", "size": "91 bytes", "google_drive_id": "1Oef9jsGkfT5isyhp9ro8d7UAH3fxXdOW" },
+            { "name": "icon.ico", "size": "3 KB", "google_drive_id": "1SEEeOTWw_pspkGKDs4aFv_jZdy1ibWp-" },
+            { "name": "Instructions.txt", "size": "2 KB", "google_drive_id": "15ynRBXPSDgV9-7dlk2faZ864A3dv_yfq" },
+            { "name": "Setup-1.bin", "size": "1.82 GB", "google_drive_id": "1biUrvwWc1JOTZJHCrauOqdqSoRh8sg1E" },
+            { "name": "Setup.exe", "size": "22.3 MB", "google_drive_id": "11pQyy_WvJ4vF8gfUeFoXmdiGpZz2kmAh" }
+        ]
+    },
+    {
+        "id": "need-for-speed-most-wanted-2",
+        "type": "game",
+        "subcategory": "Racing",
+        "title": "Need for Speed: Most Wanted 2 (2012)",
+        "description": "Need for Speed: Most Wanted is a racing game where players strive to become the most notorious street racer, outrunning both rivals and the police. It features an open-world environment, intense police chases, and a progression system where players rise through a blacklist of elite racers. The game is known for its blend of street racing, customization, and strategic police evasion. ",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIdzvPw3P_l4KfCijRKK5_GfvgDy7g86GnYg&s",
+        "download_all_id": "1R4Sv-c_WwSoooUXht2eE9vV4YwOVmvkP",
+        "files": [
+            { "name": "Support", "size": "265 KB", "google_drive_id": "https://drive.google.com/drive/folders/1CTVIMKqxrNk5ULbaDx4sW3g1F7zFbmRQ?usp=drive_link" },
+            { "name": "autorun.inf", "size": "66 bytes", "google_drive_id": "16sNppQgSGM_wKIynO42kivrGfk8UYYhW" },
+            { "name": "CheckSums_xe.txt", "size": "10 bytes", "google_drive_id": "1YJnMRzqoDJ9dIBg5uWfXYYO4Swpd1G26" },
+            { "name": "data-1.catalyst", "size": "721.9 MB", "google_drive_id": "1QM218hEtttVQcLxqjFeDeOBaPdw_MzSI" },
+            { "name": "data-2.catalyst", "size": "852.9 MB", "google_drive_id": "1ub7edo1eC4JGkV1dJX0a02zJpeKMmyl7" },
+            { "name": "data-3.catalyst", "size": "469.5 MB", "google_drive_id": "1gSif-JZJTsxLYUfPxL-sjkVnnTdWR7Fx" },
+            { "name": "data-4.catalyst", "size": "14 MB", "google_drive_id": "1MCMdqQ2JPswt9fLsCHbmlTvXpijuss6f" },
+            { "name": "data-5.catalyst", "size": "27 MB", "google_drive_id": "1V95kGfQKKQnObBMBrCiaKpS7pBP3PDRy" },
+            { "name": "english.catalyst", "size": "211.9 MB", "google_drive_id": "1MMZzbWewcgM_s-Gi8v2tY1OP7qoOZ_0V" },
+            { "name": "russian.catalyst", "size": "109.6 MB", "google_drive_id": "1UkcCOf4sOjxHXWtegKOQ9NlX3j5oW78o" },
+            { "name": "Setup.exe", "size": "2.44 MB", "google_drive_id": "1CmPr6dufRYZ3bTEgKpTOjbAJEXMjxRfS" }
         ]
     }
 ]
