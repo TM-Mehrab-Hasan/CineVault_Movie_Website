@@ -1,33 +1,33 @@
 # MovieSaviour 🎬
 
-MovieSaviour is a dynamic, fully responsive website for Browse and streaming a personal collection of movies, dramas, and animes. It leverages modern web technologies to provide a seamless user experience, fetching rich metadata from the OMDb API and serving video content directly from Google Drive.
+MovieSaviour is a dynamic, fully responsive website for Browse and streaming a personal collection of movies, dramas, animes, software, and games. It leverages modern web technologies to provide a seamless user experience, fetching rich metadata from the OMDb API and serving content directly from Google Drive.
 
+!
+
+---
+## 🚀 Live Demo
+
+You can view the live project here: **[https://moviesaviour.netlify.app/](https://moviesaviour.netlify.app/)**
 
 ---
 ## ✨ Key Features
 
-* **Dynamic Content:** Fetches posters, titles, ratings, plots, and more from the OMDb API.
-* **Advanced Categorization:** Filters content by type (Movie, Drama, Anime) and subcategory (e.g., Bollywood, Korean) using dropdown menus.
-* **Detailed Info Pages:** Each item has a dedicated page with comprehensive information and a full episode list for series.
-* **Enhanced Video Player:** When watching a series, the player page displays a list of all other episodes for easy navigation, highlighting the current one.
-* **Alphabetical Sorting:** All content lists are automatically sorted alphabetically by title for easy Browse.
-* **Client-Side Search:** Instantly filters the displayed items on the homepage by title.
-* **Loading Indicators:** A smooth loading spinner provides a better user experience while data is being fetched.
-* **Responsive Design:** The interface is optimized for all screen sizes, from mobile phones to desktops.
+* **Dynamic Content:** Fetches posters, titles, ratings, plots, and more from the OMDb API for movies, dramas, and animes.
+* **Multiple Content Types:** Features separate, browsable rows on the homepage for Movies, Dramas, Animes, Software, and Games.
+* **Advanced Navigation:** Includes multi-level dropdown menus and a fully responsive "hamburger" menu for mobile.
+* **"See all" Functionality:** Homepage rows show a preview of 10 items, with a "See all" button to view the complete category.
+* **Details Pages:** Each item has a dedicated page with comprehensive information and a full file/episode list.
+* **Enhanced Video Player:** For series, the player page displays a full episode list with highlighting and "Next/Previous" buttons for easy navigation.
+* **Functional Search:** A search bar is available on both desktop and mobile to filter all content by title.
+* **Polished UI/UX:** Features a professional design with custom fonts, a modern color palette, loading indicators, and smooth hover effects.
 
 ---
 
 ## 🛠️ Tech Stack
 
 * **Front-End:** HTML5, CSS3 (Flexbox & Grid), and modern JavaScript (ES6+).
-* **API:** [The OMDb API](http://www.omdbapi.com/) for fetching all movie, drama, and anime metadata.
+* **API:** [The OMDb API](http://www.omdbapi.com/) for fetching metadata.
 * **Hosting:** Hosted on [Netlify](https://www.netlify.com/) with continuous deployment from GitHub.
-
----
-
-## 🚀 Live Demo
-
-You can view the live project here: **[https://moviesaviour.netlify.app/](https://moviesaviour.netlify.app/)**
 
 ---
 
@@ -56,22 +56,20 @@ To get a local copy up and running, follow these simple steps.
 
 ## ✍️ Content Management
 
-This project uses a simple, manual content management system by editing the `videos.js` file directly on GitHub. This gives you full control over your library.
+This project uses a simple, manual content management system by editing the `js/videos.js` file directly on GitHub.
 
-#### How to Add a New Movie or Series:
+#### How to Add New Content:
 
-1.  **Go to the `js/videos.js` file** in your GitHub repository:
-    [https://github.com/TMRatul49/MovieSaviour_Website/blob/main/js/videos.js](https://github.com/TMRatul49/MovieSaviour_Website/blob/main/js/videos.js)
+1.  Go to the `js/videos.js` file in your GitHub repository.
+2.  Click the "Edit" icon (a small pencil) in the top-right corner.
+3.  To add a new entry, copy an existing object (from `{` to `}`) and paste it into the array. Remember to add a comma `,` after the preceding object.
+4.  Update the details for your new entry.
 
-2.  **Click the "Edit" icon** (a small pencil) in the top-right corner of the file view.
-
-3.  To add a new entry, copy an existing object (from `{` to `}`) and paste it at the end of the list, ensuring there is a comma `,` after the preceding object.
-
-4.  **Update the details** for your new entry:
-    * `id`: A unique, all-lowercase name (e.g., `"the-dark-knight"`).
-    * `type`: `"movie"`, `"drama"`, or `"anime"`.
-    * `subcategory`: The specific category (e.g., `"Hollywood"`).
-    * `imdb_id`: The correct ID from the IMDb website (e.g., `"tt0468569"`).
-    * `google_drive_id` (for movies) or `seasons`/`episodes` (for series) with your Google Drive links.
-
-5.  **Scroll down and save** by clicking the "Commit changes" button. Netlify will automatically see the update and deploy your new content to the live site within minutes.
+**Example for a Movie:**
+```javascript
+{
+    "id": "new-movie-2025",
+    "type": "movie",
+    "subcategory": "Hollywood",
+    "imdb_id": "tt1234567"
+}
