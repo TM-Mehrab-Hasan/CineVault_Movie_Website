@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const videoItem = document.createElement('a');
             videoItem.href = pageUrl;
             videoItem.classList.add('video-item');
-            videoItem.innerHTML = `<div class="poster-container"><img src="${item.Poster}" alt="${item.Title}"><div class="badge">${item.type}</div></div><h3>${item.Title}</h3>`;
+            videoItem.innerHTML = `<div class="poster-container"><img src="${item.Poster}" alt="${item.Title}"><div class="badge">${item.subcategory || item.type}</div></div><h3>${item.Title}</h3>`;
             gridElement.appendChild(videoItem);
         });
     };
