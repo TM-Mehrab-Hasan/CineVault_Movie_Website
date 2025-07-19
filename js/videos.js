@@ -237,18 +237,18 @@ const videos = [
             {
                 "season_title": "Season 1",
                 "episodes": [
-                    { "title": "Episode #1.1", "google_drive_id": "https://drive.google.com/file/d/1iiBMKJg9R4lzNqQDvh3KXA3NuzjoN-89/view?usp=drive_link" },
-                    { "title": "Episode #1.2", "google_drive_id": "https://drive.google.com/file/d/1tCtUoHghhmSGTPGIqlnn-lc6zmsF1neI/view?usp=drive_link" },
-                    { "title": "Episode #1.3", "google_drive_id": "https://drive.google.com/file/d/1oRgt3i09R9kMmWe32vrJ0AIeF_5bqAS3/view?usp=drive_link" },
-                    { "title": "Episode #1.4", "google_drive_id": "https://drive.google.com/file/d/1kG0swY1LW8aQoxFZ674elHGTYw5Z04df/view?usp=drive_link" },
-                    { "title": "Episode #1.5", "google_drive_id": "https://drive.google.com/file/d/1z2WsnB0p0wHsw_ENZuSYQejORcYZAV1W/view?usp=drive_link" },
-                    { "title": "Episode #1.6", "google_drive_id": "https://drive.google.com/file/d/1MWPg-LJeXRCKM-Rlv1pfJr8PMYpf9NyB/view?usp=drive_link" },
-                    { "title": "Episode #1.7", "google_drive_id": "1nPDWFRPjhHFmBIKTSEmpP8-l-SooEsCB" },
-                    { "title": "Episode #1.8", "google_drive_id": "1koyVu_lyqafqkxTdiUDCFCdBYrwRAck0" },
-                    { "title": "Episode #1.9", "google_drive_id": "1wuzwWor5f2NU-z6SH9evudpC6OgqTXkL" },
-                    { "title": "Episode #1.10", "google_drive_id": "17vEt1FAwGDaJc23ToMBGgp5I9P-fZozj" },
-                    { "title": "Episode #1.11", "google_drive_id": "1_qVtQ8rRjDlWc0f-a_CxYjy-FfJIAzte" },
-                    { "title": "Episode #1.12", "google_drive_id": "1LuJp4R2F8BtDET5OF6agBFtw4d3UfxVJ" }
+                    { "title": "Episode #1.1", "google_drive_id": "1iiBMKJg9R4lzNqQDvh3KXA3NuzjoN-89" },
+                    { "title": "Episode #1.2", "google_drive_id": "1tCtUoHghhmSGTPGIqlnn-lc6zmsF1neI" },
+                    { "title": "Episode #1.3", "google_drive_id": "1oRgt3i09R9kMmWe32vrJ0AIeF_5bqAS3" },
+                    { "title": "Episode #1.4", "google_drive_id": "1kG0swY1LW8aQoxFZ674elHGTYw5Z04df" },
+                    { "title": "Episode #1.5", "google_drive_id": "1z2WsnB0p0wHsw_ENZuSYQejORcYZAV1W" },
+                    { "title": "Episode #1.6", "google_drive_id": "1MWPg-LJeXRCKM-Rlv1pfJr8PMYpf9NyB" },
+                    { "title": "Episode #1.7", "google_drive_id": "1VFENHlbB4-fapmGDYqk1NMMC2rcHPfky" },
+                    { "title": "Episode #1.8", "google_drive_id": "1HjxfOi5ioxnN3pH9yp00WpM548V40eMs" },
+                    { "title": "Episode #1.9", "google_drive_id": "1Ap6jF7OZmfUud1ExSBln0S5XjAAgEDbe" },
+                    { "title": "Episode #1.10", "google_drive_id": "19TxKNLCoxjK_9jtaH_NYepkd1C6LN6tX" },
+                    { "title": "Episode #1.11", "google_drive_id": "1T89SPv65rsFnKvktnRxgg1ARlCGqtbzq" },
+                    { "title": "Episode #1.12", "google_drive_id": "1gWh0JWctPnVfMmQqWs3eksscWEGPoh8v" }
                 ]
             }
         ]
