@@ -2,8 +2,6 @@
 
 MovieSaviour is a dynamic, fully responsive website for Browse and streaming a personal collection of movies, dramas, animes, software, and games. It leverages modern web technologies to provide a seamless user experience, fetching rich metadata from the OMDb API and serving content directly from Google Drive.
 
-!
-
 ---
 ## 🚀 Live Demo
 
