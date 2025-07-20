@@ -221,6 +221,43 @@ const videos = [
         ]
     },
     {
+        "id": "when-I-fly-towards-you",
+        "type": "drama",
+        "subcategory": "Chinese Drama",
+        "imdb_id": "tt28036189",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "Episode #1.1", "google_drive_id": "1dooDHdnP6gYxMylZMJroF8I-mN-CPlo2" },
+                    { "title": "Episode #1.2", "google_drive_id": "1BytxqfefaJR76csSfhvhhj5H8ss0QeDv" },
+                    { "title": "Episode #1.3", "google_drive_id": "1N0SKuk6B6uoslJHsW4bBAZdoRHyFm0Hl" },
+                    { "title": "Episode #1.4", "google_drive_id": "1ZmTficyrOqQTCZtSbg02ZJWhzv_L2Neu" },
+                    { "title": "Episode #1.5", "google_drive_id": "1H_b2MBN72h8MUQkvNrYlXHqf2PsGJMD3" },
+                    { "title": "Episode #1.6", "google_drive_id": "1XMtPdQyB8gt5ZaUjqAhqRpUn3gNVTHTu" },
+                    { "title": "Episode #1.7", "google_drive_id": "1o_DllM7TSzPnp8FiQsVF8Ju_qRaPKLkg" },
+                    { "title": "Episode #1.8", "google_drive_id": "1LNGmmpAwVwF_louzWPhoF_RFF8TiMf_P" },
+                    { "title": "Episode #1.9", "google_drive_id": "1tGtwL7ceLu6JC-kfZg2TjIUcHCXJPsVq" },
+                    { "title": "Episode #1.10", "google_drive_id": "1BcWB13DFHZlLDdKG4s3pNxcLG8YUHrVd" },
+                    { "title": "Episode #1.11", "google_drive_id": "1WvN9k-ruHisUAu6oAPVps-HPWncp0hDN" },
+                    { "title": "Episode #1.12", "google_drive_id": "1SlNewHVMQg7RQnDyMUlTLEvUsgynno-N" },
+                    { "title": "Episode #1.13", "google_drive_id": "14f6pNsId8HYJ6WTUFMZAnb697yHlpCYd" },
+                    { "title": "Episode #1.14", "google_drive_id": "15bLRHHiDSLVye6xpoxTI6pTFidejwDaP" },
+                    { "title": "Episode #1.15", "google_drive_id": "1pYZ4DRSGn8MEPf2MGmv4bLrQMxxcx4Cd" },
+                    { "title": "Episode #1.16", "google_drive_id": "1Alj96kpW2QHevyLH91AmgYy__pSjc3WQ" },
+                    { "title": "Episode #1.17", "google_drive_id": "18b0sYNHY2QctPZtTJrBRrA4gXE46Q1nr" },
+                    { "title": "Episode #1.18", "google_drive_id": "1-Z_0rC_YsHQbof8lred1zXXG46C_vC_K" },
+                    { "title": "Episode #1.19", "google_drive_id": "1HJL5tq2-DM93T6ZUB5j5_B4GwoignFkf" },
+                    { "title": "Episode #1.20", "google_drive_id": "1RxqM8q2j1t7rw0Zw3WRp-cRGkcXHHjIm" },
+                    { "title": "Episode #1.21", "google_drive_id": "17CN4Qe7tzingsu82KLMBi51I_TMHOw66" },
+                    { "title": "Episode #1.22", "google_drive_id": "1nmb7Uz9iNS1o53s8XznhQLdV5NOEKSE_" },
+                    { "title": "Episode #1.23", "google_drive_id": "1ibASCRfh6l9H1fEh8SuZcjOBBY6OsV1E" },
+                    { "title": "Episode #1.24", "google_drive_id": "1EtsSQNCdW2P6XqQzSdZiPZVG0e0vJuqi" }
+                ]
+            }
+        ]
+    },
+    {
         "id": "business-proposal",
         "type": "drama",
         "subcategory": "Korean Drama",
