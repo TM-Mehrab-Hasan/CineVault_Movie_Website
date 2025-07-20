@@ -780,6 +780,17 @@ const videos = [
         ]
     },
     {
+        "id": "kms-activator",
+        "type": "software",
+        "title": "Adobe Acrobat Pro DC 2019",
+        "description": "A KMS activator is a tool or process that utilizes Key Management Service (KMS) for activating Microsoft products like Windows and Office on a local network. KMS is a volume activation method where clients connect to a KMS host (a server) to activate their software. Instead of activating each computer individually with a unique product key, KMS enables activation through a centralized server, simplifying the process for organizations with multiple devices. KMS activators are often used in enterprise environments to manage software licenses efficiently. They can also be used for personal use, but it's important to note that using KMS activators may violate the terms of service of the software and could lead to legal issues.",
+        "thumbnail": "https://repository-images.githubusercontent.com/587776950/0e35bd95-0d52-406f-bc0b-c395c672629d",
+        "download_all_id": "1pHSvnFEkc6UgBHZW5culuRLQLOXXpabz",
+        "files": [
+            { "name": "KMS_VL_ALL_AIOv2.zip", "size": "103 KB", "google_drive_id": "1pHSvnFEkc6UgBHZW5culuRLQLOXXpabz" }
+        ]
+    },
+    {
         "id": "adobe-reader",
         "type": "software",
         "title": "Adobe Reader 11.0.7",
