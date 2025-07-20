@@ -192,6 +192,35 @@ const videos = [
         ]
     },
     {
+        "id": "dream-garden",
+        "type": "drama",
+        "subcategory": "Chinese Drama",
+        "imdb_id": "tt14496552",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "Episode #1.1", "google_drive_id": "1cpkpDf88HNlq1vLjapmXwtblm679srBr" },
+                    { "title": "Episode #1.2", "google_drive_id": "1IaZCPSwM8dp-ZV21YsGxUdDHxLUdewVV" },
+                    { "title": "Episode #1.3", "google_drive_id": "1KTZYyqYd3e56QfEC6VrlQxOmgOKOYOP9" },
+                    { "title": "Episode #1.4", "google_drive_id": "1lyYmPiBAXpkiT2QYkxL_iUjmYxLYAsDg" },
+                    { "title": "Episode #1.5", "google_drive_id": "1XyQJ6YgItSmr4Q9_WwkpIyhz0p470Zwh" },
+                    { "title": "Episode #1.6", "google_drive_id": "1zQFsYQ7IBD0zBsyrGFX2flp6Emej5Tbf" },
+                    { "title": "Episode #1.7", "google_drive_id": "1kyjjXHm1N-KX12JB0pHZcdidYCwmKJsC" },
+                    { "title": "Episode #1.8", "google_drive_id": "14ZVAuJZVLoXV-NKoYTaJeGth6KRrm-29" },
+                    { "title": "Episode #1.9", "google_drive_id": "1Pt4J4cKp0BNfWjFKtOD8GY5yYt9lbuTx" },
+                    { "title": "Episode #1.10", "google_drive_id": "1IrkRC2PW4NzwTSStuMy6EkvRK0CmuW7s" },
+                    { "title": "Episode #1.11", "google_drive_id": "1p7bJFTpb9aQKdnI832zUCD2yxz96WRr0" },
+                    { "title": "Episode #1.12", "google_drive_id": "1Erzjqc0jSZ9u5rISR87_BbOE_LBfBELw" },
+                    { "title": "Episode #1.13", "google_drive_id": "1hFvPRS7-K1zmVKEXWdV9IDR_3sAlD0HQ" },
+                    { "title": "Episode #1.14", "google_drive_id": "1-rt4V_PgudmeXC_3YC4kRyv_I8j9pMwj" },
+                    { "title": "Episode #1.15", "google_drive_id": "1yS3pjxhlGvgJmsOtu9v0fdFJplJKqRzX" },
+                    { "title": "Episode #1.16", "google_drive_id": "1G7nAMbBsvLn1_MPmnKLa9l1dnLBHxaj9" }
+                ]
+            }
+        ]
+    },
+    {
         "id": "business-proposal",
         "type": "drama",
         "subcategory": "Korean Drama",
