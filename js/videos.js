@@ -146,6 +146,52 @@ const videos = [
         ]
     },
     {
+        "id": "love-me-love-my-voice",
+        "type": "drama",
+        "subcategory": "Chinese Drama",
+        "imdb_id": "tt28131836",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "Episode #1.1", "google_drive_id": "15_5fTri9V-NgA8mM4H9c3VA8uqtbKo8_" },
+                    { "title": "Episode #1.2", "google_drive_id": "1z60T539jxMwhsTWqJBjUNgR89ppl0roE" },
+                    { "title": "Episode #1.3", "google_drive_id": "1hGf4grGeUD3LdwpmUXlmcaGqS1eFTRuA" },
+                    { "title": "Episode #1.4", "google_drive_id": "1koq1sLk8vYVwlWTtL1BIsD3xM5CmI2Z5" },
+                    { "title": "Episode #1.5", "google_drive_id": "1_jEJE4iqgtz4fx14lBxzygjg-Z4VP9lO" },
+                    { "title": "Episode #1.6", "google_drive_id": "1-6cNBtxzkN00ToJDIH1sUI2GCC7_iGiB" },
+                    { "title": "Episode #1.7", "google_drive_id": "18ZnPUMe9jDyEJQk_2mcPLJdO4sTDgPsf" },
+                    { "title": "Episode #1.8", "google_drive_id": "1QkJj2oHa4lGcqi-gmjv3AjNvHy-2noba" },
+                    { "title": "Episode #1.9", "google_drive_id": "1H8exYZKwmr9M5kXU2M4FcNkuTi7hqmKJ" },
+                    { "title": "Episode #1.10", "google_drive_id": "16Y2LJP-LfdxGMFSjUYg0nnpiCPz8AQdq" },
+                    { "title": "Episode #1.11", "google_drive_id": "1tme8ipRIjZH8d_v7sxmz82PmfnFtCywN" },
+                    { "title": "Episode #1.12", "google_drive_id": "1rWmN_ImAcLcpYypsLpVSe8ZXUH91tMpJ" },
+                    { "title": "Episode #1.13", "google_drive_id": "1EAc2FRNNjbOhXc1s4fFmfR8TLNAZ5jC6" },
+                    { "title": "Episode #1.14", "google_drive_id": "1yS9TSckj4_vjwjy1jvvmwVEXkzKYEnbu" },
+                    { "title": "Episode #1.15", "google_drive_id": "1eOu0H716jqGIWnYh5qn02pMqX3lQQ-Sa" },
+                    { "title": "Episode #1.16", "google_drive_id": "1MCY6ZBQMI12c7o9ZfDCHtr5nk1Ty4u1I" },
+                    { "title": "Episode #1.17", "google_drive_id": "1hUT-gnrEER1smVAVsIcn0HMT0iaoGpMs" },
+                    { "title": "Episode #1.18", "google_drive_id": "1ZScQ6DAxWtXXBoWMuFDUKZghwaZMPLza" },
+                    { "title": "Episode #1.19", "google_drive_id": "1dm7fnYygRO12fNiy37UJolNieIQxCbxh" },
+                    { "title": "Episode #1.20", "google_drive_id": "1XXEuV4QEnISb0Q-0FXMffwS8OgMRgJdF" },
+                    { "title": "Episode #1.21", "google_drive_id": "1ZWFwxKUakMviT4-Rp_aIV3Am94mhCvNb" },
+                    { "title": "Episode #1.22", "google_drive_id": "1MrLFOsSkwCAJMsM2qglhigOYzzK9pEFc" },
+                    { "title": "Episode #1.23", "google_drive_id": "1K6pWAEMmUyPszrPnPIUBInUSwiHdLNe6" },
+                    { "title": "Episode #1.24", "google_drive_id": "11Te3STrqMqVkjO05pZLk0hq4v8mUpcaC" },
+                    { "title": "Episode #1.25", "google_drive_id": "1JCLvG25caLz-rAwEq6gKQuKa-qzTd6DS" },
+                    { "title": "Episode #1.26", "google_drive_id": "1XxGZ_B2rUklHF12xKrgJAXF9vSAkDg_G " },
+                    { "title": "Episode #1.27", "google_drive_id": "1YZP3nWDs_TuUG43YwMmRxUt1YLHw9JAy" },
+                    { "title": "Episode #1.28", "google_drive_id": "1wNljQcuNabH7BIJ3KxeNdGa4ykR-qER2" },
+                    { "title": "Episode #1.29", "google_drive_id": "1fes_EcW1BxZrGL6VOh-a_SKjvNtTFsAu" },
+                    { "title": "Episode #1.30", "google_drive_id": "1qFa-LnFdS_bOQ38RDb6HjxYAKxAlv3cD" },
+                    { "title": "Episode #1.31", "google_drive_id": "1i07jk-GCpVkVVFTryRRp83wezCqtrlzj" },
+                    { "title": "Episode #1.32", "google_drive_id": "1GD2YYkHJuM8QyKiyWNHMqYknEx-8VL4n" },
+                    { "title": "Episode #1.33", "google_drive_id": "1gRC76r1vz_YeGtNWkZJ5qvEnsU1s072K" }
+                ]
+            }
+        ]
+    },
+    {
         "id": "business-proposal",
         "type": "drama",
         "subcategory": "Korean Drama",
