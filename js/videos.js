@@ -366,7 +366,7 @@ const videos = [
         ]
     },
     {
-        "id": "hatyapuri",
+        "id": "hatya-puri",
         "type": "movie",
         "subcategory": "Bangla",
         "imdb_id": "tt9319882",
