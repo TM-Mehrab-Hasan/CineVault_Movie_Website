@@ -93,6 +93,79 @@ const videos = [
         ]
     },
     {
+        "id": "mondaijitachi-ga-isekai-kara-kuru-sou-desu-yo",
+        "type": "anime",
+        "subcategory": "Japanese",
+        "imdb_id": "tt2575690",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "Mondaiji-tachi ga hakoniwa ni yattekita yô desu yo?", "google_drive_id": "1NzfV5voef4OnQncsKM2wy0tQxiWyAnnI" },
+                    { "title": "Wasô rori wa iroiro buttonda okata no yô desu yo?", "google_drive_id": "17AzXStTbaGjZAXweoGnfSsG90imqxLpz" },
+                    { "title": "Ofuro de anna koto ya konna koto da sô desu yo?", "google_drive_id": "1plJwMWOZIGfNeHSejpF28d3Be_fNsOtH" },
+                    { "title": "Kuro Usagi ga eroiyarashii yatsu ni nerawareta yô desu yo?", "google_drive_id": "1PlbAhMi9tNAFq4xXgXcDQHVQvmIvLGF7" },
+                    { "title": "Chikai wa hoshi no kanata ni da sô desu yo?", "google_drive_id": "1aNMf03VPxqxGcwxRB_opcFxcVxt-v2ya" },
+                    { "title": "Mondaijii-tachi ga omatsurisawagi ni sanka suru yô desu yo?", "google_drive_id": "1FKyetF0jznWJDbF78nWYBsg8VyvUvH3s" },
+                    { "title": "Kurayami de Asuka ga chûchû sorechau sô desu yo?", "google_drive_id": "1_m3bDhE_oFHK6mYMLJuc96AK0PKhBe81-" },
+                    { "title": "Kuroi kyouji wa fue no oto totomoni kuru sô desu yo?", "google_drive_id": "1u-yEHv4svfeb7J_TviHJVrHyx0OpiicM" },
+                    { "title": "Episode #1.9", "google_drive_id": "1mw5rmFJiUrdKepz5x31g-E0Pplw6ZSF0" },
+                    { "title": "It Seems That the Problem Children Prove Who's on Top?", "google_drive_id": "1TlkZYhOYA_g0eOl4dbwjZvwOZdU3FvA5" }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "princess-lover",
+        "type": "anime",
+        "subcategory": "Japanese",
+        "imdb_id": "tt1470836",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "Basha to hanagimi", "google_drive_id": "1wSpfWB87leD3--8JN41YDe_6iIFj7gg8" },
+                    { "title": "Gakuen to saikai", "google_drive_id": "1_3WutXI-9mNytzeS9isIUUNIY6FWy7TX" },
+                    { "title": "Ken to budôkai", "google_drive_id": "12WovwtySsCrCB7ScsnL5SXK3PCHWf3Tj" },
+                    { "title": "Bara to kutsu", "google_drive_id": "16o6_12wqtzAL1fyzgai_7LyUattPxtyG" },
+                    { "title": "Yûhi to kanransha", "google_drive_id": "1Ai8lDuy4rsnZola2LxfHhuEr8NUTdySW" },
+                    { "title": "Yukemuri porori to rakkî sukebe", "google_drive_id": "17q83RmCDjrVX7gM1YIyMdIw37ud8rhdU" },
+                    { "title": "Kon'yakusha to hanabira", "google_drive_id": "1a2eIIDXFKYtccLE7i6nNxBnxb55uKgKc-" },
+                    { "title": "Rakuen to shinjitsu", "google_drive_id": "1MwNm6DDkBhsOTAMtlOOEbbKh1OKpOIUf" },
+                    { "title": "Aka to ao", "google_drive_id": "1My8TQ8PVBzpcgKIlPGi_3lt2RfKcdK9B" },
+                    { "title": "Sôshitsu to saisei", "google_drive_id": "1JTNp2SwUuqDLfWS6fFXa-uB_ysBs5fR8" },
+                    { "title": "Kibatai to ressha", "google_drive_id": "1lJVOBoRB4K6s8w_Cdd4vYt2t1Dub8qS5" },
+                    { "title": "Purinsesu rabâ!", "google_drive_id": "1aIBZbOzbU1lxbgqo4npggT5aqEVYa0ow" }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "seiken-tsukai-no-world-break",
+        "type": "anime",
+        "subcategory": "Japanese",
+        "imdb_id": "tt4219244",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "The Reincarnater", "google_drive_id": "1R0ynUySaT1Asom8veJRhtNmpr9Vqp9Ho" },
+                    { "title": "Imbue My Sword, Magic Flame!", "google_drive_id": "1ZVBdVjvZ5udhA_yRfNl1oJOlLVYvaK_y" },
+                    { "title": "Witch of the Netherworld", "google_drive_id": "1KCRB-pzQpFr_u33aZ6uFrRNArhxpjyCh" },
+                    { "title": "White Knight's Fierce Attack", "google_drive_id": "1S0zpDFZyzUtamMsiGwTcbasjXACTHIRL" },
+                    { "title": "We Are the Summer", "google_drive_id": "1_PlTsiaiOGSi5pRLzbhKV-g0Tl16YeGQ" },
+                    { "title": "We Are the Swords of Salvation", "google_drive_id": "1UE9EJ6wQR7SIF_j9ogJCbbTRUTdsP_0j" },
+                    { "title": "The Silver-haired Alien", "google_drive_id": "1Rc9neENGgXByCgJnJm_6Hysg8QCZnXYj" },
+                    { "title": "The Demon Sword and the Holy Sword", "google_drive_id": "1bB2yx4siGslAXfYp5IgocRZZsVA_GbRd" },
+                    { "title": "To Siberia", "google_drive_id": "1ipe-XqS7mVZOyWIdyGqgw1_lrSvNi9So" },
+                    { "title": "Battle at Yekaterinburg", "google_drive_id": "1G4aYR0vfgFKsTHI_1qM9kQwf624XxkG_" },
+                    { "title": "The Nightmare from the Previous Life", "google_drive_id": "1w7eOfCsRy2GO_Y0MmMgl1V0UW8qlqpa0" },
+                    { "title": "Beyond the Time", "google_drive_id": "1SKitv-Z4yH2qmzkGci8TF8pv1737zHhR" }
+                ]
+            }
+        ]
+    },
+    {
         "id": "fireworks-of-my-heart",
         "type": "drama",
         "subcategory": "Chinese Drama",
@@ -131,7 +204,7 @@ const videos = [
                     { "title": "Staying Together", "google_drive_id": "1LD6ola67FiokVRl7gxWxocgq4pubETXP" },
                     { "title": "Progress", "google_drive_id": "1IJFf_UsJrBoi_tzXlVWWuAmx-qziDMnG" },
                     { "title": "Assurance", "google_drive_id": "1-z_crXEH47ATUnsSVKEucFPGUHHA5IXE" },
-                    { "title": "Danger", "google_drive_id": "1BZ4ahaf2ckAWFUXybnfWnuJon_FT4f3I  `" },
+                    { "title": "Danger", "google_drive_id": "1BZ4ahaf2ckAWFUXybnfWnuJon_FT4f3I" },
                     { "title": "New Year", "google_drive_id": "1QtLuI0_w3sTiByib0V02nYMQUu6DIYsc" },
                     { "title": "Flashover", "google_drive_id": "1Qsr7xcDK0a9Z0zLgvI5AMyYew0I4Qz3k" },
                     { "title": "Making Choices", "google_drive_id": "1bZFRF_Qr2FDIlceEebGsnfnoYNb4IZsR" },
@@ -366,7 +439,7 @@ const videos = [
         ]
     },
     {
-        "id": "hatya-puri",
+        "id": "hatyapuri",
         "type": "movie",
         "subcategory": "Bangla",
         "imdb_id": "tt9319882",
@@ -834,7 +907,7 @@ const videos = [
         "title": "Need for Speed: Most Wanted Black Edition (2005)",
         "description": "Need for Speed: Most Wanted is a racing game where players strive to become the most notorious street racer, outrunning both rivals and the police. It features an open-world environment, intense police chases, and a progression system where players rise through a blacklist of elite racers. The game is known for its blend of street racing, customization, and strategic police evasion. ",
         "thumbnail": "https://i.redd.it/jcd0799d5vd21.jpg",
-        "download_all_id": "1wIMthCpT3U4jwZ2m4Rd309FQVNx4z8Fe",
+        "download_all_id": "1jTCTqHwq_P62d1unJgT-5wO3AE13A1UH",
         "files": [
             { "name": "Redist", "size": "5.88 MB", "google_drive_id": "19FgXssaXXAoEokMIZQDRf2hnJUkGQFMM" },
             { "name": "autorun.inf", "size": "91 bytes", "google_drive_id": "1Oef9jsGkfT5isyhp9ro8d7UAH3fxXdOW" },
@@ -853,7 +926,7 @@ const videos = [
         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIdzvPw3P_l4KfCijRKK5_GfvgDy7g86GnYg&s",
         "download_all_id": "1R4Sv-c_WwSoooUXht2eE9vV4YwOVmvkP",
         "files": [
-            { "name": "Support", "size": "265 KB", "google_drive_id": "https://drive.google.com/drive/folders/1CTVIMKqxrNk5ULbaDx4sW3g1F7zFbmRQ?usp=drive_link" },
+            { "name": "Support", "size": "265 KB", "google_drive_id": "1CTVIMKqxrNk5ULbaDx4sW3g1F7zFbmRQ" },
             { "name": "autorun.inf", "size": "66 bytes", "google_drive_id": "16sNppQgSGM_wKIynO42kivrGfk8UYYhW" },
             { "name": "CheckSums_xe.txt", "size": "10 bytes", "google_drive_id": "1YJnMRzqoDJ9dIBg5uWfXYYO4Swpd1G26" },
             { "name": "data-1.catalyst", "size": "721.9 MB", "google_drive_id": "1QM218hEtttVQcLxqjFeDeOBaPdw_MzSI" },
