@@ -754,6 +754,20 @@ const videos = [
         "google_drive_id": "1FJHJV0fNjrBNOUMBlled3_srQLEPuwMD"
     },
     {
+        "id": "children-of-the-sea",
+        "type": "movie",
+        "subcategory": "Japanese Movie",
+        "imdb_id": "tt9850064",
+        "google_drive_id": "1nUoUSaOAubxFSq9m_icJohEA7djM7dei"
+    },
+    {
+        "id": "love-life",
+        "type": "movie",
+        "subcategory": "Japanese Movie",
+        "imdb_id": "tt18235306",
+        "google_drive_id": "1gePDdpRVJ6mnAAzUy0hqy5LLXfqY904W"
+    },
+    {
         "id": "exhuma",
         "type": "movie",
         "subcategory": "Korean Movie",
