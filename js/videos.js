@@ -408,6 +408,13 @@ const videos = [
         "google_drive_id": "1vEcZqS_bg628cL9orp3xtO8_MOVeXM9b"
     },
     {
+        "id": "taandob",
+        "type": "movie",
+        "subcategory": "Bangla",
+        "imdb_id": "tt36293840",
+        "google_drive_id": "1aXdfMjFSzqafHwFM1AsCnT7Yc4PzhObt"
+    },
+    {
         "id": "kabir-singh",
         "type": "movie",
         "subcategory": "Bollywood",
