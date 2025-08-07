@@ -2,7 +2,7 @@ const videos = [
     {
         "id": "absolute-duo",
         "type": "anime",
-        "subcategory": "Japanese",
+        "subcategory": "Japanese Anime",
         "imdb_id": "tt4216878",
         "seasons": [
             {
@@ -27,7 +27,7 @@ const videos = [
     {
         "id": "campione!",
         "type": "anime",
-        "subcategory": "Japanese",
+        "subcategory": "Japanese Anime",
         "imdb_id": "tt2250160",
         "seasons": [
             {
@@ -53,7 +53,7 @@ const videos = [
     {
         "id": "gakusen-toshi-asterisk",
         "type": "anime",
-        "subcategory": "Japanese",
+        "subcategory": "Japanese Anime",
         "imdb_id": "tt5095466",
         "seasons": [
             {
@@ -95,7 +95,7 @@ const videos = [
     {
         "id": "mondaijitachi-ga-isekai-kara-kuru-sou-desu-yo",
         "type": "anime",
-        "subcategory": "Japanese",
+        "subcategory": "Japanese Anime",
         "imdb_id": "tt2575690",
         "seasons": [
             {
@@ -118,7 +118,7 @@ const videos = [
     {
         "id": "princess-lover",
         "type": "anime",
-        "subcategory": "Japanese",
+        "subcategory": "Japanese Anime",
         "imdb_id": "tt1470836",
         "seasons": [
             {
@@ -143,7 +143,7 @@ const videos = [
     {
         "id": "seiken-tsukai-no-world-break",
         "type": "anime",
-        "subcategory": "Japanese",
+        "subcategory": "Japanese Anime",
         "imdb_id": "tt4219244",
         "seasons": [
             {
@@ -331,6 +331,20 @@ const videos = [
         ]
     },
     {
+        "id": "trainwreck-storm-area-51",
+        "type": "drama",
+        "subcategory": "English Series",
+        "imdb_id": "tt36856570",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "The S**tpost", "google_drive_id": "1Ujd_xrY3VMBpqKTGx9YY8RU2ekpZxXS1" }
+                ]
+            }
+        ]
+    },
+    {
         "id": "business-proposal",
         "type": "drama",
         "subcategory": "Korean Drama",
@@ -434,6 +448,22 @@ const videos = [
                     { "title": "Episode #1.10", "google_drive_id": "19TxKNLCoxjK_9jtaH_NYepkd1C6LN6tX" },
                     { "title": "Episode #1.11", "google_drive_id": "1T89SPv65rsFnKvktnRxgg1ARlCGqtbzq" },
                     { "title": "Episode #1.12", "google_drive_id": "1gWh0JWctPnVfMmQqWs3eksscWEGPoh8v" }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "hymn-of-death",
+        "type": "drama",
+        "subcategory": "Korean Drama",
+        "imdb_id": "tt8160064",
+        "seasons": [
+            {
+                "season_title": "Season 1",
+                "episodes": [
+                    { "title": "Episode #1.1", "google_drive_id": "1t5allErAsQPDm-g_KnCeaQrNRYM53f2O" },
+                    { "title": "Episode #1.2", "google_drive_id": "1HvUT13IIXiJNtHZIwmCTWNfA05nlxOE8" },
+                    { "title": "Episode #1.3", "google_drive_id": "17wfhr4S25QlpVvQi-hYfD00k8JBAbXDF" }
                 ]
             }
         ]
@@ -565,6 +595,27 @@ const videos = [
         "google_drive_id": "1zzQqkFNlPzSI5WtEjxQBlzmrvMa7ghBf"
     },
     {
+        "id": "aankhon-ki-gustakhiyan",
+        "type": "movie",
+        "subcategory": "Bollywood",
+        "imdb_id": "tt28812582",
+        "google_drive_id": "1b-e2gidi4b1yAFFNE_C-g4n9KhyGUarE"
+    },
+    {
+        "id": "aap-jaisa-koi",
+        "type": "movie",
+        "subcategory": "Bollywood",
+        "imdb_id": "tt33888131",
+        "google_drive_id": "1IfrfbFfYtOwKDyR8Y7-6-AUvBTT_YbZ2"
+    },
+    {
+        "id": "saiyaara-2025",
+        "type": "movie",
+        "subcategory": "Bollywood",
+        "imdb_id": "tt28037987",
+        "google_drive_id": "1dNEeUNbsxP6yaNfw7gWLc5ON4Pdi8YV7"
+    },
+    {
         "id": "creation-of-gods",
         "type": "movie",
         "subcategory": "Chinese Movie",
@@ -619,6 +670,27 @@ const videos = [
         "subcategory": "Chinese Movie",
         "imdb_id": "tt9490414",
         "google_drive_id": "1BqNM2XadtDzLjLm6uyVtI_GCYWVabJnh"
+    },
+    {
+        "id": "a-leg",
+        "type": "movie",
+        "subcategory": "Chinese Movie",
+        "imdb_id": "tt12921022",
+        "google_drive_id": "1WbGQ3JKeQ2JwJMIXwnGAeu8U-Hk_5ziR"
+    },
+    {
+        "id": "taipei-exchange",
+        "type": "movie",
+        "subcategory": "Chinese Movie",
+        "imdb_id": "tt1682949",
+        "google_drive_id": "1Pxw4TOo1A8Ev5_W1CdyI4qIAzXlQH6KF"
+    },
+    {
+        "id": "ne-zha-2",
+        "type": "movie",
+        "subcategory": "Chinese Movie",
+        "imdb_id": "tt34956443",
+        "google_drive_id": "1VQ1pC0PsWHGxEt_ApANAXq_i-UXk9bKn"
     },
     {
         "id": "a-girl-in-the-river",
@@ -761,6 +833,41 @@ const videos = [
         "google_drive_id": "10dZlucqO4PQCNMBRDS8-_2bsKp7jCe4s"
     },
     {
+        "id": "yummy-2019",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt11054164",
+        "google_drive_id": "176wuM8SHbjsolRp7DvaEviQd-_k9YR1x"
+    },
+    {
+        "id": "the-fantastic-four-first-steps",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt10676052",
+        "google_drive_id": "1wqXLV5fYNOvSUQdKbCe6sWoTggOHk3P6"
+    },
+    {
+        "id": "materialists",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt30253473",
+        "google_drive_id": "1rrX-4D2GfVcKO9QLndXsJPHGw1qOzG08"
+    },
+    {
+        "id": "forrest-gump-1994",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt0109830",
+        "google_drive_id": "1NZn0Kp-UTIvHz3DrDkkwwhJ7XgSjeNxO"
+    },
+    {
+        "id": "28-years-later",
+        "type": "movie",
+        "subcategory": "Hollywood",
+        "imdb_id": "tt10548174",
+        "google_drive_id": "1v62EXiLJhzU7nHyN7boziqanFTjS0DnC"
+    },
+    {
         "id": "my-happy-marriage",
         "type": "movie",
         "subcategory": "Japanese Movie",
@@ -822,6 +929,13 @@ const videos = [
         "subcategory": "Korean Movie",
         "imdb_id": "tt13721828",
         "google_drive_id": "19AZ8at9OQ0jSQGVWx53qyUWHhrsYmEKf"
+    },
+    {
+        "id": "the-noisy-mansion",
+        "type": "movie",
+        "subcategory": "Korean Movie",
+        "imdb_id": "tt35684021",
+        "google_drive_id": "1aP6b3_633D60aUjCGinfbNkUbwokZ_J8"
     },
     {
         "id": "maharaja-2024",
