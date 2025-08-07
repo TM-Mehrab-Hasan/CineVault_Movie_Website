@@ -756,13 +756,6 @@ const videos = [
         "google_drive_id": "1c6GQ8Wolcgpj2bNf7-_TprufROsSNmsA"
     },
     {
-        "id": "the-lover-lamant",
-        "type": "movie",
-        "subcategory": "Hollywood",
-        "imdb_id": "tt0101316",
-        "google_drive_id": "1eNjuCwAP4qWMkpcK-nsGzMI74wfZqh9b"
-    },
-    {
         "id": "uptown-girls",
         "type": "movie",
         "subcategory": "Hollywood",
