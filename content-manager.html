@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Manager - CinemaVault</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .content-manager {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .manager-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .manager-header h1 {
+            color: var(--color-primary);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .manager-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .manager-section {
+            background: var(--color-surface);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+        }
+
+        .section-title {
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            color: var(--color-text);
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.2);
+        }
+
+        .btn {
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #c40711;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+        }
+
+        .search-results {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 1rem;
+        }
+
+        .search-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--color-background);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-item:hover {
+            background: var(--color-surface);
+            border-color: var(--color-primary);
+        }
+
+        .search-item img {
+            width: 60px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .search-item-info h4 {
+            color: var(--color-text);
+            margin: 0 0 0.5rem 0;
+        }
+
+        .search-item-info p {
+            color: var(--color-text-muted);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .generated-code {
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .generated-code pre {
+            color: var(--color-text);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        .copy-btn {
+            margin-top: 1rem;
+            background: var(--color-accent);
+        }
+
+        .drag-drop-area {
+            border: 2px dashed var(--color-border);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            color: var(--color-text-muted);
+            transition: all 0.3s ease;
+        }
+
+        .drag-drop-area.dragover {
+            border-color: var(--color-primary);
+            background: rgba(229, 9, 20, 0.1);
+        }
+
+        .success-message {
+            background: #28a745;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            background: #dc3545;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .manager-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .content-manager {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="CinemaVault" class="logo-image">
+                <span class="text-logo">CinemaVault</span>
+            </a>
+            <div class="nav-menu">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="#" class="active"><i class="fas fa-cog"></i> Content Manager</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-manager">
+        <div class="manager-header">
+            <h1><i class="fas fa-tools"></i> CinemaVault Content Manager</h1>
+            <p>Easily add new movies, shows, and content to your website</p>
+        </div>
+
+        <div class="manager-grid">
+            <!-- Movie/Show Search Section -->
+            <div class="manager-section">
+                <h2 class="section-title">
+                    <i class="fas fa-search"></i>
+                    Search & Add Content
+                </h2>
+                
+                <div class="form-group">
+                    <label for="omdb-search">Search Movies/Shows (OMDB)</label>
+                    <input type="text" id="omdb-search" class="form-control" placeholder="Enter movie or show title...">
+                </div>
+
+                <div class="form-group">
+                    <button type="button" id="search-btn" class="btn">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+
+                <div id="search-results" class="search-results"></div>
+            </div>
+
+            <!-- Content Details Section -->
+            <div class="manager-section">
+                <h2 class="section-title">
+                    <i class="fas fa-edit"></i>
+                    Content Details
+                </h2>
+
+                <div class="form-group">
+                    <label for="content-type">Content Type</label>
+                    <select id="content-type" class="form-control">
+                        <option value="movie">Movie</option>
+                        <option value="drama">Drama/Series</option>
+                        <option value="anime">Anime</option>
+                        <option value="software">Software</option>
+                        <option value="game">Game</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="subcategory">Subcategory</label>
+                    <select id="subcategory" class="form-control">
+                        <!-- Options will be populated dynamically based on content type -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="google-drive">Google Drive Link/ID</label>
+                    <input type="text" id="google-drive" class="form-control" placeholder="Paste Google Drive URL or enter file ID">
+                    <small>You can drag and drop a Drive link here</small>
+                </div>
+
+                <div class="form-group">
+                    <button type="button" id="generate-btn" class="btn">
+                        <i class="fas fa-code"></i> Generate Code
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Generated Code Section -->
+        <div class="manager-section">
+            <h2 class="section-title">
+                <i class="fas fa-code"></i>
+                Generated Code
+            </h2>
+            <p>Copy this code and add it to your <code>js/videos.js</code> file:</p>
+            
+            <div id="generated-code" class="generated-code" style="display: none;">
+                <pre id="code-output"></pre>
+                <button type="button" id="copy-btn" class="btn copy-btn">
+                    <i class="fas fa-copy"></i> Copy Code
+                </button>
+            </div>
+        </div>
+
+        <!-- Drag and Drop Area -->
+        <div class="manager-section">
+            <h2 class="section-title">
+                <i class="fas fa-cloud-upload-alt"></i>
+                Quick Add
+            </h2>
+            <div id="drag-drop-area" class="drag-drop-area">
+                <i class="fas fa-cloud-upload-alt" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                <p>Drag and drop Google Drive links here for quick ID extraction</p>
+                <p><small>Or paste multiple links separated by new lines</small></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/content-manager.js"></script>
+    <script>
+        // Initialize content manager
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Content Manager Loaded');
+            
+            // Dynamic subcategory filtering
+            const contentTypeSelect = document.getElementById('content-type');
+            const subcategorySelect = document.getElementById('subcategory');
+            
+            const subcategoryOptions = {
+                'movie': [
+                    { value: 'Hollywood', text: 'Hollywood' },
+                    { value: 'Bollywood', text: 'Bollywood' },
+                    { value: 'Chinese Movie', text: 'Chinese Movie' },
+                    { value: 'Korean Movie', text: 'Korean Movie' },
+                    { value: 'Bangla', text: 'Bangla Movie' }
+                ],
+                'drama': [
+                    { value: 'Korean Drama', text: 'Korean Drama' },
+                    { value: 'Chinese Drama', text: 'Chinese Drama' },
+                    { value: 'English Series', text: 'English Series' },
+                    { value: 'Thai Drama', text: 'Thai Drama' }
+                ],
+                'anime': [
+                    { value: 'Japanese Anime', text: 'Japanese Anime' },
+                    { value: 'Korean Anime', text: 'Korean Anime' },
+                    { value: 'Chinese Anime', text: 'Chinese Anime' }
+                ],
+                'software': [
+                    { value: 'Software', text: 'Software' }
+                ],
+                'game': [
+                    { value: 'Game', text: 'Game' }
+                ]
+            };
+            
+            function updateSubcategories() {
+                const selectedType = contentTypeSelect.value;
+                const options = subcategoryOptions[selectedType] || [];
+                
+                // Clear existing options
+                subcategorySelect.innerHTML = '';
+                
+                // Add new options
+                options.forEach(option => {
+                    const optionElement = document.createElement('option');
+                    optionElement.value = option.value;
+                    optionElement.textContent = option.text;
+                    subcategorySelect.appendChild(optionElement);
+                });
+            }
+            
+            // Initialize subcategories
+            updateSubcategories();
+            
+            // Update subcategories when content type changes
+            contentTypeSelect.addEventListener('change', updateSubcategories);
+        });
+    </script>
+</body>
+</html>
