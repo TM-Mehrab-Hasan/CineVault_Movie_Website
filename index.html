@@ -247,6 +247,26 @@
                 }
             }
         });
+        
+        // Function to manually refresh cache if needed
+        function refreshCache() {
+            if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+                navigator.serviceWorker.controller.postMessage({ type: 'REFRESH_CACHE' });
+                setTimeout(() => {
+                    window.location.reload(true);
+                }, 100);
+            } else {
+                window.location.reload(true);
+            }
+        }
+        
+        // Add keyboard shortcut for cache refresh (Ctrl+Shift+R alternative)
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.shiftKey && e.key === 'U') {
+                e.preventDefault();
+                refreshCache();
+            }
+        });
     </script>
     
     <!-- PWA Service Worker Registration -->
@@ -256,6 +276,24 @@
                 navigator.serviceWorker.register('/sw.js')
                     .then(registration => {
                         console.log('SW registered: ', registration);
+                        
+                        // Check for updates
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // New service worker installed, refresh to get latest content
+                                    console.log('New content available, refreshing...');
+                                    newWorker.postMessage({ type: 'SKIP_WAITING' });
+                                    window.location.reload();
+                                }
+                            });
+                        });
+                        
+                        // Listen for controlling service worker change
+                        navigator.serviceWorker.addEventListener('controllerchange', () => {
+                            window.location.reload();
+                        });
                     })
                     .catch(registrationError => {
                         console.log('SW registration failed: ', registrationError);
