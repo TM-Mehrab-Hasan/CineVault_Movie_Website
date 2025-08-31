@@ -36,6 +36,9 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 </head>
 <body>
     <header>
@@ -129,11 +132,11 @@
         </div>
     </header>
 
-    <main class="container">
+    <main class="container animate-page">
         <div id="homepage-content">
             <!-- Trending Section -->
-            <section class="trending-section">
-                <div class="trending-badge">🔥 Trending Now</div>
+            <section class="trending-section reveal">
+                <div class="trending-badge floating">🔥 Trending Now</div>
                 <div class="category-row-header">
                     <h2 class="category-row-title">What's Hot Right Now</h2>
                 </div>
@@ -141,7 +144,7 @@
             </section>
 
             <!-- Recently Added Section -->
-            <section class="category-row" id="recent-section">
+            <section class="category-row reveal" id="recent-section">
                 <div class="category-row-header">
                     <h2 class="category-row-title">Recently Added</h2>
                     <a href="#" class="see-all-link category-link" data-category="recent">See all &raquo;</a>
@@ -149,35 +152,35 @@
                 <div class="video-grid" id="recent-grid"></div>
             </section>
 
-            <section class="category-row" id="movie-section">
+            <section class="category-row reveal" id="movie-section">
                 <div class="category-row-header">
                     <h2 class="category-row-title">Movie</h2>
                     <a href="#" class="see-all-link category-link" data-category="movie">See all &raquo;</a>
                 </div>
                 <div class="video-grid" id="movie-grid"></div>
             </section>
-            <section class="category-row" id="drama-section">
+            <section class="category-row reveal" id="drama-section">
                 <div class="category-row-header">
                     <h2 class="category-row-title">Drama</h2>
                     <a href="#" class="see-all-link category-link" data-category="drama">See all &raquo;</a>
                 </div>
                 <div class="video-grid" id="drama-grid"></div>
             </section>
-            <section class="category-row" id="anime-section">
+            <section class="category-row reveal" id="anime-section">
                 <div class="category-row-header">
                     <h2 class="category-row-title">Anime</h2>
                     <a href="#" class="see-all-link category-link" data-category="anime">See all &raquo;</a>
                 </div>
                 <div class="video-grid" id="anime-grid"></div>
             </section>
-            <section class="category-row" id="software-section">
+            <section class="category-row reveal" id="software-section">
                 <div class="category-row-header">
                     <h2 class="category-row-title">Software</h2>
                     <a href="#" class="see-all-link category-link" data-category="software">See all &raquo;</a>
                 </div>
                 <div class="video-grid" id="software-grid"></div>
             </section>
-            <section class="category-row" id="game-section">
+            <section class="category-row reveal" id="game-section">
                 <div class="category-row-header">
                     <h2 class="category-row-title">Game</h2>
                     <a href="#" class="see-all-link category-link" data-category="game">See all &raquo;</a>
@@ -224,6 +227,7 @@
     <script src="js/script.js"></script>
     <script src="js/main.js"></script>
     <script src="js/content-manager.js"></script>
+    <script src="js/modern-animations.js"></script>
     
     <!-- Admin Access (removed old floating button since we now have proper login) -->
     <script>
