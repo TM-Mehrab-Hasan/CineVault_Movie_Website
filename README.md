@@ -2,6 +2,8 @@
 
 Your ultimate cinema universe for movies, dramas, anime, software and games. Built with vanilla HTML, CSS, and JavaScript.
 
+You can watch it live - "https://cinemavault.netlify.app/"
+
 ## 🌟 Features
 
 ### ✅ Current Features
@@ -222,3 +224,4 @@ if (userConsent && window.location.hostname === 'your-domain.com') {
 **Happy Watching! 🍿**
 
 Made with ❤️ for cinema lovers everywhere.
+
