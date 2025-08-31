@@ -118,6 +118,16 @@
             border-color: var(--color-primary);
         }
 
+        .search-item.selected {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+
+        .search-item.selected h4,
+        .search-item.selected p {
+            color: white;
+        }
+
         .search-item img {
             width: 60px;
             height: 90px;
@@ -317,10 +327,23 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Content Manager Loaded');
             
-            // Dynamic subcategory filtering
+            // Create manager instance
+            const manager = new ContentManager();
+            let selectedMovie = null;
+            
+            // Get DOM elements
             const contentTypeSelect = document.getElementById('content-type');
             const subcategorySelect = document.getElementById('subcategory');
+            const searchInput = document.getElementById('omdb-search');
+            const searchBtn = document.getElementById('search-btn');
+            const searchResults = document.getElementById('search-results');
+            const googleDriveInput = document.getElementById('google-drive');
+            const generateBtn = document.getElementById('generate-btn');
+            const generatedCodeDiv = document.getElementById('generated-code');
+            const codeOutput = document.getElementById('code-output');
+            const copyBtn = document.getElementById('copy-btn');
             
+            // Dynamic subcategory filtering
             const subcategoryOptions = {
                 'movie': [
                     { value: 'Hollywood', text: 'Hollywood' },
@@ -363,6 +386,165 @@
                     subcategorySelect.appendChild(optionElement);
                 });
             }
+            
+            function showMessage(message, type = 'success') {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `${type}-message`;
+                messageDiv.textContent = message;
+                
+                // Insert at top of content manager
+                const contentManager = document.querySelector('.content-manager');
+                contentManager.insertBefore(messageDiv, contentManager.firstChild);
+                
+                // Remove after 3 seconds
+                setTimeout(() => {
+                    messageDiv.remove();
+                }, 3000);
+            }
+            
+            // OMDB Search functionality
+            searchBtn.addEventListener('click', async function() {
+                const searchTerm = searchInput.value.trim();
+                if (!searchTerm) {
+                    showMessage('Please enter a search term', 'error');
+                    return;
+                }
+                
+                try {
+                    searchBtn.textContent = 'Searching...';
+                    searchBtn.disabled = true;
+                    
+                    const results = await manager.searchByTitle(searchTerm);
+                    
+                    if (results.length === 0) {
+                        searchResults.innerHTML = '<p style="color: var(--color-text-muted); text-align: center; padding: 2rem;">No results found</p>';
+                        return;
+                    }
+                    
+                    searchResults.innerHTML = results.map(movie => `
+                        <div class="search-item" data-imdb="${movie.imdbID}" onclick="selectMovie('${movie.imdbID}', '${movie.Title.replace(/'/g, "\\'")}', '${movie.Year}', '${movie.Poster}')">
+                            <img src="${movie.Poster !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/60x90?text=No+Image'}" 
+                                 alt="${movie.Title}" onerror="this.src='https://via.placeholder.com/60x90?text=No+Image'">
+                            <div class="search-item-info">
+                                <h4>${movie.Title}</h4>
+                                <p>Year: ${movie.Year}</p>
+                                <p>Type: ${movie.Type}</p>
+                                <p>IMDB ID: ${movie.imdbID}</p>
+                            </div>
+                        </div>
+                    `).join('');
+                    
+                } catch (error) {
+                    console.error('Search error:', error);
+                    showMessage('Search failed. Please try again.', 'error');
+                    searchResults.innerHTML = '<p style="color: var(--color-text-muted); text-align: center; padding: 2rem;">Search failed. Please try again.</p>';
+                } finally {
+                    searchBtn.textContent = 'Search';
+                    searchBtn.disabled = false;
+                }
+            });
+            
+            // Make selectMovie global for onclick handlers
+            window.selectMovie = function(imdbID, title, year, poster) {
+                selectedMovie = { imdbID, Title: title, Year: year, Poster: poster };
+                
+                // Update UI to show selection
+                document.querySelectorAll('.search-item').forEach(item => {
+                    item.classList.remove('selected');
+                });
+                document.querySelector(`[data-imdb="${imdbID}"]`).classList.add('selected');
+                
+                showMessage(`Selected: ${title} (${year})`);
+            };
+            
+            // Generate code functionality
+            generateBtn.addEventListener('click', async function() {
+                if (!selectedMovie) {
+                    showMessage('Please select a movie from search results first', 'error');
+                    return;
+                }
+                
+                const driveInput = googleDriveInput.value.trim();
+                if (!driveInput) {
+                    showMessage('Please enter a Google Drive link or ID', 'error');
+                    return;
+                }
+                
+                const contentType = contentTypeSelect.value;
+                const subcategory = subcategorySelect.value;
+                
+                try {
+                    generateBtn.textContent = 'Generating...';
+                    generateBtn.disabled = true;
+                    
+                    // Extract Drive ID
+                    const driveId = manager.extractDriveId(driveInput) || driveInput;
+                    
+                    if (!manager.isValidDriveId(driveId)) {
+                        showMessage('Invalid Google Drive ID format', 'error');
+                        return;
+                    }
+                    
+                    // Get detailed movie info
+                    const movieDetails = await manager.getMovieDetails(selectedMovie.imdbID);
+                    if (!movieDetails) {
+                        showMessage('Could not fetch movie details', 'error');
+                        return;
+                    }
+                    
+                    // Generate template
+                    const template = manager.generateVideoTemplate(movieDetails, driveId, contentType, subcategory);
+                    
+                    // Show generated code
+                    codeOutput.textContent = template;
+                    generatedCodeDiv.style.display = 'block';
+                    
+                    showMessage('Code generated successfully!');
+                    
+                } catch (error) {
+                    console.error('Generate error:', error);
+                    showMessage('Failed to generate code. Please try again.', 'error');
+                } finally {
+                    generateBtn.textContent = 'Generate Code';
+                    generateBtn.disabled = false;
+                }
+            });
+            
+            // Copy to clipboard functionality
+            copyBtn.addEventListener('click', function() {
+                const code = codeOutput.textContent;
+                
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(code).then(function() {
+                        showMessage('Code copied to clipboard!');
+                        copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                        setTimeout(() => {
+                            copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy Code';
+                        }, 2000);
+                    });
+                } else {
+                    // Fallback for older browsers
+                    const textArea = document.createElement('textarea');
+                    textArea.value = code;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    
+                    showMessage('Code copied to clipboard!');
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    setTimeout(() => {
+                        copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy Code';
+                    }, 2000);
+                }
+            });
+            
+            // Enter key search
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchBtn.click();
+                }
+            });
             
             // Initialize subcategories
             updateSubcategories();
