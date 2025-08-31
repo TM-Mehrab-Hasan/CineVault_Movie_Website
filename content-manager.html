@@ -175,11 +175,19 @@
             text-align: center;
             color: var(--color-text-muted);
             transition: all 0.3s ease;
+            cursor: pointer;
+            background: var(--color-background);
         }
 
         .drag-drop-area.dragover {
             border-color: var(--color-primary);
             background: rgba(229, 9, 20, 0.1);
+            color: var(--color-primary);
+        }
+
+        .drag-drop-area:hover {
+            border-color: var(--color-primary);
+            background: rgba(229, 9, 20, 0.05);
         }
 
         .success-message {
@@ -315,8 +323,10 @@
             </h2>
             <div id="drag-drop-area" class="drag-drop-area">
                 <i class="fas fa-cloud-upload-alt" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
-                <p>Drag and drop Google Drive links here for quick ID extraction</p>
-                <p><small>Or paste multiple links separated by new lines</small></p>
+                <p><strong>Quick Add</strong></p>
+                <p>Drag and drop Google Drive links here</p>
+                <p>Or click to paste from clipboard</p>
+                <p><small>Supports: drive.google.com links, movie titles for search</small></p>
             </div>
         </div>
     </main>
@@ -544,6 +554,78 @@
                 if (e.key === 'Enter') {
                     searchBtn.click();
                 }
+            });
+            
+            // Drag and Drop functionality
+            const dragDropArea = document.getElementById('drag-drop-area');
+            
+            function handleDragOver(e) {
+                e.preventDefault();
+                dragDropArea.classList.add('dragover');
+            }
+            
+            function handleDragLeave(e) {
+                e.preventDefault();
+                dragDropArea.classList.remove('dragover');
+            }
+            
+            function handleDrop(e) {
+                e.preventDefault();
+                dragDropArea.classList.remove('dragover');
+                
+                const data = e.dataTransfer.getData('text');
+                if (data) {
+                    processDraggedData(data);
+                }
+            }
+            
+            function processDraggedData(data) {
+                // Check if it's a Google Drive link
+                if (data.includes('drive.google.com')) {
+                    const driveId = manager.extractDriveId(data);
+                    if (driveId) {
+                        googleDriveInput.value = driveId;
+                        showMessage('Google Drive ID extracted successfully!');
+                    } else {
+                        showMessage('Could not extract Drive ID from the link', 'error');
+                    }
+                } else {
+                    // Assume it's a movie title for search
+                    searchInput.value = data.trim();
+                    showMessage('Text added to search field');
+                }
+            }
+            
+            // Add drag and drop event listeners
+            dragDropArea.addEventListener('dragover', handleDragOver);
+            dragDropArea.addEventListener('dragleave', handleDragLeave);
+            dragDropArea.addEventListener('drop', handleDrop);
+            
+            // Also handle paste events in the drag drop area
+            dragDropArea.addEventListener('click', function() {
+                navigator.clipboard.readText().then(text => {
+                    if (text.trim()) {
+                        processDraggedData(text);
+                    }
+                }).catch(err => {
+                    // Fallback: prompt user to paste
+                    const userInput = prompt('Paste your Google Drive link or movie title here:');
+                    if (userInput) {
+                        processDraggedData(userInput);
+                    }
+                });
+            });
+            
+            // Handle paste events in Google Drive input
+            googleDriveInput.addEventListener('paste', function(e) {
+                setTimeout(() => {
+                    const pastedText = e.target.value;
+                    const driveId = manager.extractDriveId(pastedText);
+                    if (driveId && driveId !== pastedText) {
+                        e.target.value = driveId;
+                        showMessage('Drive ID extracted from URL');
+                    }
+                }, 100);
             });
             
             // Initialize subcategories

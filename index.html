@@ -224,6 +224,68 @@
     <script src="js/main.js"></script>
     <script src="js/content-manager.js"></script>
     
+    <!-- Admin Access Button (only visible on localhost or for admins) -->
+    <script>
+        // Add admin access button for content management
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if we're on localhost or if admin mode is enabled
+            const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            const adminAccess = localStorage.getItem('cinemavault-admin') === 'true';
+            
+            if (isLocalhost || adminAccess) {
+                const adminBtn = document.createElement('button');
+                adminBtn.innerHTML = '<i class="fas fa-cog"></i>';
+                adminBtn.title = 'Content Manager';
+                adminBtn.style.cssText = `
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    background: linear-gradient(45deg, #e50914, #ff6b6b);
+                    color: white;
+                    border: none;
+                    cursor: pointer;
+                    z-index: 1000;
+                    font-size: 20px;
+                    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+                    transition: all 0.3s ease;
+                `;
+                
+                adminBtn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.1)';
+                    this.style.boxShadow = '0 6px 20px rgba(229, 9, 20, 0.6)';
+                });
+                
+                adminBtn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.boxShadow = '0 4px 15px rgba(229, 9, 20, 0.4)';
+                });
+                
+                adminBtn.addEventListener('click', function() {
+                    window.location.href = 'content-manager.html';
+                });
+                
+                document.body.appendChild(adminBtn);
+            }
+        });
+    </script>
+    
+    <!-- Enable admin mode with konami code or special key combination -->
+    <script>
+        // Secret admin access (Ctrl+Shift+A)
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+                const password = prompt('Enter admin password:');
+                if (password === 'cinemavault2025') { // Change this password
+                    localStorage.setItem('cinemavault-admin', 'true');
+                    location.reload();
+                }
+            }
+        });
+    </script>
+    
     <!-- PWA Service Worker Registration -->
     <script>
         if ('serviceWorker' in navigator) {
