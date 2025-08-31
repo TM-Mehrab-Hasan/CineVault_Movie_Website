@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - CinemaVault</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--color-background) 0%, #0d1117 100%);
+            padding: 2rem;
+        }
+
+        .login-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .login-logo {
+            margin-bottom: 2rem;
+        }
+
+        .login-logo img {
+            height: 60px;
+            width: auto;
+            filter: drop-shadow(0 0 20px rgba(229, 9, 20, 0.4));
+        }
+
+        .login-title {
+            color: var(--color-text);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-subtitle {
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: var(--color-background);
+            border: 2px solid var(--color-border);
+            border-radius: 8px;
+            color: var(--color-text);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.1);
+        }
+
+        .input-icon {
+            position: relative;
+        }
+
+        .input-icon i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-text-muted);
+            z-index: 1;
+        }
+
+        .input-icon .form-control {
+            padding-left: 2.5rem;
+        }
+
+        .btn-login {
+            width: 100%;
+            background: linear-gradient(45deg, var(--color-primary), #ff4757);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+
+        .btn-login:hover {
+            background: linear-gradient(45deg, #c40711, #ff3742);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(229, 9, 20, 0.3);
+        }
+
+        .btn-login:disabled {
+            background: var(--color-border);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--color-primary);
+        }
+
+        .error-message {
+            background: #dc3545;
+            color: white;
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .success-message {
+            background: #28a745;
+            color: white;
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .loading-spinner {
+            display: none;
+            margin-right: 0.5rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .spinning {
+            animation: spin 1s linear infinite;
+        }
+
+        .security-note {
+            background: rgba(229, 9, 20, 0.1);
+            border: 1px solid rgba(229, 9, 20, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            text-align: left;
+        }
+
+        .security-note h4 {
+            color: var(--color-primary);
+            margin: 0 0 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .security-note p {
+            color: var(--color-text-muted);
+            margin: 0;
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 2rem 1.5rem;
+                margin: 1rem;
+            }
+            
+            .login-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-logo">
+                <img src="assets/logo.svg" alt="CinemaVault" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <h2 style="display: none; color: var(--color-primary); font-family: 'Monoton', cursive;">CinemaVault</h2>
+            </div>
+            
+            <h1 class="login-title">Admin Login</h1>
+            <p class="login-subtitle">Access Content Management System</p>
+            
+            <div id="message-container"></div>
+            
+            <form id="admin-login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" class="form-control" placeholder="Enter admin username" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" class="form-control" placeholder="Enter admin password" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-login" id="login-btn">
+                    <i class="fas fa-spinner loading-spinner"></i>
+                    <i class="fas fa-sign-in-alt"></i>
+                    Login to Admin Panel
+                </button>
+            </form>
+            
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to CinemaVault
+            </a>
+            
+            <div class="security-note">
+                <h4><i class="fas fa-shield-alt"></i> Security Notice</h4>
+                <p>This is a protected area for content management. All login attempts are logged and monitored.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('admin-login-form');
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const loginBtn = document.getElementById('login-btn');
+            const messageContainer = document.getElementById('message-container');
+            const loadingSpinner = document.querySelector('.loading-spinner');
+            
+            // Admin credentials with permission levels
+            const adminCredentials = {
+                'admin': {
+                    password: 'cinemavault2025',
+                    role: 'admin',
+                    permissions: ['full_access', 'user_management', 'system_settings', 'content_crud', 'analytics', 'backup']
+                },
+                'moderator': {
+                    password: 'cinema123',
+                    role: 'moderator', 
+                    permissions: ['content_moderate', 'content_edit', 'content_add_approval', 'quality_control']
+                },
+                'content-manager': {
+                    password: 'vault2025',
+                    role: 'content-manager',
+                    permissions: ['content_add', 'content_edit_own', 'basic_search']
+                }
+            };
+            
+            function showMessage(message, type = 'error') {
+                messageContainer.innerHTML = `
+                    <div class="${type}-message">
+                        <i class="fas fa-${type === 'error' ? 'exclamation-triangle' : 'check-circle'}"></i>
+                        ${message}
+                    </div>
+                `;
+                
+                setTimeout(() => {
+                    messageContainer.innerHTML = '';
+                }, 5000);
+            }
+            
+            function setLoading(loading) {
+                loginBtn.disabled = loading;
+                if (loading) {
+                    loadingSpinner.style.display = 'inline-block';
+                    loadingSpinner.classList.add('spinning');
+                    loginBtn.innerHTML = '<i class="fas fa-spinner loading-spinner spinning"></i>Logging in...';
+                } else {
+                    loadingSpinner.style.display = 'none';
+                    loadingSpinner.classList.remove('spinning');
+                    loginBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i>Login to Admin Panel';
+                }
+            }
+            
+            function simulateNetworkDelay() {
+                return new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 1000));
+            }
+            
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const username = usernameInput.value.trim();
+                const password = passwordInput.value.trim();
+                
+                if (!username || !password) {
+                    showMessage('Please enter both username and password');
+                    return;
+                }
+                
+                setLoading(true);
+                
+                try {
+                    // Simulate network delay for realistic feel
+                    await simulateNetworkDelay();
+                    
+                    // Check credentials
+                    if (adminCredentials[username] && adminCredentials[username].password === password) {
+                        // Successful login
+                        const userInfo = adminCredentials[username];
+                        showMessage(`Login successful! Welcome ${userInfo.role}. Redirecting...`, 'success');
+                        
+                        // Store admin session with role and permissions
+                        localStorage.setItem('cinemavault-admin', 'true');
+                        localStorage.setItem('cinemavault-admin-user', username);
+                        localStorage.setItem('cinemavault-admin-role', userInfo.role);
+                        localStorage.setItem('cinemavault-admin-permissions', JSON.stringify(userInfo.permissions));
+                        localStorage.setItem('cinemavault-admin-time', Date.now());
+                        
+                        // Redirect to content manager after short delay
+                        setTimeout(() => {
+                            window.location.href = 'content-manager.html';
+                        }, 1500);
+                        
+                    } else {
+                        // Failed login
+                        showMessage('Invalid username or password. Please try again.');
+                        
+                        // Clear password field
+                        passwordInput.value = '';
+                        passwordInput.focus();
+                        
+                        // Log failed attempt (in production, send to server)
+                        console.warn('Failed login attempt:', { username, timestamp: new Date().toISOString() });
+                    }
+                    
+                } catch (error) {
+                    showMessage('Login failed. Please check your connection and try again.');
+                    console.error('Login error:', error);
+                } finally {
+                    setLoading(false);
+                }
+            });
+            
+            // Enter key handling
+            usernameInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    passwordInput.focus();
+                }
+            });
+            
+            passwordInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    form.dispatchEvent(new Event('submit'));
+                }
+            });
+            
+            // Check if already logged in
+            const isAdminLoggedIn = localStorage.getItem('cinemavault-admin') === 'true';
+            const adminLoginTime = localStorage.getItem('cinemavault-admin-time');
+            const currentTime = Date.now();
+            const sessionDuration = 24 * 60 * 60 * 1000; // 24 hours
+            
+            if (isAdminLoggedIn && adminLoginTime && (currentTime - parseInt(adminLoginTime)) < sessionDuration) {
+                showMessage('You are already logged in. Redirecting...', 'success');
+                setTimeout(() => {
+                    window.location.href = 'content-manager.html';
+                }, 1500);
+            }
+            
+            // Auto-focus username field
+            usernameInput.focus();
+        });
+    </script>
+</body>
+</html>

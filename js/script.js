@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const grid = document.getElementById(`${type}-grid`);
             if (grid) {
                 const filtered = allEnrichedMedia.filter(v => v.type === type);
-                const sorted = sortItems(filtered, 'rating');
+                const sorted = sortItems(filtered, 'title'); // Sort alphabetically by title
                 const limited = sorted.slice(0, 10);
                 renderGrid(grid, limited);
             }

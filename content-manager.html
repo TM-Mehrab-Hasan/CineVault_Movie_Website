@@ -333,9 +333,211 @@
 
     <script src="js/content-manager.js"></script>
     <script>
+        // Check admin authentication first
+        function checkAdminAuth() {
+            const isAdminLoggedIn = localStorage.getItem('cinemavault-admin') === 'true';
+            const adminLoginTime = localStorage.getItem('cinemavault-admin-time');
+            const currentTime = Date.now();
+            const sessionDuration = 24 * 60 * 60 * 1000; // 24 hours
+            
+            // Check if session is valid
+            if (!isAdminLoggedIn || !adminLoginTime || (currentTime - parseInt(adminLoginTime)) > sessionDuration) {
+                // Redirect to login page
+                alert('Please login as admin to access this page.');
+                window.location.href = 'admin-login.html';
+                return false;
+            }
+            
+            return true;
+        }
+        
+        function hasPermission(permission) {
+            const permissions = JSON.parse(localStorage.getItem('cinemavault-admin-permissions') || '[]');
+            return permissions.includes(permission) || permissions.includes('full_access');
+        }
+        
+        function getAdminRole() {
+            return localStorage.getItem('cinemavault-admin-role') || 'content-manager';
+        }
+        
+        function initializeUIBasedOnRole() {
+            const role = getAdminRole();
+            const adminUser = localStorage.getItem('cinemavault-admin-user') || 'Admin';
+            
+            // Role-specific welcome messages and UI modifications
+            let welcomeMessage = '';
+            let uiModifications = [];
+            
+            switch(role) {
+                case 'admin':
+                    welcomeMessage = `
+                        <i class="fas fa-crown"></i>
+                        Welcome back, ${adminUser}! (Full Administrator)
+                        <span style="margin-left: 1rem; font-size: 0.9rem;">
+                            <i class="fas fa-shield-alt"></i> Full Access Granted
+                        </span>
+                    `;
+                    uiModifications = ['show_advanced_options', 'show_bulk_operations', 'show_system_settings'];
+                    break;
+                    
+                case 'moderator':
+                    welcomeMessage = `
+                        <i class="fas fa-user-shield"></i>
+                        Welcome back, ${adminUser}! (Content Moderator)
+                        <span style="margin-left: 1rem; font-size: 0.9rem;">
+                            <i class="fas fa-edit"></i> Content Moderation Access
+                        </span>
+                    `;
+                    uiModifications = ['show_moderation_tools', 'limit_deletion'];
+                    break;
+                    
+                case 'content-manager':
+                    welcomeMessage = `
+                        <i class="fas fa-plus-circle"></i>
+                        Welcome back, ${adminUser}! (Content Manager)
+                        <span style="margin-left: 1rem; font-size: 0.9rem;">
+                            <i class="fas fa-video"></i> Content Creation Access
+                        </span>
+                    `;
+                    uiModifications = ['hide_advanced_options', 'basic_mode_only'];
+                    break;
+            }
+            
+            return { welcomeMessage, uiModifications };
+        }
+        
         // Initialize content manager
         document.addEventListener('DOMContentLoaded', function() {
+            // Check authentication first
+            if (!checkAdminAuth()) {
+                return;
+            }
+            
             console.log('Content Manager Loaded');
+            
+            // Initialize UI based on admin role
+            const { welcomeMessage, uiModifications } = initializeUIBasedOnRole();
+            
+            // Show welcome message with role-specific content
+            const welcomeDiv = document.createElement('div');
+            welcomeDiv.className = 'success-message';
+            welcomeDiv.innerHTML = `
+                ${welcomeMessage}
+                <button onclick="logout()" style="float: right; background: none; border: none; color: white; cursor: pointer;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            `;
+            
+            const contentManager = document.querySelector('.content-manager');
+            contentManager.insertBefore(welcomeDiv, contentManager.firstChild);
+            
+            // Apply UI modifications based on role
+            applyRoleBasedUI(uiModifications);
+            
+            function applyRoleBasedUI(modifications) {
+                const role = getAdminRole();
+                
+                // Add role-specific features
+                if (modifications.includes('show_advanced_options')) {
+                    addAdvancedAdminFeatures();
+                }
+                
+                if (modifications.includes('show_moderation_tools')) {
+                    addModerationTools();
+                }
+                
+                if (modifications.includes('basic_mode_only')) {
+                    enableBasicModeOnly();
+                }
+                
+                // Add role badge to title
+                const managerHeader = document.querySelector('.manager-header h1');
+                if (managerHeader) {
+                    const roleBadge = document.createElement('span');
+                    roleBadge.style.cssText = `
+                        background: var(--color-primary);
+                        color: white;
+                        padding: 0.3rem 0.8rem;
+                        border-radius: 20px;
+                        font-size: 0.7rem;
+                        margin-left: 1rem;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                    `;
+                    roleBadge.textContent = role.replace('-', ' ');
+                    managerHeader.appendChild(roleBadge);
+                }
+            }
+            
+            function addAdvancedAdminFeatures() {
+                // Add bulk operations section for full admins
+                const advancedSection = document.createElement('div');
+                advancedSection.className = 'manager-section';
+                advancedSection.innerHTML = `
+                    <h2 class="section-title">
+                        <i class="fas fa-cogs"></i>
+                        Advanced Admin Tools
+                    </h2>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <button class="btn" onclick="exportDatabase()">
+                            <i class="fas fa-download"></i> Export Database
+                        </button>
+                        <button class="btn" onclick="showAnalytics()">
+                            <i class="fas fa-chart-bar"></i> View Analytics
+                        </button>
+                        <button class="btn btn-secondary" onclick="bulkEdit()">
+                            <i class="fas fa-edit"></i> Bulk Edit
+                        </button>
+                        <button class="btn btn-secondary" onclick="systemSettings()">
+                            <i class="fas fa-cog"></i> System Settings
+                        </button>
+                    </div>
+                `;
+                
+                document.querySelector('.content-manager').appendChild(advancedSection);
+            }
+            
+            function addModerationTools() {
+                // Add moderation-specific tools
+                const moderationSection = document.createElement('div');
+                moderationSection.className = 'manager-section';
+                moderationSection.innerHTML = `
+                    <h2 class="section-title">
+                        <i class="fas fa-shield-alt"></i>
+                        Moderation Tools
+                    </h2>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <button class="btn" onclick="reviewPending()">
+                            <i class="fas fa-clock"></i> Review Pending (0)
+                        </button>
+                        <button class="btn" onclick="checkBrokenLinks()">
+                            <i class="fas fa-link"></i> Check Links
+                        </button>
+                        <button class="btn btn-secondary" onclick="qualityCheck()">
+                            <i class="fas fa-search"></i> Quality Check
+                        </button>
+                        <button class="btn btn-secondary" onclick="reportedContent()">
+                            <i class="fas fa-flag"></i> Reported Content
+                        </button>
+                    </div>
+                `;
+                
+                document.querySelector('.content-manager').appendChild(moderationSection);
+            }
+            
+            function enableBasicModeOnly() {
+                // Simplify UI for content managers
+                const managerHeader = document.querySelector('.manager-header p');
+                if (managerHeader) {
+                    managerHeader.textContent = 'Add new movies and shows to CinemaVault';
+                }
+                
+                // Hide quick add section for basic users
+                const quickAddSection = document.querySelector('.manager-section:last-child');
+                if (quickAddSection && quickAddSection.querySelector('h2').textContent.includes('Quick Add')) {
+                    quickAddSection.style.display = 'none';
+                }
+            }
             
             // Create manager instance
             const manager = new ContentManager();
@@ -634,6 +836,154 @@
             // Update subcategories when content type changes
             contentTypeSelect.addEventListener('change', updateSubcategories);
         });
+        
+        // Logout function
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                localStorage.removeItem('cinemavault-admin');
+                localStorage.removeItem('cinemavault-admin-user');
+                localStorage.removeItem('cinemavault-admin-role');
+                localStorage.removeItem('cinemavault-admin-permissions');
+                localStorage.removeItem('cinemavault-admin-time');
+                window.location.href = 'index.html';
+            }
+        }
+        
+        // Advanced Admin Functions
+        function exportDatabase() {
+            if (!hasPermission('backup')) {
+                alert('You do not have permission to export the database.');
+                return;
+            }
+            
+            fetch('js/videos.js')
+                .then(response => response.text())
+                .then(data => {
+                    const blob = new Blob([data], { type: 'application/javascript' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `cinemavault-backup-${new Date().toISOString().split('T')[0]}.js`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    
+                    showMessage('Database exported successfully!');
+                })
+                .catch(err => {
+                    showMessage('Failed to export database', 'error');
+                });
+        }
+        
+        function showAnalytics() {
+            if (!hasPermission('analytics')) {
+                alert('You do not have permission to view analytics.');
+                return;
+            }
+            
+            alert('Analytics Dashboard\n\n' +
+                  '📊 Total Content: Loading...\n' +
+                  '🎬 Movies: Loading...\n' +
+                  '📺 Series: Loading...\n' +
+                  '🎌 Anime: Loading...\n' +
+                  '💻 Software: Loading...\n' +
+                  '🎮 Games: Loading...\n\n' +
+                  'Full analytics dashboard coming soon!');
+        }
+        
+        function bulkEdit() {
+            if (!hasPermission('content_crud')) {
+                alert('You do not have permission for bulk operations.');
+                return;
+            }
+            
+            alert('Bulk Edit Tools\n\n' +
+                  '• Update multiple entries\n' +
+                  '• Fix broken Drive links\n' +
+                  '• Batch category changes\n' +
+                  '• Mass metadata updates\n\n' +
+                  'Feature in development!');
+        }
+        
+        function systemSettings() {
+            if (!hasPermission('system_settings')) {
+                alert('You do not have permission to access system settings.');
+                return;
+            }
+            
+            alert('System Settings\n\n' +
+                  '⚙️ API Configuration\n' +
+                  '🔧 Cache Management\n' +
+                  '👥 User Management\n' +
+                  '🛡️ Security Settings\n\n' +
+                  'Advanced settings panel coming soon!');
+        }
+        
+        // Moderation Functions
+        function reviewPending() {
+            if (!hasPermission('content_moderate')) {
+                alert('You do not have permission for content moderation.');
+                return;
+            }
+            
+            alert('Pending Content Review\n\n' +
+                  'No pending submissions at this time.\n\n' +
+                  'This feature will show:\n' +
+                  '• User submitted content\n' +
+                  '• Flagged entries\n' +
+                  '• Quality issues');
+        }
+        
+        function checkBrokenLinks() {
+            if (!hasPermission('quality_control')) {
+                alert('You do not have permission for quality control.');
+                return;
+            }
+            
+            showMessage('Checking for broken links... This may take a moment.');
+            
+            // Simulate link checking
+            setTimeout(() => {
+                alert('Link Check Results\n\n' +
+                      '✅ Working Links: 95%\n' +
+                      '⚠️ Suspicious Links: 3%\n' +
+                      '❌ Broken Links: 2%\n\n' +
+                      'Detailed report will be available in full version.');
+            }, 2000);
+        }
+        
+        function qualityCheck() {
+            alert('Quality Control Dashboard\n\n' +
+                  '🔍 Duplicate Detection\n' +
+                  '📝 Metadata Validation\n' +
+                  '🖼️ Missing Posters\n' +
+                  '⭐ Rating Inconsistencies\n\n' +
+                  'Quality tools coming soon!');
+        }
+        
+        function reportedContent() {
+            alert('Reported Content\n\n' +
+                  'No reports at this time.\n\n' +
+                  'This will show:\n' +
+                  '• User reports\n' +
+                  '• Copyright claims\n' +
+                  '• Quality issues\n' +
+                  '• Inappropriate content');
+        }
+        
+        function showMessage(message, type = 'success') {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `${type}-message`;
+            messageDiv.textContent = message;
+            
+            const contentManager = document.querySelector('.content-manager');
+            contentManager.insertBefore(messageDiv, contentManager.firstChild);
+            
+            setTimeout(() => {
+                messageDiv.remove();
+            }, 3000);
+        }
     </script>
 </body>
 </html>

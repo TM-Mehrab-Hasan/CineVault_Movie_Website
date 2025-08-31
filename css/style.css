@@ -831,3 +831,29 @@ footer {
         display: none;
     }
 }
+
+/* Admin Link Styling */
+.admin-link {
+    color: var(--color-text-muted) !important;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+    background: rgba(229, 9, 20, 0.1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.admin-link:hover {
+    background: var(--color-primary) !important;
+    color: white !important;
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
+}
+
+.admin-link i {
+    font-size: 0.9rem;
+}
